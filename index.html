@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ONGOWON 온고원 — 그림으로 비는 소원, 민화 아기 담요</title>
+<meta name="description" content="온고원(溫故園)은 조선의 민화가 품었던 소원을 오늘의 아기 담요와 패브릭으로 다시 짓는 브랜드입니다. 첫 컬렉션 준비 중.">
+<meta property="og:title" content="ONGOWON 온고원">
+<meta property="og:description" content="그림으로 소원을 비는 조선의 방식, 지금의 아기 담요로.">
+<meta property="og:image" content="https://ongowon.com/images/hero.jpg">
+<meta property="og:url" content="https://ongowon.com">
+<meta name="theme-color" content="#FBF7F0">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FBF7F0; --paper:#F2E9DA; --sand:#E8DCC6; --ink:#2B2520; --soft:#6A5E52;
+  --seal:#B4412F; --rose:#E9CFC6; --blue:#55688F; --line:#D9CCB6;
+  --serif:'Gowun Batang',serif; --latin:'Cormorant Garamond',serif; --sans:'Noto Sans KR',sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-weight:400;font-size:15px;line-height:1.7;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1360px;margin:0 auto;padding:0 32px}
+
+/* announcement */
+.announce{background:var(--seal);color:#FFF8F0;font-size:12.5px;letter-spacing:.06em;text-align:center;height:36px;overflow:hidden;position:relative}
+.announce p{margin:0;position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0;transform:translateY(8px);transition:.6s}
+.announce p.on{opacity:1;transform:none}
+
+/* header */
+header{position:sticky;top:0;z-index:20;background:rgba(251,247,240,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.hd{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:84px}
+.hd nav{display:flex;gap:26px;font-size:13px;letter-spacing:.04em}
+.hd nav a:hover,.hd .right a:hover{color:var(--seal)}
+.hd .right{display:flex;justify-content:flex-end;gap:22px;font-size:13px;align-items:center}
+.logo{display:flex;align-items:center;gap:14px}
+.seal{width:26px;height:58px;background:var(--seal);border-radius:3px;padding:3px;flex:none}
+.seal span{display:flex;flex-direction:column;align-items:center;justify-content:space-evenly;height:100%;border:1px solid rgba(255,248,240,.85);border-radius:2px;font-family:var(--serif);font-weight:700;font-size:13px;line-height:1;color:#FFF8F0}
+.wm{display:flex;flex-direction:column;gap:5px}
+.wm b{font-family:var(--latin);font-weight:600;font-size:27px;letter-spacing:.42em;margin-right:-.42em;line-height:1}
+.wm small{font-family:var(--serif);font-size:11px;letter-spacing:.5em;color:var(--soft);display:flex;align-items:center;gap:8px}
+.wm small i{width:16px;height:1px;background:var(--seal);display:inline-block}
+.menu-btn{display:none;background:none;border:0;font:inherit;cursor:pointer;padding:0}
+
+/* hero */
+.hero{position:relative;background:var(--paper)}
+.hero img{width:100%;height:min(78vh,760px);object-fit:cover}
+.hero .cap{text-align:center;padding:44px 20px 56px;background:var(--bg)}
+.hero .cap .k{font-family:var(--latin);font-style:italic;font-size:22px;color:var(--soft)}
+.hero h1{font-family:var(--serif);font-weight:700;font-size:clamp(30px,4.4vw,56px);line-height:1.25;margin:6px 0 24px;letter-spacing:-.01em;}
+.btn{display:inline-block;border:1px solid var(--ink);padding:13px 34px;font-size:13px;letter-spacing:.12em;background:var(--bg);transition:.25s}
+.btn:hover{background:var(--ink);color:var(--bg)}
+.btn.red{border-color:var(--seal);background:var(--seal);color:#FFF8F0}
+.btn.red:hover{background:#8f3020}
+
+/* section titles */
+.sec{padding:96px 0}
+.title{text-align:center;margin-bottom:48px}
+.title .en{font-family:var(--latin);font-style:italic;font-size:20px;color:var(--seal);letter-spacing:.02em}
+.title h2{font-family:var(--serif);font-weight:700;font-size:clamp(26px,3vw,36px);margin:4px 0 10px;letter-spacing:-.01em}
+.title p{margin:0 auto;max-width:560px;color:var(--soft)}
+.divider{width:84px;height:12px;margin:18px auto 0;background:radial-gradient(circle,var(--seal) 2px,transparent 2.5px) center/12px 12px repeat-x}
+
+/* product grid */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px 28px}
+.card .ph{position:relative;aspect-ratio:1;overflow:hidden;background:var(--paper)}
+.card .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .6s,transform 1.2s}
+.card .ph img.b{opacity:0}
+.card:hover .ph img.b{opacity:1;transform:scale(1.03)}
+.card .tag{position:absolute;left:14px;top:14px;background:var(--bg);font-size:11px;letter-spacing:.08em;padding:4px 10px;z-index:2}
+.card h3{font-family:var(--serif);font-weight:700;font-size:18px;margin:16px 0 2px;text-align:center}
+.card .wish{text-align:center;font-size:13px;color:var(--seal)}
+.card .st{text-align:center;font-size:12.5px;color:var(--soft);letter-spacing:.04em}
+.more{text-align:center;margin-top:56px}
+
+/* gift */
+.gift{display:grid;grid-template-columns:1fr 1fr;background:var(--rose)}
+.gift .img img{width:100%;height:100%;object-fit:cover}
+.gift .txt{display:flex;flex-direction:column;justify-content:center;padding:72px clamp(32px,7vw,110px)}
+.gift .txt .en{font-family:var(--latin);font-style:italic;font-size:22px;color:var(--seal)}
+.gift h2{font-family:var(--serif);font-size:clamp(28px,3vw,40px);line-height:1.35;margin:6px 0 18px}
+.gift p{color:#4A413A;margin:0 0 28px;max-width:440px}
+
+/* categories */
+.cats{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.cat{position:relative;aspect-ratio:3/4;overflow:hidden;background:var(--paper)}
+.cat img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s}
+.cat:hover img{transform:scale(1.05)}
+.cat span{position:absolute;left:0;right:0;bottom:0;padding:18px;background:linear-gradient(transparent,rgba(43,37,32,.55));color:#FFF8F0;font-family:var(--serif);font-weight:700;font-size:18px;text-align:center}
+.cat span small{display:block;font-family:var(--sans);font-weight:300;font-size:12px;letter-spacing:.08em;opacity:.9}
+
+/* values */
+.values{background:var(--paper)}
+.vals{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.val img{aspect-ratio:4/5;width:100%;object-fit:cover}
+.val .en{font-family:var(--latin);font-style:italic;font-size:19px;color:var(--seal);margin-top:20px}
+.val h3{font-family:var(--serif);font-size:22px;margin:2px 0 8px}
+.val p{margin:0;color:var(--soft)}
+
+/* story */
+.story{display:grid;grid-template-columns:1.1fr 1fr;gap:72px;align-items:center}
+.story .big{font-family:var(--serif);font-size:clamp(40px,6vw,84px);line-height:1.05;letter-spacing:.06em;color:var(--seal)}
+.story .big small{display:block;font-family:var(--latin);font-style:italic;font-size:22px;letter-spacing:0;color:var(--soft);margin-top:14px}
+.story p{color:#4A413A;margin:0 0 16px}
+.story .imgs{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.story .imgs img{aspect-ratio:1;object-fit:cover;width:100%}
+.story .imgs img:first-child{grid-column:span 2;aspect-ratio:2/1}
+
+/* newsletter */
+.news{background:var(--ink);color:var(--bg);text-align:center}
+.news .title h2{color:var(--bg)} .news .title p{color:#CFC3B2}
+.news form{display:flex;max-width:520px;margin:0 auto;border-bottom:1px solid #8C7F70}
+.news input{flex:1;background:none;border:0;color:var(--bg);font:inherit;padding:14px 4px;outline:none}
+.news input::placeholder{color:#9D9081}
+.news button{background:none;border:0;color:var(--bg);font:inherit;letter-spacing:.12em;cursor:pointer;padding:0 6px}
+.news .note{font-size:12px;color:#9D9081;margin-top:16px}
+.news .ig{margin-top:30px;display:inline-flex;gap:10px;align-items:center;font-family:var(--latin);font-size:20px;letter-spacing:.08em}
+
+/* footer */
+footer{padding:64px 0 40px;font-size:13px;color:var(--soft)}
+.ft{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px}
+footer h4{font-family:var(--serif);color:var(--ink);font-size:14px;margin:0 0 12px}
+footer ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+footer a:hover{color:var(--seal)}
+.copy{border-top:1px solid var(--line);margin-top:48px;padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:12px}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(24px);transition:opacity .9s,transform .9s}
+.rv.in{opacity:1;transform:none}
+
+@media (max-width:960px){
+  .wrap{padding:0 20px}
+  .hd{height:70px} .hd nav{display:none} .menu-btn{display:block}
+  .hd .right .hide-m{display:none}
+  .wm b{font-size:21px} .seal{height:48px;width:22px} .seal span{font-size:11px}
+  .grid{grid-template-columns:repeat(2,1fr);gap:28px 14px}
+  .gift,.story{grid-template-columns:1fr}
+  .cats{grid-template-columns:repeat(2,1fr);gap:12px}
+  .vals{grid-template-columns:1fr}
+  .ft{grid-template-columns:1fr 1fr}
+  .sec{padding:72px 0}
+  .announce{font-size:11px} .announce p{padding:0 12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:block;line-height:36px}
+  .hero img{height:46vh}
+}
+.mnav{display:none;position:fixed;inset:0;background:var(--bg);z-index:50;padding:28px;flex-direction:column;gap:22px;font-family:var(--serif);font-size:22px}
+.mnav.open{display:flex}
+.mnav button{align-self:flex-end;background:none;border:0;font:inherit;font-size:14px;cursor:pointer}
+</style>
+</head>
+<body>
+
+<div class="announce" aria-live="polite">
+  <p class="on">온고원 첫 컬렉션을 준비하고 있어요 · 출시 소식을 가장 먼저 받아보세요</p>
+  <p>그림으로 소원을 빌던 조선의 방식을, 지금의 아기 담요로</p>
+  <p>Instagram @ongo.won_archive 에서 제작 과정을 공개하고 있어요</p>
+</div>
+
+<header>
+  <div class="wrap hd">
+    <nav>
+      <a href="#collection">컬렉션</a>
+      <a href="#gift">선물</a>
+      <a href="#story">이야기</a>
+    </nav>
+    <button class="menu-btn" aria-label="메뉴 열기" onclick="document.querySelector('.mnav').classList.add('open')">☰ 메뉴</button>
+    <a href="/" class="logo" aria-label="ONGOWON 온고원 홈">
+      <div class="seal"><span><em style="font-style:normal">온</em><em style="font-style:normal">고</em><em style="font-style:normal">원</em></span></div>
+      <div class="wm"><b>ONGOWON</b><small>온고원<i></i>KOREA</small></div>
+    </a>
+    <div class="right">
+      <a class="hide-m" href="https://www.instagram.com/ongo.won_archive/" target="_blank" rel="noopener">Instagram</a>
+      <a href="#newsletter">출시 알림</a>
+    </div>
+  </div>
+</header>
+
+<div class="mnav" role="dialog" aria-label="메뉴">
+  <button onclick="this.parentNode.classList.remove('open')">닫기 ✕</button>
+  <a href="#collection" onclick="this.parentNode.classList.remove('open')">컬렉션</a>
+  <a href="#gift" onclick="this.parentNode.classList.remove('open')">선물</a>
+  <a href="#story" onclick="this.parentNode.classList.remove('open')">이야기</a>
+  <a href="#newsletter" onclick="this.parentNode.classList.remove('open')">출시 알림</a>
+  <a href="https://www.instagram.com/ongo.won_archive/" target="_blank" rel="noopener">Instagram</a>
+</div>
+
+<section class="hero">
+  <img src="/images/hero.jpg" alt="달·아기 양·학이 그려진 민화 아기 담요 세 장">
+  <div class="cap">
+    <div class="k">The First Collection</div>
+    <h1>소원을 덮어주는<br>첫 번째 담요</h1>
+    <a class="btn" href="#collection">컬렉션 보기</a>
+  </div>
+</section>
+
+<section class="sec" id="collection">
+  <div class="wrap">
+    <div class="title rv">
+      <div class="en">Wish Minhwa Blankets</div>
+      <h2>소원 민화 블랭킷</h2>
+      <p>민화는 본래 장식이 아니라, 집 안에 걸어 두고 소원을 비는 그림이었어요. 아이에게 바라는 마음을 한 장의 담요에 담았습니다.</p>
+      <div class="divider"></div>
+    </div>
+    <div class="grid" id="grid"></div>
+    <div class="more rv"><a class="btn" href="#newsletter">출시 알림 받기</a></div>
+  </div>
+</section>
+
+<section class="gift" id="gift">
+  <div class="img"><img src="/images/gift.jpg" alt="모란 민화 담요가 담긴 붉은 리본 선물 상자"></div>
+  <div class="txt rv">
+    <div class="en">Make it a gift</div>
+    <h2>축하의 마음까지<br>함께 포장해 드려요</h2>
+    <p>출산·백일·돌, 아이의 첫 순간을 축하하는 선물로. 그림마다 담긴 소원의 뜻을 적은 카드와 함께 온고원의 선물 상자에 담아 보내드릴 예정입니다.</p>
+    <div><a class="btn" href="#newsletter">선물 세트 출시 알림</a></div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="title rv">
+      <div class="en">Shop by category</div>
+      <h2>온고원이 만드는 것들</h2>
+      <p>지금은 시제품을 만들며 어떤 형태가 가장 사랑받을지 확인하고 있어요.</p>
+    </div>
+    <div class="cats">
+      <a class="cat rv" href="#collection"><img src="/images/p_sheep.jpg" alt="아기 양 민화 담요" loading="lazy"><span>아기 담요 · 스와들<small>준비 중</small></span></a>
+      <a class="cat rv" href="#collection"><img src="/images/moon.jpg" alt="달과 산 민화" loading="lazy"><span>패브릭 포스터<small>준비 중</small></span></a>
+      <a class="cat rv" href="#collection"><img src="/images/books.jpg" alt="책가도 민화" loading="lazy"><span>족자<small>준비 중</small></span></a>
+      <a class="cat rv" href="#gift"><img src="/images/gift.jpg" alt="선물 상자" loading="lazy"><span>선물 세트<small>준비 중</small></span></a>
+    </div>
+  </div>
+</section>
+
+<section class="sec values">
+  <div class="wrap">
+    <div class="title rv">
+      <div class="en">Our values</div>
+      <h2>온고원이 지키는 세 가지</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="vals">
+      <div class="val rv"><img src="/images/d_peony.jpg" alt="모란 민화 세부" loading="lazy"><div class="en">Art</div><h3>그림</h3><p>한국화를 공부한 작가들과 함께, 조선 민화의 소재와 색을 오늘의 감각으로 다시 그립니다.</p></div>
+      <div class="val rv"><img src="/images/d_carp.jpg" alt="잉어 민화 세부" loading="lazy"><div class="en">Meaning</div><h3>소원</h3><p>잉어는 합격, 모란은 부귀, 학은 장수. 그림마다 담긴 옛 소원의 뜻을 함께 전합니다.</p></div>
+      <div class="val rv"><img src="/images/d_sheep.jpg" alt="아기 양 민화 세부" loading="lazy"><div class="en">Materials</div><h3>원단</h3><p>아기 피부에 매일 닿는 물건이기에, 원단과 제작처를 직접 찾아다니며 고르고 있어요.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="story">
+  <div class="wrap story">
+    <div class="rv">
+      <div class="big">溫故<small>On-go · 옛것을 익혀 새것을 안다</small></div>
+      <p style="margin-top:32px">온고원(溫故園)은 '온고지신(溫故知新)'에서 이름을 빌렸습니다. 옛 그림을 예쁘게 따라 그리는 데서 멈추지 않고, <b>그림으로 소원을 빌던 행위</b> 자체를 지금의 방식으로 되살리고 싶었어요.</p>
+      <p>조선 사람들은 새해가 되면 집 안에 그림을 붙여 복을 빌었습니다. 온고원은 그 마음을 아이가 가장 먼저 덮는 담요에 담습니다.</p>
+      <a class="btn" href="https://www.instagram.com/ongo.won_archive/" target="_blank" rel="noopener">제작 과정 보기</a>
+    </div>
+    <div class="imgs rv">
+      <img src="/images/moon.jpg" alt="보름달과 산 민화" loading="lazy" style="object-position:center 30%">
+      <img src="/images/crane.jpg" alt="학 민화" loading="lazy">
+      <img src="/images/monkey.jpg" alt="복숭아를 든 아기 원숭이 민화" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<section class="sec news" id="newsletter">
+  <div class="wrap">
+    <div class="title">
+      <div class="en" style="color:#E9CFC6">Newsletter</div>
+      <h2>출시 소식을 가장 먼저</h2>
+      <p>첫 컬렉션이 나오면 이메일로 알려드릴게요.</p>
+    </div>
+    <form id="nl">
+      <input type="email" name="email" required placeholder="이메일 주소" aria-label="이메일 주소">
+      <button type="submit">신청하기 →</button>
+    </form>
+    <div class="note" id="nlnote">신청하시면 메일 앱이 열리고 ongowon.contact@gmail.com 으로 알림 신청 메일이 작성됩니다.</div>
+    <div><a class="ig" href="https://www.instagram.com/ongo.won_archive/" target="_blank" rel="noopener">@ongo.won_archive</a></div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="ft">
+      <div>
+        <a href="/" class="logo" style="margin-bottom:18px"><div class="seal"><span><em style="font-style:normal">온</em><em style="font-style:normal">고</em><em style="font-style:normal">원</em></span></div><div class="wm"><b style="font-size:22px">ONGOWON</b><small>온고원<i></i>KOREA</small></div></a>
+        <p style="max-width:300px">그림으로 소원을 비는 조선의 방식을, 지금의 아기 담요로.</p>
+      </div>
+      <div><h4>Shop</h4><ul><li><a href="#collection">소원 민화 블랭킷</a></li><li><a href="#gift">선물 세트</a></li></ul></div>
+      <div><h4>About</h4><ul><li><a href="#story">온고원 이야기</a></li><li><a href="https://www.instagram.com/ongo.won_archive/" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://www.youtube.com/channel/UC07gJPocSabI5b8AhCYtEoQ" target="_blank" rel="noopener">YouTube</a></li></ul></div>
+      <div><h4>Contact</h4><ul><li><a href="mailto:ongowon.contact@gmail.com">ongowon.contact@gmail.com</a></li></ul></div>
+    </div>
+    <div class="copy"><span>© 2026 ONGOWON 온고원</span><span>사이트의 제품 이미지는 개발 중인 디자인 시안이며, 일부는 AI로 생성되었습니다.</span></div>
+  </div>
+</footer>
+
+<script>
+const items=[
+  ['sheep','아기 양','',''],
+  ['horse','붉은 말','2026 병오년, 말의 해',''],
+  ['crane','학과 소나무','건강 · 장수',''],
+  ['carp','연꽃 잉어','합격 · 취업',''],
+  ['peony','모란','재물 · 부귀',''],
+  ['monkey','천도복숭아','무병 · 장수',''],
+  ['books','책가도','공부 · 실력',''],
+  ['moon','보름달','소원 빌기',''],
+  ['jar','달항아리','','']
+];
+document.getElementById('grid').innerHTML=items.map(([k,n,w])=>`
+  <a class="card rv" href="#newsletter">
+    <div class="ph"><span class="tag">출시 예정</span>
+      <img class="a" src="/images/p_${k}.jpg" alt="${n} 민화 담요" loading="lazy">
+      <img class="b" src="/images/d_${k}.jpg" alt="" loading="lazy">
+    </div>
+    <h3>${n}</h3>
+    ${w?`<div class="wish">${w}</div>`:''}
+    <div class="st">Carré Blanket · 출시 알림 받기</div>
+  </a>`).join('');
+
+// announcement rotate
+const ps=[...document.querySelectorAll('.announce p')];let ai=0;
+setInterval(()=>{ps[ai].classList.remove('on');ai=(ai+1)%ps.length;ps[ai].classList.add('on')},4200);
+
+// reveal
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+
+// newsletter -> mailto
+document.getElementById('nl').addEventListener('submit',e=>{
+  e.preventDefault();
+  const em=e.target.email.value;
+  location.href='mailto:ongowon.contact@gmail.com?subject='+encodeURIComponent('[온고원] 출시 알림 신청')+'&body='+encodeURIComponent('출시 알림을 받을 이메일: '+em);
+  document.getElementById('nlnote').textContent='메일 앱에서 전송 버튼을 누르면 신청이 완료돼요. 감사합니다!';
+});
+</script>
+</body>
+</html>
