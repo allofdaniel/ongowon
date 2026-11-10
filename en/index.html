@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ONGOWON — Korean Minhwa Wish Blankets for Babies</title>
+<meta name="description" content="ONGOWON reimagines the wishes hidden in Korean folk painting (minhwa) as baby blankets and fabrics for today. First collection coming soon.">
+<link rel="canonical" href="https://ongowon.com/en/">
+<link rel="alternate" hreflang="ko" href="https://ongowon.com/"><link rel="alternate" hreflang="en" href="https://ongowon.com/en/"><link rel="alternate" hreflang="ja" href="https://ongowon.com/ja/"><link rel="alternate" hreflang="x-default" href="https://ongowon.com/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="ONGOWON — Korean Minhwa Wish Blankets for Babies">
+<meta property="og:description" content="ONGOWON reimagines the wishes hidden in Korean folk painting (minhwa) as baby blankets and fabrics for today. First collection coming soon.">
+<meta property="og:image" content="https://ongowon.com/images/og.jpg">
+<meta property="og:url" content="https://ongowon.com/en/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#FBF7F0">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@300;400;500&family=Noto+Sans+JP:wght@300;400;500&family=Shippori+Mincho:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FBF7F0; --paper:#F2E9DA; --sand:#E8DCC6; --ink:#2B2520; --soft:#6A5E52;
+  --seal:#B4412F; --rose:#E9CFC6; --blue:#55688F; --line:#D9CCB6;
+  --serif:'Gowun Batang',serif; --latin:'Cormorant Garamond',serif; --sans:'Noto Sans KR',sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-weight:400;font-size:15px;line-height:1.7;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1360px;margin:0 auto;padding:0 32px}
+
+/* announcement */
+.announce{background:var(--seal);color:#FFF8F0;font-size:12.5px;letter-spacing:.06em;text-align:center;height:36px;overflow:hidden;position:relative}
+.announce p{margin:0;position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0;transform:translateY(8px);transition:.6s}
+.announce p.on{opacity:1;transform:none}
+
+/* header */
+header{position:sticky;top:0;z-index:20;background:rgba(251,247,240,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.hd{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:84px}
+.hd nav{display:flex;gap:26px;font-size:13px;letter-spacing:.04em}
+.hd nav a:hover,.hd .right a:hover{color:var(--seal)}
+.hd .right{display:flex;justify-content:flex-end;gap:22px;font-size:13px;align-items:center}
+.logo{display:flex;align-items:center;gap:14px}
+.seal{width:26px;height:58px;background:var(--seal);border-radius:3px;padding:3px;flex:none}
+.seal span{display:flex;flex-direction:column;align-items:center;justify-content:space-evenly;height:100%;border:1px solid rgba(255,248,240,.85);border-radius:2px;font-family:var(--serif);font-weight:700;font-size:13px;line-height:1;color:#FFF8F0}
+.wm{display:flex;flex-direction:column;gap:5px}
+.wm b{font-family:var(--latin);font-weight:600;font-size:27px;letter-spacing:.42em;margin-right:-.42em;line-height:1}
+.wm small{font-family:var(--serif);font-size:11px;letter-spacing:.5em;color:var(--soft);display:flex;align-items:center;gap:8px}
+.wm small i{width:16px;height:1px;background:var(--seal);display:inline-block}
+.menu-btn{display:none;background:none;border:0;font:inherit;cursor:pointer;padding:0}
+
+/* hero */
+.hero{position:relative;background:var(--paper)}
+.hero img{width:100%;height:min(78vh,760px);object-fit:cover}
+.hero .cap{text-align:center;padding:44px 20px 56px;background:var(--bg)}
+.hero .cap .k{font-family:var(--latin);font-style:italic;font-size:22px;color:var(--soft)}
+.hero h1{font-family:var(--serif);font-weight:700;font-size:clamp(30px,4.4vw,56px);line-height:1.25;margin:6px 0 24px;letter-spacing:-.01em;}
+.btn{display:inline-block;border:1px solid var(--ink);padding:13px 34px;font-size:13px;letter-spacing:.12em;background:var(--bg);transition:.25s}
+.btn:hover{background:var(--ink);color:var(--bg)}
+.btn.red{border-color:var(--seal);background:var(--seal);color:#FFF8F0}
+.btn.red:hover{background:#8f3020}
+
+/* section titles */
+.sec{padding:96px 0}
+.title{text-align:center;margin-bottom:48px}
+.title .en{font-family:var(--latin);font-style:italic;font-size:20px;color:var(--seal);letter-spacing:.02em}
+.title h2{font-family:var(--serif);font-weight:700;font-size:clamp(26px,3vw,36px);margin:4px 0 10px;letter-spacing:-.01em}
+.title p{margin:0 auto;max-width:560px;color:var(--soft)}
+.divider{width:84px;height:12px;margin:18px auto 0;background:radial-gradient(circle,var(--seal) 2px,transparent 2.5px) center/12px 12px repeat-x}
+
+/* product grid */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px 28px}
+.card .ph{position:relative;aspect-ratio:1;overflow:hidden;background:var(--paper)}
+.card .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .6s,transform 1.2s}
+.card .ph img.b{opacity:0}
+.card:hover .ph img.b{opacity:1;transform:scale(1.03)}
+.card .tag{position:absolute;left:14px;top:14px;background:var(--bg);font-size:11px;letter-spacing:.08em;padding:4px 10px;z-index:2}
+.card h3{font-family:var(--serif);font-weight:700;font-size:18px;margin:16px 0 2px;text-align:center}
+.card .wish{text-align:center;font-size:13px;color:var(--seal)}
+.card .st{text-align:center;font-size:12.5px;color:var(--soft);letter-spacing:.04em}
+.more{text-align:center;margin-top:56px}
+
+/* gift */
+.gift{display:grid;grid-template-columns:1fr 1fr;background:var(--rose)}
+.gift .img img{width:100%;height:100%;object-fit:cover}
+.gift .txt{display:flex;flex-direction:column;justify-content:center;padding:72px clamp(32px,7vw,110px)}
+.gift .txt .en{font-family:var(--latin);font-style:italic;font-size:22px;color:var(--seal)}
+.gift h2{font-family:var(--serif);font-size:clamp(28px,3vw,40px);line-height:1.35;margin:6px 0 18px}
+.gift p{color:#4A413A;margin:0 0 28px;max-width:440px}
+
+/* categories */
+.cats{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.cat{position:relative;aspect-ratio:3/4;overflow:hidden;background:var(--paper)}
+.cat img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s}
+.cat:hover img{transform:scale(1.05)}
+.cat span{position:absolute;left:0;right:0;bottom:0;padding:18px;background:linear-gradient(transparent,rgba(43,37,32,.55));color:#FFF8F0;font-family:var(--serif);font-weight:700;font-size:18px;text-align:center}
+.cat span small{display:block;font-family:var(--sans);font-weight:300;font-size:12px;letter-spacing:.08em;opacity:.9}
+
+/* values */
+.values{background:var(--paper)}
+.vals{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.val img{aspect-ratio:4/5;width:100%;object-fit:cover}
+.val .en{font-family:var(--latin);font-style:italic;font-size:19px;color:var(--seal);margin-top:20px}
+.val h3{font-family:var(--serif);font-size:22px;margin:2px 0 8px}
+.val p{margin:0;color:var(--soft)}
+
+/* story */
+.story{display:grid;grid-template-columns:1.1fr 1fr;gap:72px;align-items:center}
+.story .big{font-family:var(--serif);font-size:clamp(40px,6vw,84px);line-height:1.05;letter-spacing:.06em;color:var(--seal)}
+.story .big small{display:block;font-family:var(--latin);font-style:italic;font-size:22px;letter-spacing:0;color:var(--soft);margin-top:14px}
+.story p{color:#4A413A;margin:0 0 16px}
+.story .imgs{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.story .imgs img{aspect-ratio:1;object-fit:cover;width:100%}
+.story .imgs img:first-child{grid-column:span 2;aspect-ratio:2/1}
+
+/* newsletter */
+.news{background:var(--ink);color:var(--bg);text-align:center}
+.news .title h2{color:var(--bg)} .news .title p{color:#CFC3B2}
+.news form{display:flex;max-width:520px;margin:0 auto;border-bottom:1px solid #8C7F70}
+.news input{flex:1;background:none;border:0;color:var(--bg);font:inherit;padding:14px 4px;outline:none}
+.news input::placeholder{color:#9D9081}
+.news button{background:none;border:0;color:var(--bg);font:inherit;letter-spacing:.12em;cursor:pointer;padding:0 6px}
+.news .note{font-size:12px;color:#9D9081;margin-top:16px}
+.news .ig{margin-top:30px;display:inline-flex;gap:10px;align-items:center;font-family:var(--latin);font-size:20px;letter-spacing:.08em}
+
+/* footer */
+footer{padding:64px 0 40px;font-size:13px;color:var(--soft)}
+.ft{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px}
+footer h4{font-family:var(--serif);color:var(--ink);font-size:14px;margin:0 0 12px}
+footer ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+footer a:hover{color:var(--seal)}
+.copy{border-top:1px solid var(--line);margin-top:48px;padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:12px}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(24px);transition:opacity .9s,transform .9s}
+.rv.in{opacity:1;transform:none}
+
+@media (max-width:960px){
+  .wrap{padding:0 20px}
+  .hd{height:70px} .hd nav{display:none} .menu-btn{display:block}
+  .hd .right .hide-m{display:none}
+  .wm b{font-size:21px} .seal{height:48px;width:22px} .seal span{font-size:11px}
+  .grid{grid-template-columns:repeat(2,1fr);gap:28px 14px}
+  .gift,.story{grid-template-columns:1fr}
+  .cats{grid-template-columns:repeat(2,1fr);gap:12px}
+  .vals{grid-template-columns:1fr}
+  .ft{grid-template-columns:1fr 1fr}
+  .sec{padding:72px 0}
+  .announce{font-size:11px} .announce p{padding:0 12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:block;line-height:36px}
+  .hero img{height:46vh}
+}
+.mnav{display:none;position:fixed;inset:0;background:var(--bg);z-index:50;padding:28px;flex-direction:column;gap:22px;font-family:var(--serif);font-size:22px}
+.mnav.open{display:flex}
+.mnav button{align-self:flex-end;background:none;border:0;font:inherit;font-size:14px;cursor:pointer}
+
+.seal span em{font-style:normal}
+.hero-img img{width:100%;height:min(80vh,820px);object-fit:cover;object-position:center 40%}
+.langs{display:flex;gap:4px;font-family:var(--latin);font-size:14px;letter-spacing:.08em}
+.langs a{padding:2px 6px;color:var(--soft)}
+.langs a.cur{color:var(--ink);border-bottom:1px solid var(--seal)}
+.ft-langs{margin-top:16px}
+.mnav .langs{font-size:18px;margin-top:12px}
+/* lifestyle mosaic */
+.life{background:var(--bg);padding-top:24px}
+.mosaic{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:220px;gap:16px}
+.lf{margin:0;position:relative;overflow:hidden;background:var(--paper)}
+.lf.tall{grid-row:span 2}
+.lf.wide{grid-column:span 2;grid-row:span 2}
+.lf img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s}
+.lf:hover img{transform:scale(1.04)}
+.lf figcaption{position:absolute;left:14px;bottom:12px;background:rgba(251,247,240,.92);font-size:12px;letter-spacing:.04em;padding:4px 10px}
+/* japanese typography */
+.l-ja{font-family:'Noto Sans JP',var(--sans)}
+.l-ja h1,.l-ja h2,.l-ja h3,.l-ja .gift h2,.l-ja .story .big{font-family:'Shippori Mincho',var(--serif)}
+.l-en h1,.l-en h2,.l-en h3{font-family:var(--latin);font-weight:600;letter-spacing:.01em}
+.l-en .hero h1{font-size:clamp(34px,5vw,64px)}
+.l-en .title h2,.l-en .gift h2{font-size:clamp(30px,3.4vw,44px)}
+@media (max-width:960px){
+  .mosaic{grid-template-columns:repeat(2,1fr);grid-auto-rows:160px;gap:10px}
+  .lf.wide{grid-column:span 2;grid-row:span 2}
+  .hero-img img{height:58vh}
+  .hd .right .langs{font-size:12px} .hd .right .langs a{padding:2px 3px}
+}
+
+@media (max-width:960px){
+  .menu-btn{font-size:20px;line-height:1} .menu-btn .ml{display:none}
+  .hd{grid-template-columns:40px 1fr auto;gap:6px}
+  .hd .logo{justify-self:center;gap:8px}
+  .wm b{font-size:17px;letter-spacing:.3em;margin-right:-.3em} .hd .wm small{display:none}
+  .seal{height:40px;width:19px} .seal span{font-size:9.5px}
+  .hd .right{gap:0}
+}
+</style>
+</head>
+<body class="l-en">
+
+<div class="announce" aria-live="polite"><p class=on>Our first collection is on its way · Be the first to know</p><p>An old Korean way of wishing with pictures, woven into a baby blanket</p><p>Follow the making-of on Instagram @ongo.won_archive</p></div>
+
+<header>
+  <div class="wrap hd">
+    <nav><a href="#collection">Collection</a><a href="#life">At home</a><a href="#gift">Gifts</a><a href="#story">Our story</a></nav>
+    <button class="menu-btn" aria-label="Menu" data-open>☰<span class="ml"> Menu</span></button>
+    <a href="/en/" class="logo" aria-label="ONGOWON"><div class="seal"><span><em>온</em><em>고</em><em>원</em></span></div><div class="wm"><b>ONGOWON</b><small>온고원<i></i>KOREA</small></div></a>
+    <div class="right">
+      <div class="langs" aria-label="Language"><a href="/" data-lang="ko">KO</a><a href="/en/" data-lang="en" class=cur aria-current=page>EN</a><a href="/ja/" data-lang="ja">JA</a></div>
+      <a class="hide-m" href="#newsletter">Notify me</a>
+    </div>
+  </div>
+</header>
+
+<div class="mnav" role="dialog" aria-label="Menu">
+  <button data-close>Close ✕</button>
+  <a href="#collection" data-close>Collection</a><a href="#life" data-close>At home</a><a href="#gift" data-close>Gifts</a><a href="#story" data-close>Our story</a>
+  <a href="#newsletter" data-close>Notify me</a>
+  <a href="https://www.instagram.com/ongo.won_archive/" target="_blank" rel="noopener">Instagram</a>
+  <div class="langs"><a href="/" data-lang="ko">KO</a><a href="/en/" data-lang="en" class=cur aria-current=page>EN</a><a href="/ja/" data-lang="ja">JA</a></div>
+</div>
+
+<section class="hero">
+  <div class="hero-img"><img src="/images/life_picnic.jpg" alt="Toddler playing on a peony minhwa blanket on the grass"></div>
+  <div class="cap">
+    <div class="k">The First Collection</div>
+    <h1>A blanket<br>that keeps a wish</h1>
+    <a class="btn" href="#collection">Discover the collection</a>
+  </div>
+</section>
+
+<section class="sec" id="collection">
+  <div class="wrap">
+    <div class="title rv">
+      <div class="en">Wish Minhwa Blankets</div>
+      <h2>Wish Minhwa Blankets</h2>
+      <p>In Joseon-era Korea, minhwa paintings were not mere decoration — they were hung at home to wish for good fortune. We put that same wish for your child into a single blanket.</p>
+      <div class="divider"></div>
+    </div>
+    <div class="grid">
+      <a class="card rv" href="#newsletter">
+        <div class="ph"><span class="tag">Coming soon</span>
+          <img class="a" src="/images/p_sheep.jpg" alt="Little Lamb minhwa blanket" loading="lazy">
+          <img class="b" src="/images/d_sheep.jpg" alt="" loading="lazy">
+        </div>
+        <h3>Little Lamb</h3>
+        <div class="st">Carré Blanket · Get notified</div>
+      </a>
+      <a class="card rv" href="#newsletter">
+        <div class="ph"><span class="tag">Coming soon</span>
+          <img class="a" src="/images/p_horse.jpg" alt="Red Horse minhwa blanket" loading="lazy">
+          <img class="b" src="/images/d_horse.jpg" alt="" loading="lazy">
+        </div>
+        <h3>Red Horse</h3><div class="wish">2026 · Year of the Horse</div>
+        <div class="st">Carré Blanket · Get notified</div>
+      </a>
+      <a class="card rv" href="#newsletter">
+        <div class="ph"><span class="tag">Coming soon</span>
+          <img class="a" src="/images/p_crane.jpg" alt="Crane & Pine minhwa blanket" loading="lazy">
+          <img class="b" src="/images/d_crane.jpg" alt="" loading="lazy">
+        </div>
+        <h3>Crane & Pine</h3><div class="wish">Health · Long life</div>
+        <div class="st">Carré Blanket · Get notified</div>
+      </a>
+      <a class="card rv" href="#newsletter">
+        <div class="ph"><span class="tag">Coming soon</span>
+          <img class="a" src="/images/p_carp.jpg" alt="Lotus Carp minhwa blanket" loading="lazy">
+          <img class="b" src="/images/d_carp.jpg" alt="" loading="lazy">
+        </div>
+        <h3>Lotus Carp</h3><div class="wish">Success in exams & career</div>
+        <div class="st">Carré Blanket · Get notified</div>
+      </a>
+      <a class="card rv" href="#newsletter">
+        <div class="ph"><span class="tag">Coming soon</span>
+          <img class="a" src="/images/p_peony.jpg" alt="Peony minhwa blanket" loading="lazy">
+          <img class="b" src="/images/d_peony.jpg" alt="" loading="lazy">
+        </div>
+        <h3>Peony</h3><div class="wish">Wealth · Prosperity</div>
+        <div class="st">Carré Blanket · Get notified</div>
+      </a>
+      <a class="card rv" href="#newsletter">
+        <div class="ph"><span class="tag">Coming soon</span>
+          <img class="a" src="/images/p_monkey.jpg" alt="Peach of Immortality minhwa blanket" loading="lazy">
+          <img class="b" src="/images/d_monkey.jpg" alt="" loading="lazy">
+        </div>
+        <h3>Peach of Immortality</h3><div class="wish">Good health · Long life</div>
+        <div class="st">Carré Blanket · Get notified</div>
+      </a>
+      <a class="card rv" href="#newsletter">
+        <div class="ph"><span class="tag">Coming soon</span>
+          <img class="a" src="/images/p_books.jpg" alt="Chaekgado Bookshelf minhwa blanket" loading="lazy">
+          <img class="b" src="/images/d_books.jpg" alt="" loading="lazy">
+        </div>
+        <h3>Chaekgado Bookshelf</h3><div class="wish">Learning · Skill</div>
+        <div class="st">Carré Blanket · Get notified</div>
+      </a>
+      <a class="card rv" href="#newsletter">
+        <div class="ph"><span class="tag">Coming soon</span>
+          <img class="a" src="/images/p_moon.jpg" alt="Full Moon minhwa blanket" loading="lazy">
+          <img class="b" src="/images/d_moon.jpg" alt="" loading="lazy">
+        </div>
+        <h3>Full Moon</h3><div class="wish">Making a wish</div>
+        <div class="st">Carré Blanket · Get notified</div>
+      </a>
+      <a class="card rv" href="#newsletter">
+        <div class="ph"><span class="tag">Coming soon</span>
+          <img class="a" src="/images/p_jar.jpg" alt="Moon Jar minhwa blanket" loading="lazy">
+          <img class="b" src="/images/d_jar.jpg" alt="" loading="lazy">
+        </div>
+        <h3>Moon Jar</h3>
+        <div class="st">Carré Blanket · Get notified</div>
+      </a>
+    </div>
+    <div class="more rv"><a class="btn" href="#newsletter">Get notified</a></div>
+  </div>
+</section>
+
+<section class="sec life" id="life">
+  <div class="wrap">
+    <div class="title rv">
+      <div class="en">Ongowon at home</div>
+      <h2>Everyday moments</h2>
+      <p>Naps, strolls, picnics and cosy moments after bath time — a wish to wrap around every part of your little one's day.</p>
+      <div class="divider"></div>
+    </div>
+    <div class="mosaic"><figure class="lf tall rv"><img src="/images/life_baby.jpg" alt="Little Lamb · Nap time" loading="lazy"><figcaption>Little Lamb · Nap time</figcaption></figure><figure class="lf wide rv"><img src="/images/life_crib.jpg" alt="Red Horse · In the crib" loading="lazy"><figcaption>Red Horse · In the crib</figcaption></figure><figure class="lf tall rv"><img src="/images/life_mom.jpg" alt="Crane & Pine · First hug" loading="lazy"><figcaption>Crane & Pine · First hug</figcaption></figure><figure class="lf tall rv"><img src="/images/life_stroller.jpg" alt="Full Moon · Out for a stroll" loading="lazy"><figcaption>Full Moon · Out for a stroll</figcaption></figure><figure class="lf wide rv"><img src="/images/hero.jpg" alt="Full Moon · Little Lamb · Crane" loading="lazy"><figcaption>Full Moon · Little Lamb · Crane</figcaption></figure><figure class="lf tall rv"><img src="/images/life_bath.jpg" alt="Lotus Carp · After bath" loading="lazy"><figcaption>Lotus Carp · After bath</figcaption></figure></div>
+  </div>
+</section>
+
+<section class="gift" id="gift">
+  <div class="img"><img src="/images/life_gift.jpg" alt="Gift box with a red ribbon holding a peony minhwa blanket" loading="lazy"></div>
+  <div class="txt rv">
+    <div class="en">Make it a gift</div>
+    <h2>Wrapped with<br>your good wishes</h2>
+    <p>For a birth, a 100th-day or a first birthday. Each blanket will come in an Ongowon gift box with a card explaining the wish behind its painting.</p>
+    <div><a class="btn" href="#newsletter">Notify me about gift sets</a></div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="title rv">
+      <div class="en">Shop by category</div>
+      <h2>What we make</h2>
+      <p>We're making prototypes now to learn which pieces you'll love most.</p>
+    </div>
+    <div class="cats"><a class="cat rv" href="#collection"><img src="/images/p_sheep.jpg" alt="Blankets · Swaddles" loading="lazy"><span>Blankets · Swaddles<small>Coming soon</small></span></a><a class="cat rv" href="#collection"><img src="/images/moon.jpg" alt="Fabric posters" loading="lazy"><span>Fabric posters<small>Coming soon</small></span></a><a class="cat rv" href="#collection"><img src="/images/books.jpg" alt="Hanging scrolls" loading="lazy"><span>Hanging scrolls<small>Coming soon</small></span></a><a class="cat rv" href="#gift"><img src="/images/gift.jpg" alt="Gift sets" loading="lazy"><span>Gift sets<small>Coming soon</small></span></a></div>
+  </div>
+</section>
+
+<section class="sec values">
+  <div class="wrap">
+    <div class="title rv">
+      <div class="en">Our values</div>
+      <h2>Three things we hold on to</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="vals"><div class="val rv"><img src="/images/d_peony.jpg" alt="" loading="lazy"><div class="en">Art</div><h3>Painting</h3><p>We work with artists trained in Korean painting to redraw the motifs and colours of minhwa with a modern eye.</p></div><div class="val rv"><img src="/images/d_carp.jpg" alt="" loading="lazy"><div class="en">Meaning</div><h3>Wishes</h3><p>The carp for success, the peony for prosperity, the crane for long life — every design comes with the story of its wish.</p></div><div class="val rv"><img src="/images/d_sheep.jpg" alt="" loading="lazy"><div class="en">Materials</div><h3>Fabric</h3><p>Because it touches a baby's skin every day, we visit mills and makers in person to choose our fabric.</p></div></div>
+  </div>
+</section>
+
+<section class="sec" id="story">
+  <div class="wrap story">
+    <div class="rv">
+      <div class="big">溫故<small>On-go · Learn from the old to understand the new</small></div>
+      <p style="margin-top:32px">Ongowon (溫故園) takes its name from the Korean saying <i>ongo-jisin</i> — "learn from the old to know the new." Rather than simply copying old paintings, we wanted to bring back <b>the act of wishing through pictures</b> in a way that fits life today.</p>
+      <p>At the start of each year, people in Joseon-era Korea hung paintings at home to call in good fortune. Ongowon carries that wish into the first blanket a child is wrapped in.</p>
+      <a class="btn" href="https://www.instagram.com/ongo.won_archive/" target="_blank" rel="noopener">See how it's made</a>
+    </div>
+    <div class="imgs rv">
+      <img src="/images/moon.jpg" alt="" loading="lazy" style="object-position:center 30%">
+      <img src="/images/crane.jpg" alt="" loading="lazy">
+      <img src="/images/monkey.jpg" alt="" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<section class="sec news" id="newsletter">
+  <div class="wrap">
+    <div class="title">
+      <div class="en" style="color:#E9CFC6">Newsletter</div>
+      <h2>Be the first to know</h2>
+      <p>We'll email you when our first collection launches.</p>
+    </div>
+    <form id="nl">
+      <input type="email" name="email" required placeholder="Email address" aria-label="Email address">
+      <button type="submit">Sign up →</button>
+    </form>
+    <div class="note" id="nlnote">Signing up opens your email app with a request addressed to ongowon.contact@gmail.com.</div>
+    <div><a class="ig" href="https://www.instagram.com/ongo.won_archive/" target="_blank" rel="noopener">@ongo.won_archive</a></div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="ft">
+      <div>
+        <a href="/en/" class="logo" style="margin-bottom:18px"><div class="seal"><span><em>온</em><em>고</em><em>원</em></span></div><div class="wm"><b style="font-size:22px">ONGOWON</b><small>온고원<i></i>KOREA</small></div></a>
+        <p style="max-width:300px">An old Korean way of wishing with pictures, for today's little ones.</p>
+      </div>
+      <div><h4>Shop</h4><ul><li><a href="#collection">Wish Minhwa Blankets</a></li><li><a href="#gift">Gift sets</a></li></ul></div>
+      <div><h4>About</h4><ul><li><a href="#story">Our story</a></li><li><a href="#life">At home</a></li><li><a href="https://www.instagram.com/ongo.won_archive/" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://www.youtube.com/channel/UC07gJPocSabI5b8AhCYtEoQ" target="_blank" rel="noopener">YouTube</a></li></ul></div>
+      <div><h4>Contact</h4><ul><li><a href="mailto:ongowon.contact@gmail.com">ongowon.contact@gmail.com</a></li></ul><div class="langs ft-langs"><a href="/" data-lang="ko">KO</a><a href="/en/" data-lang="en" class=cur aria-current=page>EN</a><a href="/ja/" data-lang="ja">JA</a></div></div>
+    </div>
+    <div class="copy"><span>© 2026 ONGOWON 온고원</span><span>Product and lifestyle images are design prototypes in development and were generated with AI.</span></div>
+  </div>
+</footer>
+
+<script>
+const S={"done": "Press send in your email app to finish. Thank you!", "subj": "[ONGOWON] Launch notification", "body": "Please notify this email: ", "mail": "ongowon.contact@gmail.com"};
+const ps=[...document.querySelectorAll('.announce p')];let ai=0;
+setInterval(()=>{ps[ai].classList.remove('on');ai=(ai+1)%ps.length;ps[ai].classList.add('on')},4200);
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+const mn=document.querySelector('.mnav');
+document.querySelectorAll('[data-open]').forEach(b=>b.onclick=()=>mn.classList.add('open'));
+document.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',()=>mn.classList.remove('open')));
+document.querySelectorAll('[data-lang]').forEach(a=>a.addEventListener('click',()=>{try{localStorage.setItem('ongowon_lang',a.dataset.lang)}catch(e){}}));
+document.getElementById('nl').addEventListener('submit',e=>{
+  e.preventDefault();
+  location.href='mailto:'+S.mail+'?subject='+encodeURIComponent(S.subj)+'&body='+encodeURIComponent(S.body+e.target.email.value);
+  document.getElementById('nlnote').textContent=S.done;
+});
+
+</script>
+</body>
+</html>
