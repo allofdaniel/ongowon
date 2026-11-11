@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="light"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>온고원 소원 민화 — 진짜 민화 맞히기 · 내 소원템 찾기 · 조선시대 띠와 돌잡이</title>
+<meta name="description" content="민화는 원래 소원을 비는 그림이었어요. 진짜 조선 민화를 맞혀 보고, 내 소원에 맞는 그림을 찾고, 조선시대에 태어났다면 어떤 돌잡이를 했을지 알아보세요.">
+<link rel="canonical" href="https://ongowon.com/wish/">
+<meta property="og:type" content="website"><meta property="og:title" content="온고원 소원 민화"><meta property="og:description" content="진짜 민화 맞히기 · 내 소원템 찾기 · 조선시대에 태어났다면!?">
+<meta property="og:image" content="https://ongowon.com/images/og_wish.jpg"><meta property="og:url" content="https://ongowon.com/wish/"><meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Gowun+Dodum&family=Cormorant+Garamond:ital,wght@1,500&display=swap">
+<style>
+/* Layout: 흰 여백 위 한 줄 세로 흐름. 방향 = 아뜰리에슈의 민화 버전(흰 바탕·파스텔 그림·우아한 금빛 디테일). 그림은 아치 창 액자 속 파스텔 오방색 */
+:root{
+  --bg:#fdfcf9; --paper:#ffffff; --ink:#3d3835; --muted:#857d76; --line:#ece6dd; --gold:#b8955a; --accent:#b0645a;
+  --red:#eeb0a4; --indigo:#a9c1dc; --yellow:#f2d995; --green:#bfd4b6; --white:#fffdf8; --black:#5a504a; --skin:#f7dccb; --lacquer:#b4574a; --cloth:#fbf8f1;
+  --display:"Gowun Batang","Nanum Myeongjo",serif; --body:"Gowun Dodum","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  --latin:"Cormorant Garamond","Times New Roman",serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#1e1c24; --paper:#26232d; --ink:#efe9e2; --muted:#ada49c; --line:#3a3542; --gold:#d4b47c; --accent:#f0a597;
+  --red:#d9978b; --indigo:#8faacb; --yellow:#e2c47c; --green:#a5bf9b; --white:#f6f0e6; --black:#3b3330; --skin:#e9c6b0; --lacquer:#8e4338; --cloth:#2f2b35; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#1e1c24; --paper:#26232d; --ink:#efe9e2; --muted:#ada49c; --line:#3a3542; --gold:#d4b47c; --accent:#f0a597;
+  --red:#d9978b; --indigo:#8faacb; --yellow:#e2c47c; --green:#a5bf9b; --white:#f6f0e6; --black:#3b3330; --skin:#e9c6b0; --lacquer:#8e4338; --cloth:#2f2b35; color-scheme:dark}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.75}
+.wrap{max-width:720px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:48px 72px;display:flex;flex-direction:column;gap:72px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.35;font-weight:700}
+p{margin:0}
+.brand{display:flex;flex-direction:column;align-items:center;gap:6px}
+.mono{width:54px;height:54px;border-radius:50%;border:1px solid var(--gold);display:grid;place-items:center;font-family:var(--display);color:var(--gold);font-size:20px;box-shadow:0 0 0 4px var(--bg),0 0 0 5px var(--gold)}
+.word{font-family:var(--latin);font-style:italic;font-size:22px;letter-spacing:.18em;color:var(--ink)}
+.sub{font-size:12px;letter-spacing:.3em;color:var(--muted)}
+header{display:flex;flex-direction:column;align-items:center;text-align:center;gap:22px}
+header h1{font-size:clamp(28px,5.6vw,42px)}
+header h1 em{font-style:normal;color:var(--accent)}
+.lede{max-width:30em;color:var(--muted);font-size:16.5px}
+.orn{display:flex;align-items:center;gap:12px;color:var(--gold);width:180px}
+.orn::before,.orn::after{content:"";flex:1;height:1px;background:var(--gold)}
+.orn span{font-size:12px}
+.jump-unused{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+.btn{font:inherit;font-size:15px;border:1px solid var(--gold);background:transparent;color:var(--ink);padding:11px 22px;border-radius:999px;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:6px;transition:background .2s}
+.btn.primary{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.btn:hover{background:color-mix(in srgb,var(--gold) 14%,transparent)}
+.btn.primary:hover{background:color-mix(in srgb,var(--ink) 85%,var(--gold))}
+.btn:focus-visible,.opt:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+section{display:flex;flex-direction:column;align-items:stretch;gap:18px}
+.eyebrow{font-family:var(--latin);font-style:italic;font-size:19px;letter-spacing:.06em;color:var(--gold);text-align:center}
+section h2{font-size:clamp(23px,4.4vw,30px);text-align:center}
+.panel{background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:32px clamp(18px,4.5vw,40px);display:flex;flex-direction:column;gap:22px;box-shadow:0 1px 0 var(--line),0 18px 40px -28px color-mix(in srgb,var(--black) 35%,transparent)}
+.progress{font-size:13px;color:var(--gold);letter-spacing:.08em;font-variant-numeric:tabular-nums;text-align:center}
+.q{font-family:var(--display);font-size:20px;font-weight:700;text-align:center}
+.opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px}
+.opt{font:inherit;text-align:center;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:14px;padding:14px 16px;cursor:pointer;transition:border-color .2s,background .2s}
+.opt:hover{border-color:var(--gold);background:color-mix(in srgb,var(--yellow) 18%,var(--bg))}
+.opt.right{border-color:var(--green);background:color-mix(in srgb,var(--green) 35%,var(--bg))}
+.opt.wrong{border-color:var(--red);background:color-mix(in srgb,var(--red) 30%,var(--bg))}
+.opt[disabled]{cursor:default}
+.art{width:min(230px,68%);aspect-ratio:4/5;max-width:100%;margin:6px auto;display:block;background:var(--white);border:1px solid var(--gold);border-radius:999px 999px 10px 10px;box-shadow:0 0 0 6px var(--paper),0 0 0 7px color-mix(in srgb,var(--gold) 55%,transparent);padding:34px 10px 10px}
+.result{display:grid;grid-template-columns:210px 1fr;gap:30px;align-items:start}
+.result .art{width:100%}
+.result .prod{min-width:0}
+.prod img{width:100%;max-height:none;aspect-ratio:1;object-fit:cover;border-radius:999px 999px 10px 10px}
+.fig{display:flex;flex-direction:column;align-items:center;gap:10px;margin:0}
+.fig img{display:block;max-width:100%;max-height:420px;width:auto;height:auto;border:1px solid var(--gold);box-shadow:0 0 0 6px var(--paper),0 0 0 7px color-mix(in srgb,var(--gold) 55%,transparent);border-radius:4px;margin:7px}
+.fig figcaption a{color:var(--accent)}
+.fig figcaption{font-size:12.5px;color:var(--muted);text-align:center;max-width:36em}
+.kind{display:inline-block;font-size:11.5px;letter-spacing:.12em;padding:2px 10px;border-radius:999px;margin-bottom:4px;color:var(--ink)}
+.kind.real{background:color-mix(in srgb,var(--indigo) 35%,var(--paper))}
+.kind.ongo{background:color-mix(in srgb,var(--red) 40%,var(--paper))}
+.result h3{font-size:26px}
+.tag{align-self:flex-start;display:inline-block;font-size:12px;letter-spacing:.1em;padding:3px 12px;border-radius:999px;background:color-mix(in srgb,var(--red) 45%,var(--paper));color:var(--ink)}
+.meaning{display:flex;flex-direction:column;gap:12px;min-width:0}
+.work{font-size:13px;color:var(--muted)}
+.src{font-size:13px;color:var(--muted);border-top:1px dotted var(--gold);padding-top:12px;display:flex;flex-direction:column;gap:4px}
+.src a{color:var(--accent)}
+.grade{font-size:11px;border:1px solid var(--gold);color:var(--gold);border-radius:999px;padding:0 7px;margin-right:5px}
+.gift{background:color-mix(in srgb,var(--yellow) 22%,var(--paper));border-radius:12px;padding:12px 16px;font-size:15px}
+.cta{display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px;border-top:1px solid var(--line);padding-top:22px}
+.handle{font-weight:700;color:var(--accent);user-select:all}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:center}
+.toast{font-size:13px;color:var(--accent);width:100%;text-align:center}
+.score{font-family:var(--display);font-size:52px;font-weight:700;font-variant-numeric:tabular-nums;color:var(--accent);line-height:1}
+.explain{display:flex;flex-direction:column;gap:10px;background:var(--bg);border-radius:14px;padding:18px}
+.srclist{font-size:14px}
+.srclist ul{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}
+.srclist li{display:flex;flex-direction:column;gap:3px;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:14px 16px;min-width:0}
+.srclist b{font-family:var(--display)}
+.srclist a{color:var(--accent);word-break:break-all;font-size:12.5px}
+.note{font-size:13.5px;color:var(--muted);text-align:center}
+footer{font-size:12px;color:var(--muted);text-align:center;display:flex;flex-direction:column;align-items:center;gap:14px}
+.more{display:flex;flex-direction:column;gap:12px;border-top:1px solid var(--line);padding-top:22px;min-width:0}
+.more-head{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.more-head h3{font-size:19px}
+.arrows{display:flex;gap:8px}
+.arrow{width:40px;height:40px;border-radius:50%;border:1px solid var(--gold);background:transparent;color:var(--ink);font-size:20px;line-height:1;cursor:pointer}
+.arrow:hover{background:color-mix(in srgb,var(--gold) 14%,transparent)}
+.slider{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 2px 10px;scrollbar-width:thin;-webkit-overflow-scrolling:touch}
+.card{flex:0 0 clamp(140px,36%,190px);scroll-snap-align:start;display:flex;flex-direction:column;gap:6px;text-align:center;background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:8px 8px 12px;font:inherit;color:var(--ink)}
+button.card{cursor:pointer}
+button.card:hover{border-color:var(--gold)}
+button.card:focus-visible,.arrow:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.card img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:999px 999px 8px 8px}
+.cname{font-family:var(--display);font-weight:700}
+.ctag{font-size:12px;align-self:center;padding:1px 10px;border-radius:999px;background:color-mix(in srgb,var(--red) 40%,var(--paper))}
+.ctag.muted{background:transparent;color:var(--muted);border:1px solid var(--line)}
+.ig{color:var(--accent)}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;border-bottom:1px solid var(--line);padding-bottom:14px;margin-top:-40px}
+.tab{font:inherit;font-size:15px;border:1px solid var(--line);background:transparent;color:var(--muted);padding:10px 18px;border-radius:999px;cursor:pointer}
+.tab:hover{border-color:var(--gold);color:var(--ink)}
+.tab[aria-selected="true"]{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.tab:focus-visible,.chip:focus-visible,.seg button:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.field{display:flex;flex-direction:column;gap:8px;align-items:center}
+.field label,.flabel{font-size:14px;color:var(--muted)}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:999px;padding:3px;gap:3px;flex-wrap:wrap;justify-content:center}
+.seg button{font:inherit;font-size:14px;border:0;background:transparent;color:var(--ink);padding:8px 16px;border-radius:999px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:color-mix(in srgb,var(--yellow) 45%,var(--paper))}
+.yr{font:inherit;font-size:22px;font-family:var(--display);text-align:center;width:7.5em;max-width:100%;padding:8px 12px;border:1px solid var(--gold);border-radius:12px;background:var(--bg);color:var(--ink)}
+.check{display:flex;gap:8px;align-items:flex-start;font-size:14px;color:var(--muted);max-width:30em;text-align:left}
+.ganji{font-family:var(--display);font-size:clamp(26px,5vw,34px);font-weight:700;text-align:center;line-height:1.4}
+.ganji small{display:block;font-size:15px;font-weight:400;color:var(--muted);font-family:var(--body)}
+.hanja{color:var(--accent)}
+.pick2{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}
+.dolsang{display:grid;grid-template-columns:repeat(auto-fill,minmax(88px,1fr));gap:8px;background:color-mix(in srgb,var(--yellow) 14%,var(--bg));border:1px dashed var(--gold);border-radius:16px;padding:14px}
+.chip{font:inherit;font-family:var(--display);font-size:16px;background:var(--paper);color:var(--ink);border:1px solid var(--line);border-radius:12px;padding:12px 6px;cursor:pointer}
+.chip:hover{border-color:var(--gold);background:color-mix(in srgb,var(--red) 18%,var(--paper))}
+.dolres{display:flex;flex-direction:column;gap:14px}
+.prods{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}
+.pcard{display:flex;flex-direction:column;gap:6px;text-align:center;background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:10px;min-width:0}
+.pcard img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:999px 999px 8px 8px}
+.pcard p{font-size:14px;text-align:left}
+.travel{position:fixed;inset:0;z-index:50;display:grid;place-items:center;background:color-mix(in srgb,var(--paper) 94%,transparent);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);padding:env(safe-area-inset-top,0px) max(16px,env(safe-area-inset-right,0px)) env(safe-area-inset-bottom,0px) max(16px,env(safe-area-inset-left,0px));opacity:0;transition:opacity .35s}
+.travel.on{opacity:1}
+.tv-in{display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center}
+.wheel{position:relative;width:min(280px,72vw);aspect-ratio:1;border-radius:50%;border:1px solid var(--gold);box-shadow:0 0 0 8px var(--paper),0 0 0 9px color-mix(in srgb,var(--gold) 50%,transparent)}
+.wheel-r{position:absolute;inset:0;transition:transform 2.2s cubic-bezier(.2,.7,.1,1)}
+.wheel-r span{position:absolute;left:50%;top:50%;width:2em;margin:-.7em 0 0 -1em;font-family:var(--display);font-size:clamp(16px,4.2vw,20px);color:var(--muted);text-align:center}
+.wheel-r span.me{color:var(--accent);font-weight:700}
+.wheel::after{content:"";position:absolute;left:50%;top:-14px;margin-left:-7px;border:7px solid transparent;border-top-color:var(--accent)}
+.tv-c{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px}
+.tv-year{font-family:var(--display);font-weight:700;font-size:clamp(40px,11vw,56px);font-variant-numeric:tabular-nums;line-height:1;color:var(--ink)}
+.tv-gj{font-family:var(--display);color:var(--accent);font-size:18px;opacity:0;transition:opacity .5s}
+.tv-gj.on{opacity:1}
+.tv-cap{font-family:var(--latin);font-style:italic;color:var(--gold);font-size:20px;letter-spacing:.06em}
+.tv-cap2{font-size:14px;color:var(--muted);max-width:22em;opacity:0;transition:opacity .5s}
+.tv-cap2.on{opacity:1}
+.pov{position:relative;width:100%;max-width:460px;margin:0 auto;aspect-ratio:4/5;border-radius:18px;overflow:hidden;background:linear-gradient(to bottom,color-mix(in srgb,var(--yellow) 22%,var(--paper)) 0 30%,var(--cloth) 30% 100%);border:1px solid var(--line)}
+.pov .seat{position:absolute;left:18%;right:18%;bottom:-6%;height:20%;background:color-mix(in srgb,var(--white) 80%,var(--cloth));border-radius:50% 50% 0 0;border-top:1px dashed var(--line)}
+.pov .scene{position:absolute;left:0;top:0;width:100%;height:auto;display:block}
+.ditem{position:absolute;width:calc(46px * var(--s,1));transform:translate(-50%,-50%);display:flex;flex-direction:column;align-items:center;gap:1px;padding:2px;background:none;border:0;cursor:pointer;font:inherit;color:var(--ink);transition:left .55s ease,top .55s ease,transform .45s ease,opacity .4s}
+.ditem::before{content:"";position:absolute;left:12%;right:12%;top:62%;height:16%;border-radius:50%;background:color-mix(in srgb,var(--black) 14%,transparent);z-index:-1}
+.ditem svg{width:100%;height:auto;display:block;overflow:visible}
+.dlab{font-family:var(--display);font-size:11.5px;line-height:1.5;padding:0 7px;border-radius:999px;background:var(--paper);border:1px solid var(--line);white-space:nowrap}
+.ditem:hover{transform:translate(-50%,-58%)}
+.ditem:hover .dlab{border-color:var(--gold)}
+.ditem.lift{z-index:5;transform:translate(-50%,-50%) scale(1.6)}
+.ditem.lift .dlab{border-color:var(--accent);color:var(--accent)}
+.ditem:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.pov.done .ditem:not(.lift){opacity:.25}
+.hand{position:absolute;bottom:-11%;width:21%;transition:transform .55s cubic-bezier(.3,.7,.2,1);pointer-events:none;z-index:6;animation:bob 2.4s ease-in-out infinite}
+.hand.l{left:24%}.hand.r{right:24%;animation-delay:-1.2s}
+.hand.go{animation:none}
+.hand .h-fist{display:none}.hand.fist .h-open{display:none}.hand.fist .h-fist{display:inline}
+@keyframes bob{50%{translate:0 -6px}}
+.hand svg{display:block;width:100%;height:auto;overflow:visible}
+.pov .say{position:absolute;left:50%;top:40%;transform:translate(-50%,-50%);font-family:var(--display);font-weight:700;font-size:28px;color:var(--accent);opacity:0;transition:opacity .3s;z-index:7;pointer-events:none;text-shadow:0 0 12px var(--paper)}
+.pov.done .say{opacity:1}
+.povcap{font-size:13px;color:var(--muted);text-align:center}
+@media (prefers-reduced-motion:reduce){.hand{animation:none}}
+/* 돌잡이 일러스트 */
+.lq{fill:var(--lacquer)}.lq2{fill:color-mix(in srgb,var(--lacquer) 78%,var(--black))}.sn{fill:var(--skin)}.gd{fill:var(--yellow)}.pp{fill:var(--paper)}.mt{fill:color-mix(in srgb,var(--indigo) 45%,var(--white))}.rb{fill:color-mix(in srgb,var(--lacquer) 55%,var(--black))}
+.o{stroke:var(--black);stroke-width:2;stroke-linejoin:round}
+.o1{stroke:var(--black);stroke-width:1.4;stroke-linejoin:round}
+.ln{fill:none;stroke:var(--black);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.lt{fill:none;stroke:var(--black);stroke-width:1.2;stroke-linecap:round}
+.lr{fill:none;stroke:var(--accent);stroke-width:2.2;stroke-linecap:round}
+.lb{fill:none;stroke:var(--indigo);stroke-width:2.6;stroke-linecap:round}
+.ly{fill:none;stroke:var(--yellow);stroke-width:1.6;stroke-linecap:round}
+.bow-o{fill:none;stroke:var(--black);stroke-width:7.5;stroke-linecap:round}
+.bow{fill:none;stroke:var(--lacquer);stroke-width:4.5;stroke-linecap:round}
+.nail{fill:color-mix(in srgb,var(--white) 70%,var(--skin))}
+.dimp{fill:none;stroke:color-mix(in srgb,var(--black) 35%,var(--skin));stroke-width:1.6;stroke-linecap:round}
+.pf{fill:none;stroke:color-mix(in srgb,var(--gold) 75%,transparent);stroke-width:2}
+/* 그림 색: 파스텔 채색 + 가는 먹선 */
+.r{fill:var(--red)}.b{fill:var(--indigo)}.y{fill:var(--yellow)}.g{fill:var(--green)}.k{fill:var(--black)}.w{fill:var(--white)}
+.sk{stroke:var(--black);stroke-width:1.8;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.skw{stroke:var(--white);stroke-width:2;fill:none;stroke-linecap:round}
+@media (max-width:560px){.result{grid-template-columns:1fr}.result .art{width:min(210px,68%)}.result .tag{align-self:center}.result h3,.result .work{text-align:center}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>
+<symbol id="i-ssal" viewBox="0 0 64 64"><path class="w o" d="M9 33Q32 9 55 33Z"/><path class="lt" d="M21 27l2.5-1M30 21h3M39 25l2.5 1M27 29l1-2.5M45 30h2.5M34 27l2 0"/><path class="w o" d="M6 33h52q-2 19-26 21Q8 52 6 33Z"/><path class="lb" d="M11 40h42M14 46q18 4 36 0"/><rect class="w o" x="23" y="53" width="18" height="5" rx="1.5"/></symbol>
+<symbol id="i-don" viewBox="0 0 64 64"><path class="lr" d="M6 18Q18 34 32 32T58 42"/><g><circle class="gd o" cx="19" cy="29" r="11"/><rect class="pp o1" x="15.5" y="25.5" width="7" height="7"/></g><g><circle class="gd o" cx="32" cy="34" r="11"/><rect class="pp o1" x="28.5" y="30.5" width="7" height="7"/></g><g><circle class="gd o" cx="45" cy="38" r="11"/><rect class="pp o1" x="41.5" y="34.5" width="7" height="7"/></g><circle class="r o1" cx="57" cy="44" r="2.5"/><path class="r o1" d="M54.5 46h5l2 13h-9Z"/></symbol>
+<symbol id="i-chaek" viewBox="0 0 64 64"><rect class="w o" x="16" y="10" width="38" height="48" rx="2"/><rect class="gd o" x="12" y="6" width="38" height="48" rx="2"/><path class="lt" d="M24 16l3 3-3 3-3-3ZM30 30l3 3-3 3-3-3ZM24 42l3 3-3 3-3-3Z" opacity=".55"/><rect class="w o1" x="36" y="10" width="9" height="26"/><path class="lt" d="M40.5 14v18"/><path class="ln" d="M17 6v48"/><g class="k"><circle cx="17" cy="12" r="1.5"/><circle cx="17" cy="22" r="1.5"/><circle cx="17" cy="30" r="1.5"/><circle cx="17" cy="38" r="1.5"/><circle cx="17" cy="48" r="1.5"/></g><path class="lt" d="M12 12h5M12 22h5M12 30h5M12 38h5M12 48h5"/></symbol>
+<symbol id="i-but" viewBox="0 0 64 64"><g transform="rotate(-38 32 32)"><path class="lr" d="M32 6c-5-1-5-6 0-6s5 5 0 6"/><rect class="gd o" x="29" y="6" width="6" height="38" rx="2"/><path class="lt" d="M29 17h6M29 30h6"/><rect class="k o1" x="28.5" y="43" width="7" height="4.5" rx="1"/><path class="w o" d="M28.5 47.5h7q1.2 8-3.5 14.5q-4.7-6.5-3.5-14.5Z"/><path class="k" d="M30.6 56.5h2.8q-.3 3-1.4 5.3q-1.1-2.3-1.4-5.3Z"/></g></symbol>
+<symbol id="i-meok" viewBox="0 0 64 64"><g transform="rotate(12 32 32)"><rect class="k o" x="22" y="6" width="20" height="52" rx="3"/><rect class="ly" x="25.5" y="10" width="13" height="44" rx="2"/><path class="ly" d="M28 22q4-5 8 0q-4 4-8 0M28 34q4-5 8 0q-4 4-8 0M30 45h4"/></g></symbol>
+<symbol id="i-durumari" viewBox="0 0 64 64"><rect class="w o" x="13" y="21" width="38" height="22"/><path class="lt" d="M19 26v12M24 26v12M29 26v8M34 26v12M39 26v6M44 26v12"/><rect class="lq o" x="7" y="17" width="7" height="30" rx="2"/><rect class="lq o" x="50" y="17" width="7" height="30" rx="2"/><rect class="gd o1" x="8" y="13" width="5" height="5" rx="1.5"/><rect class="gd o1" x="8" y="46" width="5" height="5" rx="1.5"/><rect class="gd o1" x="51" y="13" width="5" height="5" rx="1.5"/><rect class="gd o1" x="51" y="46" width="5" height="5" rx="1.5"/><path class="lr" d="M57 31q6 3 3 10q-3 6 1 11"/></symbol>
+<symbol id="i-hwal" viewBox="0 0 64 64"><g transform="translate(10 0)"><path class="lt" d="M28 5V59"/><path class="bow-o" d="M28 5C16 5 12 14 18 22C22 28 22 30 20 32C22 34 22 36 18 42C12 50 16 59 28 59"/><path class="bow" d="M28 5C16 5 12 14 18 22C22 28 22 30 20 32C22 34 22 36 18 42C12 50 16 59 28 59"/><rect class="gd o" x="15" y="27" width="8" height="10" rx="2.5"/></g></symbol>
+<symbol id="i-jangdo" viewBox="0 0 64 64"><g transform="rotate(-28 32 32)"><path class="lr" d="M32 7q-7-5-13 2"/><path class="r o1" d="M16.5 9h5l1.5 15h-8Z"/><rect class="w o" x="27" y="7" width="10" height="16" rx="3"/><rect class="gd o" x="26" y="22" width="12" height="4.5" rx="1.2"/><path class="lq o" d="M27 26.5h10v25q0 6-5 9q-5-3-5-9Z"/><rect class="gd o1" x="27" y="38" width="10" height="3"/></g></symbol>
+<symbol id="i-baneul" viewBox="0 0 64 64"><path class="ln" d="M22 42L28 18" opacity=".8"/><path class="ln" d="M32 40L50 10"/><ellipse class="pp o1" cx="49" cy="12" rx="1.6" ry="2.6" transform="rotate(30 49 12)"/><path class="lr" d="M49 12q9 5 3 13q-6 8 4 16"/><ellipse class="g o" cx="28" cy="46" rx="19" ry="11"/><path class="lt" d="M10 45q18 7 36 0M14 40q14 4 28 0"/><circle class="r o1" cx="28" cy="36" r="3"/></symbol>
+<symbol id="i-indu" viewBox="0 0 64 64"><path class="ln" d="M38 34L50 18"/><rect class="gd o" x="46" y="5" width="9" height="17" rx="3" transform="rotate(38 50 13)"/><path class="mt o" d="M6 46Q8 34 24 33L40 33Q45 33 45 37V41Q45 45 40 45Z"/><path class="lt" d="M14 41h24" opacity=".6"/></symbol>
+<symbol id="i-gawi" viewBox="0 0 64 64"><path class="mt o" d="M29 36L49 6L53 8L35 38Z"/><path class="mt o" d="M35 36L15 6L11 8L29 38Z"/><circle fill="none" class="o" style="stroke-width:6" cx="23" cy="49" r="8"/><circle fill="none" class="o" style="stroke-width:6" cx="41" cy="49" r="8"/><circle fill="none" cx="23" cy="49" r="8" style="stroke:var(--lacquer);stroke-width:3"/><circle fill="none" cx="41" cy="49" r="8" style="stroke:var(--lacquer);stroke-width:3"/><circle class="k" cx="32" cy="36" r="2.2"/></symbol>
+<symbol id="i-ja" viewBox="0 0 64 64"><g transform="rotate(-35 32 32)"><rect class="gd o" x="4" y="26" width="56" height="11" rx="1.5"/><path class="lt" d="M8 26v4M12 26v3M16 26v4M20 26v3M24 26v4M28 26v3M32 26v7M36 26v3M40 26v4M44 26v3M48 26v4M52 26v3M56 26v4"/></g></symbol>
+<symbol id="i-sil" viewBox="0 0 64 64"><ellipse class="w o" cx="32" cy="32" rx="25" ry="14"/><ellipse class="pp o1" cx="32" cy="32" rx="12" ry="4.5"/><path class="lt" d="M9 29q23-9 46 0M9 35q23 9 46 0M14 25q18-7 36 0M14 40q18 6 36 0" opacity=".55"/><rect class="r o" x="29" y="17" width="6" height="30" rx="2"/></symbol>
+<symbol id="i-daechu" viewBox="0 0 64 64"><ellipse class="w o" cx="32" cy="46" rx="25" ry="9"/><ellipse class="lq o" cx="22" cy="37" rx="7" ry="9.5" transform="rotate(-22 22 37)"/><ellipse class="lq o" cx="43" cy="38" rx="7" ry="9.5" transform="rotate(20 43 38)"/><ellipse class="lq o" cx="33" cy="31" rx="7" ry="9.5"/><path class="ln" d="M33 21.5l1-3M20 28l-1-3M45 29l2-3"/><path d="M30 27q-1 3 0 6M19 34q0 3 1 5M40 35q0 3 1 5" fill="none" stroke="var(--white)" stroke-width="1.6" stroke-linecap="round" opacity=".8"/></symbol>
+<symbol id="i-guksu" viewBox="0 0 64 64"><path class="w o" d="M8 26h48v12H8Z"/><path class="lt" d="M8 29h48M8 32h48M8 35h48" opacity=".6"/><path class="lt" d="M8 26q-3 6 0 12M56 26q3 6 0 12"/><rect class="r o" x="28" y="23" width="8" height="18" rx="1.5"/><rect class="r o" x="14" y="24.5" width="4" height="15" rx="1"/><rect class="r o" x="46" y="24.5" width="4" height="15" rx="1"/></symbol>
+<symbol id="i-tteok" viewBox="0 0 64 64"><ellipse class="b o" cx="32" cy="48" rx="26" ry="8.5"/><path class="w o" d="M13 30h38v13q-19 5-38 0Z"/><path class="w o" d="M13 30q19-6 38 0q-19 6-38 0Z"/><circle class="r" cx="24" cy="30" r="2"/><circle class="g" cx="32" cy="28" r="2"/><circle class="gd" cx="40" cy="30" r="2"/><circle class="r" cx="32" cy="32.5" r="1.6"/></symbol>
+<symbol id="hand-open" viewBox="0 0 100 150"><path class="sn o" d="M22 122C15 108 13 90 14.5 74L15.5 54A6.8 6.8 0 0 1 29 54L29.5 60L31 41A7.6 7.6 0 0 1 46.2 41L46.5 54L47 35.5A7.6 7.6 0 0 1 62.2 35.5L62.5 54L63 43A7.4 7.4 0 0 1 77.8 43L78 66C83 61 89 56 93.5 59.5A7.2 7.2 0 0 1 97 71C93 82 85 92 81 101C79 108 78 116 77 122Z"/><path class="dimp" d="M29.5 60v7M46.5 54v9M62.5 54v8M30 70q3 3 6 0M46 68q3 3 6 0M62 69q3 3 6 0M34 104q16 6 34 0"/><g class="nail"><ellipse cx="22.3" cy="51" rx="3.6" ry="4.2"/><ellipse cx="38.6" cy="39" rx="4" ry="4.6"/><ellipse cx="54.6" cy="33.5" rx="4" ry="4.6"/><ellipse cx="70.4" cy="41" rx="3.9" ry="4.4"/><ellipse cx="92" cy="64" rx="3.4" ry="4" transform="rotate(40 92 64)"/></g><clipPath id="cuffc"><rect x="14" y="112" width="74" height="80" rx="10"/></clipPath><g clip-path="url(#cuffc)"><rect class="r" x="0" y="112" width="100" height="8"/><rect class="gd" x="0" y="120" width="100" height="8"/><rect class="g" x="0" y="128" width="100" height="8"/><rect class="b" x="0" y="136" width="100" height="8"/><rect class="w" x="0" y="144" width="100" height="50"/></g><rect fill="none" class="o" x="14" y="112" width="74" height="80" rx="10"/></symbol>
+<symbol id="hand-fist" viewBox="0 0 100 150"><path class="sn o" d="M22 122C15 106 15 88 17 72C17 60 23 55 30 57C32 48 41 46 46.5 51C49.5 44 59 43 62.5 49C66 44 76 45 78.5 55C87 59 89 74 85 88C81 102 78 112 77 122Z"/><path class="sn o" d="M80 66C90 64 97 74 93 86C90 94 83 96 79 90C77 84 77 74 80 66Z"/><ellipse class="nail" cx="89" cy="74" rx="3.2" ry="4" transform="rotate(-15 89 74)"/><path class="dimp" d="M30 58q2 9 0 15M46.5 52q2 10 0 17M62.5 50q2 10 0 17M24 66q3 2 6 0M40 60q3 2 6 0M56 58q3 2 6 0M34 104q16 6 34 0"/><g clip-path="url(#cuffc)"><rect class="r" x="0" y="112" width="100" height="8"/><rect class="gd" x="0" y="120" width="100" height="8"/><rect class="g" x="0" y="128" width="100" height="8"/><rect class="b" x="0" y="136" width="100" height="8"/><rect class="w" x="0" y="144" width="100" height="50"/></g><rect fill="none" class="o" x="14" y="112" width="74" height="80" rx="10"/></symbol>
+<symbol id="dol-scene" viewBox="0 0 400 190"><rect class="w" x="0" y="0" width="400" height="112"/><circle class="r" cx="86" cy="34" r="15"/><path class="w o1" d="M150 30q8-10 20-4q10-8 20 2q12-2 12 8h-56q-4-4 4-6ZM270 22q8-8 18-3q8-6 16 2q10 0 8 7h-46q-2-4 4-6Z"/><path class="g o1" d="M0 104L36 64L64 86L104 46L150 96L196 70L240 100L276 60L318 92L356 70L400 98V112H0Z"/><path class="b" d="M0 104q20-6 40 0t40 0t40 0t40 0t40 0t40 0t40 0t40 0t40 0t40 0V112H0Z" opacity=".7"/><path class="ln" d="M352 112V66q-4-14 6-26"/><g class="g o1"><ellipse cx="342" cy="50" rx="16" ry="6"/><ellipse cx="366" cy="40" rx="18" ry="6"/><ellipse cx="350" cy="30" rx="14" ry="5"/></g><path class="pf" d="M1 1H399V111H1ZM50 1V111M100 1V111M150 1V111M200 1V111M250 1V111M300 1V111M350 1V111"/><rect class="lq o" x="58" y="112" width="284" height="10" rx="4"/><path class="lq2 o" d="M66 122H334V146H66Z"/><path class="pp" d="M120 146q20-16 40 0M180 146q20-16 40 0M240 146q20-16 40 0" opacity=".55"/><path class="lq o" d="M74 146h18q-2 18 10 30h-18q-12-12-10-30ZM308 146h18q2 18-10 30h-18q12-12 10-30Z"/>
+<g><path class="w o1" d="M90 104h40v3h-40ZM104 107h12v5h-12Z"/><g class="rb o1"><circle cx="100" cy="98" r="6"/><circle cx="112" cy="98" r="6"/><circle cx="124" cy="98" r="5.5"/><circle cx="106" cy="88" r="6"/><circle cx="118" cy="88" r="6"/><circle cx="112" cy="78" r="6"/></g></g>
+<g><path class="w o1" d="M144 104h40v3h-40ZM158 107h12v5h-12Z"/><g class="r o1"><circle cx="154" cy="97" r="7"/><circle cx="168" cy="97" r="7"/><circle cx="161" cy="85" r="7"/></g><g class="g o1"><circle cx="176" cy="94" r="5"/></g></g>
+<g><path class="w o1" d="M180 104h40v3h-40ZM194 107h12v5h-12Z"/><g class="w o1"><rect x="184" y="90" width="32" height="14" rx="2"/><rect x="187" y="77" width="26" height="13" rx="2"/><rect x="190" y="65" width="20" height="12" rx="2"/></g><circle class="r" cx="200" cy="62" r="2.5"/></g>
+<g><path class="w o1" d="M216 104h40v3h-40ZM230 107h12v5h-12Z"/><g class="o1"><circle class="gd" cx="226" cy="98" r="5"/><circle class="g" cx="237" cy="98" r="5"/><circle class="r" cx="248" cy="98" r="5"/><circle class="b" cx="231" cy="89" r="5"/><circle class="w" cx="242" cy="89" r="5"/><circle class="gd" cx="236" cy="80" r="5"/></g></g>
+<g><path class="w o1" d="M270 104h40v3h-40ZM284 107h12v5h-12Z"/><g class="gd o1"><path d="M282 102q-8-8 0-16q4-6 8 0q8 8 0 16Z"/><path d="M296 102q-8-8 0-16q4-6 8 0q8 8 0 16Z"/><path d="M289 88q-8-8 0-16q4-6 8 0q8 8 0 16Z"/></g></g>
+</symbol>
+</defs></svg>
+<style>
+.sitebar{position:sticky;top:0;z-index:30;background:rgba(251,247,240,.95);backdrop-filter:blur(8px);border-bottom:1px solid #D9CCB6;font-family:"Gowun Dodum",sans-serif}
+.sitebar .in{max-width:1100px;margin:0 auto;padding:10px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.sitebar a{color:#2B2520;text-decoration:none}
+.sb-logo{display:flex;align-items:center;gap:10px}
+.sb-seal{width:18px;height:40px;background:#B4412F;border-radius:2px;padding:2px;box-sizing:border-box}
+.sb-seal span{display:flex;flex-direction:column;align-items:center;justify-content:space-evenly;height:100%;border:1px solid rgba(255,248,240,.85);border-radius:1px;font-family:"Gowun Batang",serif;font-weight:700;font-size:9px;line-height:1;color:#FFF8F0}
+.sb-wm{font-family:"Cormorant Garamond",serif;font-weight:500;font-size:19px;letter-spacing:.32em}
+.sb-nav{display:flex;gap:18px;font-size:13px}
+.sb-nav a:hover{color:#B4412F}
+@media(max-width:560px){.sb-nav .h{display:none}.sb-wm{font-size:16px;letter-spacing:.24em}}
+</style>
+<div class="sitebar"><div class="in">
+  <a class="sb-logo" href="/" aria-label="ONGOWON 홈"><span class="sb-seal"><span><i style="font-style:normal">온</i><i style="font-style:normal">고</i><i style="font-style:normal">원</i></span></span><span class="sb-wm">ONGOWON</span></a>
+  <nav class="sb-nav"><a href="/#collection">컬렉션</a><a class="h" href="/#gift">선물</a><a href="/#newsletter">출시 알림</a></nav>
+</div></div>
+<div class="wrap">
+  <header>
+    <div class="brand"><span class="mono">溫</span><span class="word">ONGOWON</span><span class="sub">소원 민화</span></div>
+    <h1>민화는 원래 <em>소원</em>을 비는 그림이었어요</h1>
+    <div class="orn"><span>✦</span></div>
+    <p class="lede">조선 사람들은 합격, 건강, 넉넉함을 바라며 그림을 걸고 아이의 첫 돌상을 차렸습니다. 진짜 조선 민화를 맞혀 보고, 내 소원템을 찾고, 조선에서 태어났다면 무슨 띠로 무엇을 잡았을지 해 보세요. 모든 설명에는 근거 자료를 달았습니다.</p>
+  </header>
+
+  <nav class="tabs" role="tablist" aria-label="콘텐츠">
+    <button class="tab" role="tab" id="tab-quiz" data-tab="quiz" aria-controls="quiz">진짜 민화 맞히기</button>
+    <button class="tab" role="tab" id="tab-test" data-tab="test" aria-controls="test">내 소원템 찾기</button>
+    <button class="tab" role="tab" id="tab-joseon" data-tab="joseon" aria-controls="joseon">조선시대에 태어났다면!?</button>
+  </nav>
+
+  <section id="quiz" class="tabpanel" role="tabpanel" aria-labelledby="tab-quiz">
+    <span class="eyebrow">진짜 민화 3점</span>
+    <h2>이 조선 민화는 어떤 소원일까?</h2>
+    <div class="panel" id="quizPanel" aria-live="polite"></div>
+  </section>
+
+  <section id="test" class="tabpanel" role="tabpanel" aria-labelledby="tab-test">
+    <span class="eyebrow">3문항</span>
+    <h2>나에게 맞는 온고 소원템은?</h2>
+    <div class="panel" id="testPanel" aria-live="polite"></div>
+  </section>
+
+  <section id="joseon" class="tabpanel" role="tabpanel" aria-labelledby="tab-joseon">
+    <span class="eyebrow">띠 · 돌잡이</span>
+    <h2>내가 조선시대에 태어났다면!?</h2>
+    <p class="note">태어난 해로 조선식 해 이름(간지)과 띠를 찾고, 첫 돌상 앞에서 돌잡이를 해 보세요.</p>
+    <div class="panel" id="joseonPanel" aria-live="polite"></div>
+  </section>
+
+  <section id="sources">
+    <span class="eyebrow">Sources</span>
+    <h2>설명의 근거</h2>
+    <div class="srclist"><ul id="srcList"></ul></div>
+    <p class="note">근거 등급: <span class="grade">사전</span> 한국민족문화대백과사전(한국학중앙연구원) · <span class="grade">논문</span> 학위논문 · <span class="grade">기관</span> 공공기관 누리집 · <span class="grade">기사</span> 언론의 전시 소개. 사전 외 자료만 있는 해석은 해당 카드에 따로 표시했습니다.</p>
+  </section>
+
+  <footer><div class="orn"><span>✦</span></div><a class="btn" href="/#collection">온고원 소원 민화 블랭킷 보기</a><a class="btn" href="https://www.instagram.com/ongo.won_archive/" target="_blank" rel="noopener">인스타그램 @ongo.won_archive</a><p>이 페이지는 민화가 담은 소원을 소개하고, 온고 소원 민화에 관심 있는 분을 인스타그램 소원 인터뷰로 연결하기 위해 만들었습니다.</p>
+  <p>상징 맞히기의 그림 3점은 메트로폴리탄 미술관이 퍼블릭 도메인(CC0)으로 공개한 소장품이며, 그림마다 소장처와 원문 링크를 달았습니다. 작품 제목은 미술관의 영문 원제를 그대로 적었습니다.</p>
+  <p>상징 설명은 한국민족문화대백과사전 본문을 인용했으며, 사전의 인용 안내에 따라 [출처 : 항목명 - 한국민족문화대백과사전]으로 표기했습니다. 사전 외 자료에 근거한 해석은 해당 설명에 따로 적었습니다.</p>
+  <p>간지는 태어난 해에서 계산한 값이며, 띠가 바뀌는 날(설날 또는 입춘)은 기준이 갈려 1~2월생은 두 가지를 함께 보여 줍니다. 돌잡이 물건과 뜻은 한국민족문화대백과사전 ‘돌’ 항목을 따랐습니다.</p>
+  <p>소원템 결과, 슬라이드, 띠·돌잡이 결과의 그림은 테스트 중인 제품 디자인 시안입니다.</p></footer>
+</div>
+
+<script>
+const ART = {
+  carp:`<svg class="art" viewBox="0 0 200 200" preserveAspectRatio="xMidYMid meet" role="img" aria-label="파도 위로 뛰어오르는 잉어"><circle cx="152" cy="44" r="22" class="r"/><path d="M0 158 Q25 138 50 158 T100 158 T150 158 T200 158 V200 H0Z" class="b"/><path class="skw" d="M10 176 Q30 164 50 176 M70 182 Q90 170 110 182 M130 176 Q150 164 170 176"/><g transform="rotate(-38 95 110)"><ellipse cx="95" cy="110" rx="46" ry="19" class="y"/><path d="M48 110 L22 92 L28 110 L22 128Z" class="y"/><path class="sk" d="M48 110 L22 92 L28 110 L22 128Z M95 110 m-46 0 a46 19 0 1 0 92 0 a46 19 0 1 0 -92 0"/><circle cx="125" cy="105" r="3.5" class="k"/><path class="sk" d="M110 96 Q100 110 110 124 M80 98 Q74 110 80 122"/><path class="sk" d="M140 114 q8 6 14 4"/></g></svg>`,
+  books:`<svg class="art" viewBox="0 0 200 200" preserveAspectRatio="xMidYMid meet" role="img" aria-label="책과 꽃병이 놓인 책장"><rect x="24" y="22" width="152" height="160" class="w"/><path class="sk" d="M24 22 H176 V182 H24Z M24 76 H176 M24 130 H176 M100 76 V130"/><rect x="34" y="40" width="12" height="36" class="b"/><rect x="48" y="34" width="12" height="42" class="r"/><rect x="62" y="44" width="12" height="32" class="g"/><rect x="104" y="56" width="58" height="10" class="y"/><rect x="108" y="46" width="50" height="10" class="b"/><rect x="112" y="66" width="56" height="10" class="r"/><path d="M48 128 Q34 112 48 96 L56 90 L64 96 Q78 112 64 128Z" class="b"/><path class="sk" d="M48 128 Q34 112 48 96 L56 90 L64 96 Q78 112 64 128Z"/><path class="sk" d="M56 90 V80 M56 82 Q48 74 44 78 M56 82 Q64 72 70 76"/><circle cx="44" cy="78" r="5" class="r"/><circle cx="70" cy="76" r="5" class="r"/><rect x="112" y="102" width="40" height="26" class="g"/><path class="sk" d="M112 102 H152 V128 H112Z M118 102 V96 M126 102 V92 M134 102 V95"/><rect x="34" y="150" width="60" height="14" class="y"/><rect x="40" y="140" width="50" height="10" class="r"/><circle cx="140" cy="158" r="14" class="b"/><path class="sk" d="M128 158 h24"/></svg>`,
+  tiger:`<svg class="art" viewBox="0 0 200 200" preserveAspectRatio="xMidYMid meet" role="img" aria-label="소나무 가지의 까치와 호랑이"><path class="sk" d="M110 18 Q150 30 196 26 M140 26 Q150 44 176 46"/><path d="M150 40 l-10 -6 l-8 6 l10 4Z M160 28 l-8 -8 l-10 4 l10 6Z M178 44 l-6 -8 l-10 2 l8 6Z" class="g"/><ellipse cx="128" cy="36" rx="14" ry="8" class="k"/><path d="M120 38 Q128 44 138 38 Q130 48 120 38Z" class="w"/><path d="M114 34 L100 30 L114 40Z" class="k"/><circle cx="138" cy="32" r="5" class="k"/><path d="M143 32 l6 1 l-6 2Z" class="k"/><circle cx="98" cy="130" r="56" class="y"/><path class="sk" d="M98 74 a56 56 0 1 0 0.1 0"/><circle cx="56" cy="84" r="14" class="y"/><circle cx="140" cy="84" r="14" class="y"/><path class="sk" d="M44 80 a14 14 0 0 1 24 -4 M128 76 a14 14 0 0 1 24 4"/><circle cx="76" cy="122" r="14" class="w"/><circle cx="120" cy="122" r="14" class="w"/><circle cx="78" cy="124" r="7" class="k"/><circle cx="118" cy="124" r="7" class="k"/><path d="M90 146 h16 l-8 10Z" class="r"/><path class="sk" d="M98 156 v8 M98 164 q-12 8 -20 0 M98 164 q12 8 20 0"/><path class="sk" d="M80 84 l6 14 M98 78 v16 M116 84 l-6 14 M44 128 h14 M42 142 h16 M152 128 h-14 M154 142 h-16"/></svg>`,
+  longevity:`<svg class="art" viewBox="0 0 200 200" preserveAspectRatio="xMidYMid meet" role="img" aria-label="해, 구름, 산, 소나무, 학이 있는 장생 풍경"><circle cx="40" cy="40" r="18" class="r"/><path d="M110 40 q10 -14 22 -4 q12 -8 18 4 q12 0 8 10 h-52 q-6 -8 4 -10Z" class="w"/><path class="sk" d="M110 40 q10 -14 22 -4 q12 -8 18 4 q12 0 8 10 h-52 q-6 -8 4 -10Z"/><path d="M0 150 L50 80 L90 130 L130 70 L200 150 V200 H0Z" class="g"/><path class="sk" d="M0 150 L50 80 L90 130 L130 70 L200 150"/><path d="M0 172 Q30 160 60 172 T120 172 T200 170 V200 H0Z" class="b"/><path class="sk" d="M160 196 V112 Q156 100 164 92"/><path d="M140 112 q20 -16 40 0Z M146 96 q16 -14 32 0Z M150 82 q12 -10 24 0Z" class="k"/><ellipse cx="80" cy="150" rx="16" ry="9" class="w"/><path class="sk" d="M80 150 m-16 0 a16 9 0 1 0 32 0 a16 9 0 1 0 -32 0 M92 146 Q100 128 94 118"/><circle cx="94" cy="116" r="5" class="w"/><circle cx="95" cy="113" r="2.5" class="r"/><path class="sk" d="M98 117 l10 2 M76 158 v16 M84 158 v16"/><path d="M66 148 l-10 -4 l6 8Z" class="k"/></svg>`,
+  bat:`<svg class="art" viewBox="0 0 200 200" preserveAspectRatio="xMidYMid meet" role="img" aria-label="날개를 펼친 박쥐 다섯 마리"><g id="bt"><path d="M100 86 Q88 70 64 72 Q74 80 70 88 Q58 84 46 92 Q60 96 62 106 Q78 98 90 104 Q96 100 100 104 Q104 100 110 104 Q122 98 138 106 Q140 96 154 92 Q142 84 130 88 Q126 80 136 72 Q112 70 100 86Z" class="r"/><circle cx="96" cy="88" r="2" class="k"/><circle cx="104" cy="88" r="2" class="k"/></g><use href="#bt" transform="translate(-48 -50) scale(.55) translate(80 60)"/><use href="#bt" transform="translate(42 -50) scale(.55) translate(80 60)"/><use href="#bt" transform="translate(-48 72) scale(.55) translate(80 60)"/><use href="#bt" transform="translate(42 72) scale(.55) translate(80 60)"/><circle cx="100" cy="100" r="26" class="y" opacity=".0"/><text x="100" y="150" text-anchor="middle" font-family="Hahmlet,serif" font-size="30" font-weight="800" class="b">福</text></svg>`,
+  peony:`<svg class="art" viewBox="0 0 200 200" preserveAspectRatio="xMidYMid meet" role="img" aria-label="활짝 핀 모란꽃"><path class="sk" d="M100 196 Q96 160 100 132"/><path d="M100 160 Q70 150 56 170 Q80 176 100 160Z M100 150 Q130 136 148 152 Q124 164 100 150Z M60 120 Q40 104 46 86 Q66 100 72 118Z M140 120 Q160 104 154 86 Q134 100 128 118Z" class="g"/><circle cx="100" cy="96" r="50" class="r"/><path class="skw" d="M62 96 Q70 70 100 64 Q130 70 138 96 M72 110 Q80 84 100 82 Q120 84 128 110 M84 112 Q90 96 100 96 Q110 96 116 112"/><circle cx="100" cy="104" r="12" class="y"/><path class="sk" d="M100 46 a50 50 0 1 0 0.1 0"/><circle cx="42" cy="44" r="16" class="r" opacity=".85"/><path class="skw" d="M32 44 Q42 32 52 44"/><circle cx="160" cy="40" r="10" class="y"/></svg>`
+};
+
+const S = {
+  carp:{art:"carp",name:"잉어",work:"약리도(躍鯉圖)",wish:"합격 · 취업",
+    meaning:"아침 해 아래 파도를 박차고 뛰어오르는 잉어 그림입니다. 물고기가 황하 상류 용문의 급류를 거슬러 올라 용이 되었다는 등용문 이야기에서 나왔고, 어려운 관문을 넘어 출세하는 것을 뜻합니다.",
+    gift:"\"어려운 관문, 이 잉어처럼 뛰어넘길 바라.\"",
+    src:[["사전","약리도 - 한국민족문화대백과사전","https://encykorea.aks.ac.kr/Article/E0035303"]]},
+  books:{art:"books",name:"책가도",work:"책가도(冊架圖) · 책거리",wish:"공부 · 실력",
+    meaning:"책장 가득 책과 문방구, 도자기를 그린 그림입니다. 18세기 후반 책으로 나라를 다스리려던 정조의 구상에서 시작해 글(文)을 중시하는 상징이 되었고, 19세기에는 서민에게까지 퍼져 민화의 핵심 주제가 되었습니다.",
+    note:"공부·학업 소원과 직접 연결하는 해석은 사전이 아니라 전시 소개 기사에 근거합니다.",
+    gift:"\"쌓아 온 공부가 좋은 결과로 돌아오길.\"",
+    src:[["사전","책가도 - 한국민족문화대백과사전","https://encykorea.aks.ac.kr/Article/E0055679"],["기사","전북일보(2020.1.13), 교동미술관 '민화: Wish for happiness'전 소개","https://www.jjan.kr/article/20200113702261"]]},
+  tiger:{art:"tiger",name:"까치호랑이",work:"작호도(鵲虎圖) · 호작도",wish:"액막이",
+    meaning:"호랑이와 까치를 함께 그린 그림입니다. '호랑이는 삼재를 쫓고 용은 오복을 가져온다(虎逐三災 龍輸五福)'는 글이 적힌 까치호랑이 그림이 전해져, 나쁜 기운을 막는 용도로 쓰였음을 알 수 있습니다.",
+    note:"같은 사전의 '작호도' 항목은 호랑이를 권력자, 까치를 백성으로 보는 풍자 그림이라는 해석도 함께 소개합니다.",
+    gift:"\"올해 꼬이는 일은 이 호랑이가 다 쫓아 줄 거야.\"",
+    src:[["사전","용호도 - 한국민족문화대백과사전","https://encykorea.aks.ac.kr/Article/E0039733"],["사전","작호도 - 한국민족문화대백과사전","https://encykorea.aks.ac.kr/Article/E0048152"]]},
+  longevity:{art:"longevity",name:"십장생",work:"십장생도(十長生圖)",wish:"건강 · 장수",
+    meaning:"해, 구름, 산, 물, 바위, 학, 사슴, 거북, 소나무, 불로초처럼 오래 사는 것들을 모아 그린 그림입니다. 늙지 않고 오래 살기를 바라는 마음을 담았습니다.",
+    gift:"\"아프지 말고, 오래오래 지금처럼.\"",
+    src:[["사전","십장생도 - 한국민족문화대백과사전","https://encykorea.aks.ac.kr/Article/E0034032"]]},
+  bat:{art:"bat",name:"박쥐",work:"편복문(蝙蝠文) · 박쥐무늬",wish:"복 · 좋은 일",
+    meaning:"박쥐를 한자로 '편복(蝙蝠)'이라 쓰는데, 이 '복(蝠)'이 복을 뜻하는 '福'과 소리가 같아 복의 상징이 되었습니다. 그래서 '福' 글자 대신 박쥐를 옷감, 가구, 그릇, 떡살 등에 그려 넣었고, 다섯 마리를 그리면 오복을 뜻했습니다.",
+    gift:"\"좋은 일이 박쥐처럼 날아들길.\"",
+    src:[["사전","편복문 - 한국민족문화대백과사전","https://encykorea.aks.ac.kr/Article/E0059840"],["기관","서울특별시 문화분야 누리집, 남산골한옥마을 '복토존' 안내(2021)","https://news.seoul.go.kr/culture/?p=509908"],["논문","노지현, 「조선 후기 백자의 박쥐문 연구」, 이화여대 석사논문(2021)","https://dspace.ewha.ac.kr/handle/2015.oak/256701"]]},
+  peony:{art:"peony",name:"모란",work:"모란도(牡丹圖)",wish:"재물 · 부귀",
+    meaning:"모란도는 부귀와 행복을 바라는 마음을 사물에 담아 그리는 길상도의 하나로 분류됩니다. 크고 화려한 꽃 때문에 조선 왕실에서도 부귀와 풍요의 상징으로 즐겨 썼습니다.",
+    note:"'부귀와 풍요의 상징'이라는 설명은 국립고궁박물관 '안녕, 모란'전 소개 기사에 근거합니다.",
+    gift:"\"이번 달도 넉넉하게, 활짝 피길.\"",
+    src:[["사전","길상도 - 한국민족문화대백과사전","https://encykorea.aks.ac.kr/Article/E0008538"],["기사","서울신문(2021.7.21), 국립고궁박물관 '안녕, 모란'전 소개","https://m.seoul.co.kr/news/2021/07/22/20210722023001"]]}
+};
+const KEYS = Object.keys(S);
+/* 실제 민화: 메트로폴리탄 미술관이 퍼블릭 도메인(CC0)으로 공개한 이미지만 사용.
+   한국민족문화대백과사전 이미지는 저작권이 소장 박물관에 있어 쓰지 않음(사전 '콘텐츠 이용 안내' 기준). */
+const REAL = [
+  {k:"carp",img:"/images/met_carp.jpg",title:"작자미상, 〈Dragon and carp〉, 19세기 후반",owner:"메트로폴리탄 미술관 소장",lic:"퍼블릭 도메인(CC0)",url:"https://www.metmuseum.org/art/collection/search/853892",hint:"메트로폴리탄 미술관 설명: 용은 힘과 행운을, 잉어는 끈기와 강한 성품을 상징합니다."},
+  {k:"peony",img:"/images/met_peony.jpg",title:"작자미상, 〈Butterflies and Peonies〉, 19세기 중후반",owner:"메트로폴리탄 미술관 소장",lic:"퍼블릭 도메인(CC0)",url:"https://www.metmuseum.org/art/collection/search/45063"},
+  {k:"books",img:"/images/met_books.jpg",title:"작자미상, 〈Books and Scholarly Accoutrements〉, 19세기",owner:"메트로폴리탄 미술관 소장",lic:"퍼블릭 도메인(CC0)",url:"https://www.metmuseum.org/art/collection/search/853896"}
+];
+function quizFig(item){
+  const k=item.k, r=item.real;
+  if(r) return `<figure class="fig"><img src="${r.img}" alt="${r.title}"><figcaption><span class="kind real">조선 민화</span><br>${r.title} · ${r.owner}<br>${r.lic} · <a href="${r.url}" target="_blank" rel="noopener">소장처 자료</a></figcaption></figure>`;
+  return `<figure class="fig">${ART[S[k].art]}<figcaption><span class="kind ongo">온고 그림</span><br>온고 소원 민화 · ${S[k].name}</figcaption></figure>`;
+}
+const $ = (h)=>{const t=document.createElement('template');t.innerHTML=h.trim();return t.content};
+const esc=(s)=>s.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+function srcHTML(k){const s=S[k];return `<div class="src">${s.note?`<span>※ ${esc(s.note)}</span>`:""}${s.src.map(([g,t,u])=>`<span><span class="grade">${g}</span>[출처 : ${esc(t)}] <a href="${u}" target="_blank" rel="noopener">원문 보기</a></span>`).join("")}</div>`}
+
+/* ---------- 2. 소원템 테스트: 결과는 온고 제품 이미지 ---------- */
+/* 온고 제품 사진이 준비되면 파일 이름을 넣는다. 비어 있으면 온고 그림(시안)을 보여 준다. */
+/* 온고 단독 민화 시안(화이트 톤) 중 소원 상징의 출처가 확인된 4종만 결과로 쓴다 */
+const PRODUCT = {
+  carp:{img:"/images/carp.jpg",name:"잉어"},
+  books:{img:"/images/books.jpg",name:"책가도"},
+  peony:{img:"/images/peony.jpg",name:"모란"},
+  longevity:{img:"/images/crane.jpg",name:"학",line:"학과 소나무는 둘 다 십장생에 드는 장수의 상징입니다."}
+};
+const OTHERS = [
+  {img:"/images/jar.jpg",name:"항아리",tag:"온고 그림"},
+  {img:"/images/moon.jpg",name:"달",tag:"온고 그림"},
+  {img:"/images/sheep.jpg",name:"양",tag:"양띠"},
+  {img:"/images/horse.jpg",name:"말",tag:"말띠"},
+  {img:"/images/monkey.jpg",name:"원숭이",tag:"원숭이띠"}
+];
+const IG_URL = "https://www.instagram.com/ongo.won_archive/";
+function sliderHTML(cur){
+  const wish=Object.keys(PRODUCT).filter(k=>k!==cur).map(k=>`<button class="card" data-k="${k}" aria-label="${PRODUCT[k].name} 소원템 보기"><img src="${PRODUCT[k].img}" alt=""><span class="cname">${PRODUCT[k].name}</span><span class="ctag">${S[k].wish}</span></button>`);
+  const oth=OTHERS.map(o=>`<div class="card static"><img src="${o.img}" alt="온고 그림 ${o.name}"><span class="cname">${o.name}</span><span class="ctag muted">${o.tag}</span></div>`);
+  return `<div class="more"><div class="more-head"><h3>다른 온고 소원템 보기</h3><div class="arrows"><button class="arrow" id="prev" aria-label="이전">‹</button><button class="arrow" id="next2" aria-label="다음">›</button></div></div><div class="slider" id="slider">${wish.join("")}${oth.join("")}</div><p class="note">소원이 적힌 카드를 누르면 그 소원템 설명을 볼 수 있어요.</p></div>`;
+}
+function productFig(k){
+  const p=PRODUCT[k];
+  return `<figure class="fig prod"><img src="${p.img}" alt="온고 소원 민화 ${p.name}"><figcaption><span class="kind ongo">온고 소원템</span><br>온고 단독 민화 시안 · ${p.name}<br>테스트 중인 제품 디자인 시안입니다</figcaption></figure>`;
+}
+const TQ = [
+  {q:"요즘 머릿속을 가장 많이 차지하는 장면은?",opts:[
+    ["합격 문자를 받는 순간",{carp:3}],["책상 앞에서 버티는 밤",{books:3}],
+    ["가족이 아프지 않은 평범한 하루",{longevity:3}],["잔고가 넉넉한 월말",{peony:3}]]},
+  {q:"그 소원은 어느 쪽에 가까워요?",opts:[
+    ["넘어야 할 관문이 있다",{carp:2,books:1}],["오래 쌓아 가야 한다",{books:2,longevity:1}],
+    ["오래오래 곁에 있어 주길 바란다",{longevity:2}],["넉넉하게 피어나길 바란다",{peony:2}]]},
+  {q:"이 그림은 누구를 위한 건가요?",opts:[["나를 위해",{},"me"],["가족에게 줄 선물",{},"gift"],["친구·연인에게 줄 선물",{},"gift"]]}
+];
+let tStep=0,tScore={},tFirst=null,tFor="me";
+const tp=document.getElementById('testPanel');
+function renderTest(){
+  if(tStep>=TQ.length) return renderResult();
+  const Q=TQ[tStep];
+  tp.replaceChildren($(`<span class="progress">${tStep+1} / ${TQ.length}</span><p class="q">${Q.q}</p><div class="opts">${Q.opts.map((o,i)=>`<button class="opt" id="t${tStep}o${i}" data-i="${i}">${o[0]}</button>`).join("")}</div>`));
+  tp.querySelectorAll('.opt').forEach(b=>b.onclick=()=>{
+    const o=Q.opts[+b.dataset.i];
+    for(const k in o[1]) tScore[k]=(tScore[k]||0)+o[1][k];
+    if(tStep===0) tFirst=Object.keys(o[1])[0];
+    if(o[2]) tFor=o[2];
+    tStep++; renderTest();
+  });
+}
+function renderResult(forced){
+  let best=tFirst,max=-1;
+  for(const k of Object.keys(PRODUCT)){const v=tScore[k]||0; if(v>max||(v===max&&k===tFirst)){max=v;best=k}}
+  if(forced) best=forced;
+  const s=S[best];
+  tp.replaceChildren($(`<div class="result">${productFig(best)}<div class="meaning"><span class="tag">${s.wish}</span><h3>당신의 소원템은 ${PRODUCT[best].name}</h3><p class="work">${s.work}</p>${PRODUCT[best].line?`<p>${esc(PRODUCT[best].line)}</p>`:""}<p>${esc(s.meaning)}</p>${tFor==="gift"?`<p class="gift">선물할 때 이렇게 건네 보세요 · ${esc(s.gift)}</p>`:""}${srcHTML(best)}</div></div>
+  <div class="cta"><p><b>이 소원으로 맞춤 민화를 받아 보고 싶다면</b><br>온고가 지금 소원 인터뷰를 하고 있어요. 인스타그램 <span class="handle">@ongo.won_archive</span> 로 DM을 보내 소원을 남겨 주세요.</p>
+  <div class="row"><a class="btn primary" href="${IG_URL}" target="_blank" rel="noopener">인스타그램 바로가기</a><button class="btn" id="copyHandle">계정 이름 복사</button><button class="btn" id="copyRes">결과 복사</button><button class="btn" id="retry">다시 하기</button><span class="toast" id="tToast"></span></div></div>${sliderHTML(best)}`));
+  const sl=document.getElementById("slider");
+  const by=()=>{const c=sl.querySelector(".card");return c?c.getBoundingClientRect().width+12:200};
+  document.getElementById("prev").onclick=()=>sl.scrollBy({left:-by(),behavior:"smooth"});
+  document.getElementById("next2").onclick=()=>sl.scrollBy({left:by(),behavior:"smooth"});
+  sl.querySelectorAll("button.card").forEach(b=>b.onclick=()=>{renderResult(b.dataset.k);document.getElementById("test").scrollIntoView({behavior:"smooth"})});
+  const toast=(m)=>{document.getElementById('tToast').textContent=m};
+  const copy=async(text,ok)=>{try{await navigator.clipboard.writeText(text);toast(ok)}catch(e){toast("복사가 막혀 있어요. 글자를 길게 눌러 직접 복사해 주세요.")}};
+  document.getElementById('copyHandle').onclick=()=>copy("@ongo.won_archive","계정 이름을 복사했어요");
+  document.getElementById('copyRes').onclick=()=>copy(`내 소원템은 ${PRODUCT[best].name}(${s.wish}) — ${s.meaning} [출처 : ${s.src[0][1]}] #온고 #소원민화`,"결과를 복사했어요");
+  document.getElementById('retry').onclick=()=>{tStep=0;tScore={};tFirst=null;tFor="me";renderTest()};
+}
+
+/* ---------- 2. 상징 맞추기 ---------- */
+const qp=document.getElementById('quizPanel');
+let order=[],qi=0,score=0;
+const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+function startQuiz(){order=shuffle(REAL).map(r=>({k:r.k,real:r}));qi=0;score=0;renderQuiz()}
+function renderQuiz(){
+  if(qi>=order.length) return renderScore();
+  const item=order[qi], k=item.k, opts=shuffle([k,...shuffle(KEYS.filter(x=>x!==k)).slice(0,3)]);
+  qp.replaceChildren($(`<span class="progress">${qi+1} / ${order.length} · 맞힌 개수 ${score}</span>${quizFig(item)}<p class="q" style="text-align:center">이 그림이 담은 소원은?</p><div class="opts">${opts.map(o=>`<button class="opt" id="q${qi}${o}" data-k="${o}">${S[o].wish}</button>`).join("")}</div><div id="qExplain"></div>`));
+  qp.querySelectorAll('.opt').forEach(b=>b.onclick=()=>{
+    const ok=b.dataset.k===k; if(ok) score++;
+    qp.querySelectorAll('.opt').forEach(x=>{x.disabled=true; if(x.dataset.k===k) x.classList.add('right')});
+    if(!ok) b.classList.add('wrong');
+    document.getElementById('qExplain').replaceChildren($(`<div class="explain"><p><b>${ok?"맞았어요.":"아쉬워요."}</b> 정답은 <b>${S[k].wish}</b>, ${S[k].name} · ${S[k].work}</p>${item.real&&item.real.hint?`<p>${esc(item.real.hint)}</p>`:""}<p>${esc(S[k].meaning)}</p>${srcHTML(k)}<div class="row"><button class="btn primary" id="next">${qi+1<order.length?"다음 그림":"결과 보기"}</button></div></div>`));
+    const n=document.getElementById('next'); n.focus({preventScroll:true}); n.onclick=()=>{qi++;renderQuiz()};
+  });
+}
+function renderScore(){
+  const N=order.length, msg=score===N?"조선 민화 감별사 수준이에요.":score>=Math.ceil(N*0.6)?"옛 그림의 소원을 꽤 읽으시네요.":"이제 그림이 조금 다르게 보일 거예요.";
+  qp.replaceChildren($(`<span class="progress">결과</span><div class="row" style="gap:18px"><span class="score">${score}<span style="font-size:24px;color:var(--muted)"> / ${N}</span></span><p class="q" style="flex:1;min-width:200px">${msg}</p></div><p>마음에 걸리는 소원이 있었다면, 아래에서 내 소원에 맞는 온고 소원템을 찾아보세요.</p><div class="row"><button class="btn primary" id="again">한 번 더</button><a class="btn" href="#test">내 소원템 찾기</a></div>`));
+  document.getElementById('again').onclick=startQuiz;
+}
+
+/* ---------- 출처 목록 ---------- */
+document.getElementById('srcList').replaceChildren($([...KEYS.map(k=>`<li><b>${S[k].name} · ${S[k].wish}</b>${S[k].src.map(([g,t,u])=>`<span><span class="grade">${g}</span>${esc(t)}</span><a href="${u}" target="_blank" rel="noopener">${u}</a>`).join("")}</li>`),`<li><b>띠 · 돌잡이</b><span><span class="grade">사전</span>돌 - 한국민족문화대백과사전</span><a href="https://encykorea.aks.ac.kr/Article/E0016110" target="_blank" rel="noopener">https://encykorea.aks.ac.kr/Article/E0016110</a><span><span class="grade">기사</span>코메디닷컴(2014.1.30), 띠가 바뀌는 날은?</span><a href="https://kormedi.com/200952/" target="_blank" rel="noopener">https://kormedi.com/200952/</a></li>`].join("")));
+
+renderTest(); startQuiz();
+/* ---------- 3. 조선시대에 태어났다면 ---------- */
+const ST="갑을병정무기경신임계", STH="甲乙丙丁戊己庚辛壬癸", BR="자축인묘진사오미신유술해", BRH="子丑寅卯辰巳午未申酉戌亥";
+const ANI=["쥐","소","호랑이","토끼","용","뱀","말","양","원숭이","닭","개","돼지"];
+const TTI_IMG={6:"/images/horse.jpg",7:"/images/sheep.jpg",8:"/images/monkey.jpg"};
+function ganji(y){const s=((y-4)%10+10)%10,b=((y-4)%12+12)%12;return {y,ko:ST[s]+BR[b],hj:STH[s]+BRH[b],ani:ANI[b],bi:b}}
+const DOL_SRC=["사전","돌 - 한국민족문화대백과사전","https://encykorea.aks.ac.kr/Article/E0016110"];
+const TTI_SRC=["기사","코메디닷컴(2014.1.30), 띠가 바뀌는 날은?","https://kormedi.com/200952/"];
+/* 사전 '돌' 항목: 무엇을 먼저 집으면 어떻게 보았는지 (원문 그대로) */
+const DOL={
+  study:{items:["책","붓","먹","두루마리"],says:"학문에 힘써 과거에 등과하여 벼슬을 할 것",prods:["carp","books"]},
+  rich:{items:["쌀","돈"],says:"부자가 될 것",prods:["peony"]},
+  long:{items:["실","국수"],says:"장수하리라",prods:["longevity"]},
+  arms:{items:["활","장도"],says:"무관이 될 것",prods:[]},
+  kids:{items:["대추"],says:"자손이 많으리라",prods:[]},
+  tteok:{items:["떡"],says:"미련하리라",prods:[]},
+  sew:{items:["바늘","가위","자","인두"],says:"바느질을 잘할 것",prods:[]}
+};
+const PLINE={
+  carp:{line:"약리도의 '등용(登龍)'은 관직에 나간다는 '등용(登用)'과 발음이 같아 과거 급제를 상징했습니다.",src:["사전","약리도 - 한국민족문화대백과사전","https://encykorea.aks.ac.kr/Article/E0035303"]},
+  books:{line:"책가도는 글(文)을 중시하는 상징으로 그려졌습니다.",src:["사전","책가도 - 한국민족문화대백과사전","https://encykorea.aks.ac.kr/Article/E0055679"]},
+  peony:{line:"모란도는 부귀를 바라는 길상도의 하나입니다.",src:["사전","길상도 - 한국민족문화대백과사전","https://encykorea.aks.ac.kr/Article/E0008538"]},
+  longevity:{line:"학은 십장생, 곧 오래 사는 것들의 하나입니다.",src:["사전","십장생도 - 한국민족문화대백과사전","https://encykorea.aks.ac.kr/Article/E0034032"]}
+};
+const IKEY={"쌀":"ssal","돈":"don","책":"chaek","붓":"but","먹":"meok","두루마리":"durumari","활":"hwal","장도":"jangdo","바늘":"baneul","인두":"indu","가위":"gawi","자":"ja","실":"sil","대추":"daechu","국수":"guksu","떡":"tteok"};
+const ALL_ITEMS=Object.entries(DOL).flatMap(([g,d])=>d.items.map(n=>({n,g})));
+const jp=document.getElementById('joseonPanel');
+let J={who:"kid",year:2026,early:false,gj:null};
+const srcLine=([g,t,u])=>`<span><span class="grade">${g}</span>[출처 : ${esc(t)}] <a href="${u}" target="_blank" rel="noopener">원문 보기</a></span>`;
+const subj=()=>J.who==="kid"?"우리 아이":"나";
+function jStart(){
+  jp.replaceChildren($(`<div class="field"><span class="flabel">누구의 이야기인가요?</span><div class="seg" role="group" aria-label="대상"><button id="whoKid" aria-pressed="${J.who==="kid"}">우리 아이 · 선물할 아이</button><button id="whoMe" aria-pressed="${J.who==="me"}">나</button></div></div>
+  <div class="field"><label for="yr">태어난 해 (양력)</label><input class="yr" id="yr" type="number" inputmode="numeric" min="1900" max="2100" value="${J.year}"></div>
+  <label class="check" for="early"><input type="checkbox" id="early" ${J.early?"checked":""}> 양력 1월 1일 ~ 2월 중순 사이에 태어났어요 (이 기간은 띠를 정하는 기준에 따라 띠가 달라질 수 있어요)</label>
+  <div class="row"><button class="btn primary" id="go">조선으로 가기</button></div><span class="toast" id="jErr"></span>`));
+  const setWho=w=>{J.who=w;document.getElementById('whoKid').setAttribute('aria-pressed',w==="kid");document.getElementById('whoMe').setAttribute('aria-pressed',w==="me")};
+  document.getElementById('whoKid').onclick=()=>setWho("kid");
+  document.getElementById('whoMe').onclick=()=>setWho("me");
+  document.getElementById('go').onclick=()=>{
+    const y=parseInt(document.getElementById('yr').value,10);
+    if(!(y>=1900&&y<=2100)){document.getElementById('jErr').textContent="1900년부터 2100년 사이의 연도를 숫자로 넣어 주세요.";return}
+    J.year=y;J.early=document.getElementById('early').checked;
+    J.early?jChooseTti():(J.gj=ganji(y),travel(J.gj,jDol));
+  };
+}
+function jChooseTti(){
+  const a=ganji(J.year-1),b=ganji(J.year);
+  jp.replaceChildren($(`<p class="q">${J.year}년 1~2월생은 기준에 따라 띠가 갈려요</p>
+  <p class="note">띠가 바뀌는 날을 설날로 보는 경우와 입춘으로 보는 경우가 함께 쓰입니다. 태어난 날이 그해 설날(또는 입춘)보다 앞이면 왼쪽, 뒤면 오른쪽을 고르세요.</p>
+  <div class="pick2"><button class="opt" id="pa">${a.ko}년 ${a.ani}띠<br><small>설날·입춘 전에 태어났다면</small></button><button class="opt" id="pb">${b.ko}년 ${b.ani}띠<br><small>설날·입춘 뒤에 태어났다면</small></button></div>
+  <div class="src">${srcLine(TTI_SRC)}</div>`));
+  document.getElementById('pa').onclick=()=>{J.gj=a;travel(a,jDol)};
+  document.getElementById('pb').onclick=()=>{J.gj=b;travel(b,jDol)};
+}
+/* 같은 간지가 돌아오는 조선의 해: 60년 주기, 조선 1392~1897 */
+const joseonYear=y=>y<=1897?y:y-60*Math.ceil((y-1897)/60);
+function travel(g,done){
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduce){done();return}
+  const from=new Date().getFullYear(), to=joseonYear(g.y);
+  const el=document.createElement('div'); el.className='travel'; el.setAttribute('role','status');
+  const ring=BRH.split("").map((c,i)=>{const a=i*30;return `<span class="${i===g.bi?'me':''}" style="transform:rotate(${a}deg) translateY(calc(min(280px,72vw)/-2 + 1.3em)) rotate(${-a+720+g.bi*30}deg)">${c}</span>`}).join("");
+  el.innerHTML=`<div class="tv-in"><p class="tv-cap">시간을 거슬러 조선으로</p><div class="wheel"><div class="wheel-r" id="wr">${ring}</div><div class="tv-c"><div class="tv-year" id="ty">${from}</div><div class="tv-gj" id="tg">${g.ko}년 ${g.hj}年</div></div></div><p class="tv-cap2" id="tc">60년마다 같은 해 이름이 돌아와요.<br>조선의 ${to}년도 ${g.ko}년이었어요.</p></div>`;
+  document.body.appendChild(el);
+  requestAnimationFrame(()=>{el.classList.add('on');document.getElementById('wr').style.transform=`rotate(${-(720+g.bi*30)}deg)`});
+  const ty=document.getElementById('ty'), t0=performance.now(), D=2000;
+  const tick=now=>{const p=Math.min(1,(now-t0)/D), e=1-Math.pow(1-p,3); ty.textContent=Math.round(from-(from-to)*e); if(p<1) requestAnimationFrame(tick); else {document.getElementById('tg').classList.add('on');document.getElementById('tc').classList.add('on');setTimeout(()=>{el.classList.remove('on');done();document.getElementById('joseon').scrollIntoView({block:"start"});setTimeout(()=>el.remove(),380)},1500)}};
+  requestAnimationFrame(tick);
+}
+function ttiFig(){const img=TTI_IMG[J.gj.bi];return img?`<div class="pcard"><img src="${img}" alt="온고 띠 그림 ${J.gj.ani}"><span class="cname">온고 ${J.gj.ani}띠 그림</span><span class="ctag">${J.gj.ani}띠</span></div>`:""}
+function jDol(){
+  const g=J.gj, items=shuffle(ALL_ITEMS);
+  const rows=[[4,42,.82],[4,53,.92],[4,64,1],[4,75,1.08]]; let k=0; const pos=[];
+  rows.forEach(([n,y,sc],ri)=>{for(let i=0;i<n;i++){const x=12+i*(76/(n-1))+(ri%2?4:-4)+(Math.random()*4-2);pos.push([x,y+(Math.random()*3-1.5),sc])}});
+  jp.replaceChildren($(`<div class="ganji">${J.who==="kid"?"우리 아이는":"나는"} <span class="hanja">${g.ko}년(${g.hj}年)</span> <span style="white-space:nowrap">${g.ani}띠</span><small>${J.year}년생 · 조선에서는 ${joseonYear(g.y)}년이 같은 ${g.ko}년이었어요</small></div>
+  <p class="q">첫 돌상 앞에 앉았어요. 바닥에 놓인 물건 중 하나를 잡아 보세요.</p>
+  <div class="pov" id="pov" role="group" aria-label="돌잡이 장면: 돌상 아래 바닥에 놓인 물건">
+    <svg class="scene" viewBox="0 0 400 190" aria-hidden="true"><use href="#dol-scene"/></svg>
+    <div class="seat" aria-hidden="true"></div>
+    ${items.map((it,i)=>`<button class="ditem" id="dol${i}" data-g="${it.g}" data-n="${it.n}" style="left:${pos[i][0]}%;top:${pos[i][1]}%;--s:${pos[i][2]}" aria-label="${it.n}"><svg viewBox="0 0 64 64" aria-hidden="true"><use href="#i-${IKEY[it.n]}"/></svg><span class="dlab">${it.n}</span></button>`).join("")}
+    <div class="hand l" id="hl"><svg viewBox="0 0 100 150" aria-hidden="true"><use class="h-open" href="#hand-open"/><use class="h-fist" href="#hand-fist"/></svg></div><div class="hand r" id="hr" style="transform:scaleX(-1)"><svg viewBox="0 0 100 150" aria-hidden="true"><use class="h-open" href="#hand-open"/><use class="h-fist" href="#hand-fist"/></svg></div>
+    <div class="say" id="say"></div>
+  </div>
+  <p class="povcap">아기의 눈높이에서 본 돌상 · 뒤로는 병풍, 앞에는 돌상, 바닥에는 돌잡이 물건</p>
+  <div class="row"><button class="btn primary" id="rand">아기처럼 아무거나 잡기</button><button class="btn" id="back">태어난 해 다시 넣기</button></div>
+  <p class="note">사전에 따르면 남자아이에게는 활·장도를, 여자아이에게는 바늘·인두·가위·잣대를 두었고, 쌀·돈·책·붓·먹·두루마리·실타래·대추·국수·떡은 함께 두었어요.</p>`));
+  let busy=false;
+  const grab=btn=>{
+    if(busy) return; busy=true;
+    const name=btn.dataset.n, gk=btn.dataset.g;
+    if(matchMedia('(prefers-reduced-motion: reduce)').matches){jResult(gk,name);return}
+    const pov=document.getElementById('pov'), pr=pov.getBoundingClientRect(), br=btn.getBoundingClientRect();
+    const right=(br.left+br.width/2)>(pr.left+pr.width/2), hand=document.getElementById(right?'hr':'hl'), hr=hand.getBoundingClientRect();
+    const dx=(br.left+br.width/2)-(hr.left+hr.width/2), dy=(br.top+br.height/2)-(hr.top+hr.height*0.25);
+    const flip=right?' scaleX(-1)':'';
+    hand.classList.add('go'); hand.style.transform=`translate(${dx}px,${dy}px)${flip}`;
+    setTimeout(()=>{hand.classList.add('fist');btn.classList.add('lift');btn.style.left='50%';btn.style.top='58%';hand.style.transform=`translate(${(pr.left+pr.width/2)-(hr.left+hr.width/2)}px,${-pr.height*0.2}px)${flip}`;pov.classList.add('done');document.getElementById('say').textContent='잡았다!'},600);
+    setTimeout(()=>jResult(gk,name),1900);
+  };
+  jp.querySelectorAll('.ditem').forEach(c=>c.onclick=()=>grab(c));
+  document.getElementById('rand').onclick=()=>{const all=[...jp.querySelectorAll('.ditem')];grab(all[Math.floor(Math.random()*all.length)])};
+  document.getElementById('back').onclick=jStart;
+}
+const josa=n=>{const c=n.charCodeAt(n.length-1)-0xAC00;return (c>=0&&c<11172&&c%28)?"을":"를"};
+function jResult(gk,name){
+  const d=DOL[gk], g=J.gj, kid=J.who==="kid";
+  const prods=d.prods.map(k=>`<div class="pcard"><img src="${PRODUCT[k].img}" alt="온고 소원 민화 ${PRODUCT[k].name}"><span class="cname">${PRODUCT[k].name}</span><span class="ctag">${S[k].wish}</span><p>${esc(PLINE[k].line)}</p><div class="src">${srcLine(PLINE[k].src)}</div></div>`).join("");
+  const tti=ttiFig();
+  const msg=`${g.ko}년 ${g.ani}띠, 돌잡이로 '${name}'${josa(name)} 잡았어요. 옛사람들은 “${d.says}”(이)라고 보았대요. [출처 : 돌 - 한국민족문화대백과사전] #온고 #돌잡이 #${g.ani}띠`;
+  jp.replaceChildren($(`<div class="dolres">
+    <div class="ganji"><span class="hanja">${esc(name)}</span>${josa(name)} 잡았어요!<small>${g.ko}년 ${g.ani}띠 ${subj()}</small></div>
+    <div class="explain"><p>조선 사람들은 돌상에서 <b>${d.items.join(" · ")}</b>을(를) 먼저 집으면 <b>“${d.says}”</b>(이)라고 보았어요.</p><p class="note" style="text-align:left">부모는 바라는 물건을 아이 가까이 두기도 했지만, 아이가 바라는 대로 집지 않는 일이 많았다고 해요.</p><div class="src">${srcLine(DOL_SRC)}</div></div>
+    ${prods?`<h3 style="text-align:center">이 바람을 담은 온고 소원템</h3><div class="prods">${prods}</div>`:`<p class="note">이 바람을 담은 온고 소원템은 아직 없어요. 다른 물건도 잡아 보세요.</p>`}
+    ${tti?`<h3 style="text-align:center">${g.ani}띠${kid?" 아이":""}를 위한 온고 그림</h3><div class="prods">${tti}</div>`:""}
+    <div class="cta"><p><b>${kid?"우리 아이의 첫 그림을 찾고 있다면":"이 소원을 그림으로 갖고 싶다면"}</b><br>인스타그램 <span class="handle">@ongo.won_archive</span> DM으로 띠와 잡은 물건을 보내 주세요.</p>
+    <div class="row"><a class="btn primary" href="${IG_URL}" target="_blank" rel="noopener">인스타그램에서 문의하기</a><button class="btn" id="jCopy">결과 복사</button><button class="btn" id="jAgain">다시 잡기</button><button class="btn" id="jNew">처음부터</button><span class="toast" id="jToast"></span></div></div>
+    <p class="note">그림은 테스트 중인 제품 디자인 시안입니다.</p>
+  </div>`));
+  document.getElementById('jCopy').onclick=async()=>{const t=document.getElementById('jToast');try{await navigator.clipboard.writeText(msg);t.textContent="결과를 복사했어요"}catch(e){t.textContent="복사가 막혀 있어요. 글자를 길게 눌러 직접 복사해 주세요."}};
+  document.getElementById('jAgain').onclick=jDol;
+  document.getElementById('jNew').onclick=jStart;
+  document.getElementById('joseon').scrollIntoView({behavior:"smooth",block:"start"});
+}
+
+/* ---------- 탭 ---------- */
+const TABS=["quiz","test","joseon"];
+function showTab(id){
+  if(!TABS.includes(id)) id="quiz";
+  TABS.forEach(t=>{const on=t===id;document.getElementById(t).hidden=!on;const b=document.getElementById('tab-'+t);b.setAttribute('aria-selected',on);b.tabIndex=on?0:-1});
+}
+document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{showTab(b.dataset.tab);try{history.replaceState(null,"","#"+b.dataset.tab)}catch(e){location.hash=b.dataset.tab}});
+window.addEventListener('hashchange',()=>showTab(location.hash.slice(1)));
+showTab(location.hash.slice(1));
+jStart();
+
+</script>
+
+</body></html>

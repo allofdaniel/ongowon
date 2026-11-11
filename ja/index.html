@@ -193,6 +193,21 @@ footer a:hover{color:var(--seal)}
   .seal{height:40px;width:19px} .seal span{font-size:9.5px}
   .hd .right{gap:0}
 }
+
+/* wish minhwa band */
+.wish{background:var(--rose)}
+.wcards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.wc{background:var(--bg);display:flex;flex-direction:column;padding:0 0 26px;transition:transform .3s,box-shadow .3s}
+.wc:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(80,50,40,.12)}
+.wc .wi{aspect-ratio:4/3;overflow:hidden;border-radius:999px 999px 0 0;margin:22px 22px 0;background:var(--paper)}
+.wc .wi img{width:100%;height:100%;object-fit:cover}
+.wc h3{font-family:var(--serif);font-size:20px;margin:18px 24px 6px;text-align:center}
+.wc p{margin:0 24px;color:var(--soft);text-align:center;font-size:14px;flex:1}
+.wc .wb{margin:16px auto 0;font-size:13px;letter-spacing:.08em;color:var(--seal);border-bottom:1px solid var(--seal)}
+.wnote{text-align:center;color:var(--soft);font-size:13px;margin:24px 0 0}
+.l-ja .wc h3{font-family:'Shippori Mincho',var(--serif)} .l-en .wc h3{font-family:var(--latin);font-size:23px}
+@media (max-width:960px){.wcards{grid-template-columns:1fr;gap:16px}.hd nav{display:none}}
+@media (min-width:961px) and (max-width:1180px){.hd nav{gap:16px;font-size:12px}}
 </style>
 </head>
 <body class="l-ja">
@@ -201,7 +216,7 @@ footer a:hover{color:var(--seal)}
 
 <header>
   <div class="wrap hd">
-    <nav><a href="#collection">コレクション</a><a href="#life">暮らしの中で</a><a href="#gift">ギフト</a><a href="#story">ストーリー</a></nav>
+    <nav><a href="#collection">コレクション</a><a href="/wish/">願いの民画</a><a href="#life">暮らしの中で</a><a href="#gift">ギフト</a><a href="#story">ストーリー</a></nav>
     <button class="menu-btn" aria-label="メニュー" data-open>☰<span class="ml"> メニュー</span></button>
     <a href="/ja/" class="logo" aria-label="ONGOWON"><div class="seal"><span><em>온</em><em>고</em><em>원</em></span></div><div class="wm"><b>ONGOWON</b><small>온고원<i></i>KOREA</small></div></a>
     <div class="right">
@@ -213,7 +228,7 @@ footer a:hover{color:var(--seal)}
 
 <div class="mnav" role="dialog" aria-label="メニュー">
   <button data-close>閉じる ✕</button>
-  <a href="#collection" data-close>コレクション</a><a href="#life" data-close>暮らしの中で</a><a href="#gift" data-close>ギフト</a><a href="#story" data-close>ストーリー</a>
+  <a href="#collection" data-close>コレクション</a><a href="/wish/" data-close>願いの民画</a><a href="#life" data-close>暮らしの中で</a><a href="#gift" data-close>ギフト</a><a href="#story" data-close>ストーリー</a>
   <a href="#newsletter" data-close>発売のお知らせ</a>
   <a href="https://www.instagram.com/ongo.won_archive/" target="_blank" rel="noopener">Instagram</a>
   <div class="langs"><a href="/" data-lang="ko">KO</a><a href="/en/" data-lang="en">EN</a><a href="/ja/" data-lang="ja" class=cur aria-current=page>JA</a></div>
@@ -314,6 +329,20 @@ footer a:hover{color:var(--seal)}
   </div>
 </section>
 
+<section class="sec wish" id="wish">
+  <div class="wrap">
+    <div class="title rv">
+      <div class="en">Ongowon Wish Minhwa</div>
+      <h2>絵に願いを託す体験を</h2>
+      <p>本物の朝鮮民画に込められた願いを当てたり、いまの自分の願いに合う絵を見つけたり、朝鮮時代に生まれていたら1歳の誕生日に何をつかんだかを試してみてください。</p>
+      <div class="divider"></div>
+    </div>
+    <div class="wcards"><a class="wc rv" href="/wish/#quiz"><div class="wi"><img src="/images/met_carp.jpg" alt="" loading="lazy"></div><h3>本物の民画クイズ</h3><p>19世紀の朝鮮民画3点は、どんな願いを込めた絵？</p><span class="wb">挑戦する →</span></a><a class="wc rv" href="/wish/#test"><div class="wi"><img src="/images/carp.jpg" alt="" loading="lazy"></div><h3>あなたの願いの絵</h3><p>3つの質問で、いまのあなたに合う絵を見つけます。</p><span class="wb">診断する →</span></a><a class="wc rv" href="/wish/#joseon"><div class="wi"><img src="/images/horse.jpg" alt="" loading="lazy"></div><h3>朝鮮時代に生まれたら!?</h3><p>生まれ年から干支を調べ、トルジャビ（1歳の運試し）を体験。</p><span class="wb">試してみる →</span></a></div>
+    <p class="wnote">現在は韓国語のみでご利用いただけます。</p>
+    <div class="more rv"><a class="btn red" href="/wish/">願いの民画を開く</a></div>
+  </div>
+</section>
+
 <section class="sec life" id="life">
   <div class="wrap">
     <div class="title rv">
@@ -398,7 +427,7 @@ footer a:hover{color:var(--seal)}
         <p style="max-width:300px">絵に願いを託した朝鮮の習わしを、今のベビーブランケットに。</p>
       </div>
       <div><h4>Shop</h4><ul><li><a href="#collection">願いの民画ブランケット</a></li><li><a href="#gift">ギフトセット</a></li></ul></div>
-      <div><h4>About</h4><ul><li><a href="#story">ストーリー</a></li><li><a href="#life">暮らしの中で</a></li><li><a href="https://www.instagram.com/ongo.won_archive/" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://www.youtube.com/channel/UC07gJPocSabI5b8AhCYtEoQ" target="_blank" rel="noopener">YouTube</a></li></ul></div>
+      <div><h4>About</h4><ul><li><a href="#story">ストーリー</a></li><li><a href="#life">暮らしの中で</a></li><li><a href="/wish/">願いの民画</a></li><li><a href="https://www.instagram.com/ongo.won_archive/" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://www.youtube.com/channel/UC07gJPocSabI5b8AhCYtEoQ" target="_blank" rel="noopener">YouTube</a></li></ul></div>
       <div><h4>Contact</h4><ul><li><a href="mailto:ongowon.contact@gmail.com">ongowon.contact@gmail.com</a></li></ul><div class="langs ft-langs"><a href="/" data-lang="ko">KO</a><a href="/en/" data-lang="en">EN</a><a href="/ja/" data-lang="ja" class=cur aria-current=page>JA</a></div></div>
     </div>
     <div class="copy"><span>© 2026 ONGOWON 온고원</span><span>掲載している商品・使用イメージは開発中のデザイン案で、AIで生成したものです。</span></div>
