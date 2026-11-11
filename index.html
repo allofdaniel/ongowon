@@ -15,6 +15,8 @@
 <meta property="og:url" content="https://ongowon.com/">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#FBF7F0">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -415,7 +417,7 @@ footer a:hover{color:var(--seal)}
       <input type="email" name="email" required placeholder="이메일 주소" aria-label="이메일 주소">
       <button type="submit">신청하기 →</button>
     </form>
-    <div class="note" id="nlnote">신청하시면 메일 앱이 열리고 kjh012677@gmail.com 으로 알림 신청 메일이 작성됩니다.</div>
+    <div class="note" id="nlnote">신청하시면 첫 컬렉션 출시 소식을 이메일로 알려드려요.</div>
     <div><a class="ig" href="https://www.instagram.com/ongo.won_archive/" target="_blank" rel="noopener">@ongo.won_archive</a></div>
   </div>
 </section>
@@ -447,8 +449,13 @@ document.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',
 document.querySelectorAll('[data-lang]').forEach(a=>a.addEventListener('click',()=>{try{localStorage.setItem('ongowon_lang',a.dataset.lang)}catch(e){}}));
 document.getElementById('nl').addEventListener('submit',e=>{
   e.preventDefault();
-  location.href='mailto:'+S.mail+'?subject='+encodeURIComponent(S.subj)+'&body='+encodeURIComponent(S.body+e.target.email.value);
-  document.getElementById('nlnote').textContent=S.done;
+  const f=e.target,b=f.querySelector('button'),n=document.getElementById('nlnote'),t=b.textContent;
+  b.disabled=true;b.textContent='신청 중…';
+  const d=new URLSearchParams({email:f.email.value,lang:'ko',src:location.pathname+(location.search||'')});
+  fetch('https://script.google.com/macros/s/AKfycby69IBv5Am_Cfwg8dH9tFOLktqmMjpe8eH-fsw8n4EDK6dlDfdG8hFlfUsRjU93Enfrpg/exec',{method:'POST',mode:'no-cors',body:d})
+    .then(()=>{n.textContent='신청 완료! 출시되면 가장 먼저 알려드릴게요.';f.reset();})
+    .catch(()=>{n.textContent='잠시 후 다시 시도해 주세요.';})
+    .finally(()=>{b.disabled=false;b.textContent=t;});
 });
 // first visit from abroad: suggest the visitor's language once
 (function(){try{
