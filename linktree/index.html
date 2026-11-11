@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ONGOWON 온고원 — Links</title>
+<meta name="description" content="그림으로 비는 소원, 민화 아기 담요 온고원. 출시 알림, 소원 민화 테스트, 인스타그램·유튜브·스레드 링크 모음.">
+<link rel="canonical" href="https://ongowon.com/linktree/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ongowon.com/linktree/">
+<meta property="og:title" content="ONGOWON 온고원 — 그림으로 비는 소원">
+<meta property="og:description" content="조선의 소원 그림을 지금의 아기 담요로. 출시 알림 · 소원 테스트 · SNS 모음">
+<meta property="og:image" content="https://ongowon.com/images/p_horse.jpg">
+<meta name="theme-color" content="#FBF7F0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Cormorant+Garamond:wght@500;600&family=Noto+Sans+KR:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FBF7F0;--paper:#F2E9DA;--sand:#E8DCC6;--ink:#2B2520;--soft:#6A5E52;--seal:#B4412F;--rose:#E9CFC6;--line:#D9CCB6;
+--serif:'Gowun Batang',serif;--latin:'Cormorant Garamond',serif;--sans:'Noto Sans KR',sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.6;min-height:100vh;
+background-image:radial-gradient(circle at 50% 0,#fff8ee 0,transparent 60%)}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:460px;margin:0 auto;padding:44px 18px calc(40px + env(safe-area-inset-bottom))}
+
+/* logo */
+.logo{display:flex;align-items:center;justify-content:center;gap:14px}
+.seal{width:30px;height:66px;background:var(--seal);border-radius:3px;padding:3px}
+.seal span{display:flex;flex-direction:column;align-items:center;justify-content:space-evenly;height:100%;border:1px solid rgba(255,248,240,.85);border-radius:2px;font-family:var(--serif);font-weight:700;font-size:14px;line-height:1;color:#FFF8F0}
+.seal em{font-style:normal}
+.wm{display:flex;flex-direction:column;gap:6px}
+.wm b{font-family:var(--latin);font-weight:600;font-size:29px;letter-spacing:.42em;margin-right:-.42em;line-height:1}
+.wm small{font-family:var(--serif);font-size:11px;letter-spacing:.5em;color:var(--soft);display:flex;align-items:center;gap:8px}
+.wm small i{width:16px;height:1px;background:var(--seal);display:inline-block}
+
+.intro{text-align:center;margin:26px 0 22px}
+.intro h1{font-family:var(--serif);font-weight:700;font-size:21px;letter-spacing:-.01em;line-height:1.5}
+.intro p{color:var(--soft);font-size:13.5px;margin-top:6px}
+.badge{display:inline-block;margin-top:14px;font-size:12px;color:var(--seal);border:1px solid var(--seal);border-radius:99px;padding:3px 12px;letter-spacing:.02em}
+
+/* social icons */
+.social{display:flex;justify-content:center;gap:12px;margin:0 0 26px}
+.social a{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;background:#fffdf9;transition:.2s}
+.social a:hover{border-color:var(--ink);transform:translateY(-2px)}
+.social svg{width:20px;height:20px;fill:var(--ink)}
+
+/* featured */
+.feature{display:block;position:relative;border-radius:14px;overflow:hidden;margin-bottom:14px;background:var(--paper);aspect-ratio:16/10}
+.feature img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s}
+.feature:hover img{transform:scale(1.03)}
+.feature .cap{position:absolute;left:0;right:0;bottom:0;padding:40px 18px 16px;background:linear-gradient(transparent,rgba(43,37,32,.72));color:#FFF8F0}
+.feature .cap small{font-family:var(--latin);font-size:13px;letter-spacing:.18em;text-transform:uppercase;opacity:.9}
+.feature .cap strong{display:block;font-family:var(--serif);font-size:19px;font-weight:700;margin-top:2px}
+
+/* buttons */
+.list{display:flex;flex-direction:column;gap:10px}
+.btn{display:flex;align-items:center;gap:14px;padding:14px 16px;background:#fffdf9;border:1px solid var(--line);border-radius:12px;transition:.2s;min-height:60px}
+.btn:hover{border-color:var(--ink);transform:translateY(-1px);box-shadow:0 6px 18px -12px rgba(43,37,32,.35)}
+.btn .ic{flex:0 0 auto;width:38px;height:38px;border-radius:9px;overflow:hidden;background:var(--paper);display:grid;place-items:center;font-family:var(--serif);font-weight:700;color:var(--seal);font-size:16px}
+.btn .ic.han{background:#fff;border:1.5px solid var(--seal);font-size:17px}
+.btn .ic img{width:100%;height:100%;object-fit:cover}
+.btn .ic svg{width:19px;height:19px;fill:var(--ink)}
+.btn .tx{flex:1;min-width:0}
+.btn .tx b{display:block;font-weight:500;font-size:15px}
+.btn .tx span{display:block;font-size:12.5px;color:var(--soft);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.btn .ar{color:var(--soft);font-size:15px}
+.btn.primary{background:var(--seal);border-color:var(--seal);color:#FFF8F0}
+.btn.primary .tx span,.btn.primary .ar{color:rgba(255,248,240,.82)}
+.btn.primary .ic{background:rgba(255,248,240,.16);color:#FFF8F0}
+
+.sec{font-family:var(--latin);font-size:13px;letter-spacing:.24em;text-transform:uppercase;color:var(--soft);text-align:center;margin:26px 0 12px;display:flex;align-items:center;gap:12px}
+.sec::before,.sec::after{content:"";flex:1;height:1px;background:var(--line)}
+
+.lang{display:flex;justify-content:center;gap:8px;margin-top:28px}
+.lang a{font-size:12px;color:var(--soft);border:1px solid var(--line);border-radius:99px;padding:4px 12px}
+.lang a:hover{color:var(--ink);border-color:var(--ink)}
+footer{text-align:center;color:var(--soft);font-size:11.5px;margin-top:22px;line-height:1.7}
+footer .han{font-family:var(--serif);color:var(--seal);font-size:13px;letter-spacing:.3em}
+img{color:transparent}
+</style>
+</head>
+<body>
+<main class="wrap">
+
+  <a href="/" class="logo" aria-label="ONGOWON 홈">
+    <div class="seal"><span><em>온</em><em>고</em><em>원</em></span></div>
+    <div class="wm"><b>ONGOWON</b><small>온고원<i></i>KOREA</small></div>
+  </a>
+
+  <div class="intro">
+    <h1>그림으로 비는 소원,<br>민화 아기 담요</h1>
+    <p>조선의 소원 그림을 지금의 아기 담요로</p>
+    <span class="badge">첫 컬렉션 준비 중</span>
+  </div>
+
+  <nav class="social" aria-label="SNS">
+    <a href="https://www.instagram.com/ongo.won_archive/" target="_blank" rel="noopener" aria-label="Instagram">
+      <svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.8c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zm0 1.8c-3.1 0-3.5 0-4.7.1-1.1.1-1.7.2-2.1.4-.5.2-.9.4-1.3.8-.4.4-.6.8-.8 1.3-.2.4-.3 1-.4 2.1C2.6 9.9 2.6 10.3 2.6 12s0 3.5.1 4.7c.1 1.1.2 1.7.4 2.1.2.5.4.9.8 1.3.4.4.8.6 1.3.8.4.2 1 .3 2.1.4 1.2.1 1.6.1 4.7.1s3.5 0 4.7-.1c1.1-.1 1.7-.2 2.1-.4.5-.2.9-.4 1.3-.8.4-.4.6-.8.8-1.3.2-.4.3-1 .4-2.1.1-1.2.1-1.6.1-4.7s0-3.5-.1-4.7c-.1-1.1-.2-1.7-.4-2.1-.2-.5-.4-.9-.8-1.3-.4-.4-.8-.6-1.3-.8-.4-.2-1-.3-2.1-.4C15.5 4 15.1 4 12 4zm0 3.1a4.9 4.9 0 110 9.8 4.9 4.9 0 010-9.8zm0 8a3.1 3.1 0 100-6.2 3.1 3.1 0 000 6.2zm5.1-8.2a1.1 1.1 0 110-2.3 1.1 1.1 0 010 2.3z"/></svg>
+    </a>
+    <a href="https://www.threads.com/@ongo.won_archive" target="_blank" rel="noopener" aria-label="Threads">
+      <svg viewBox="0 0 24 24"><path d="M17.3 11.1c-.1 0-.2-.1-.3-.1-.2-3-1.8-4.7-4.6-4.7h-.1c-1.6 0-3 .7-3.9 2l1.5 1c.6-.9 1.6-1.1 2.4-1.1 1 0 1.7.3 2.2.9.3.4.6 1 .7 1.7-.8-.1-1.7-.2-2.6-.1-2.6.2-4.3 1.7-4.2 3.8.1 1.1.6 2 1.5 2.6.8.5 1.8.8 2.8.7 1.4-.1 2.5-.6 3.2-1.6.6-.7.9-1.7 1-2.9.7.4 1.2.9 1.4 1.6.5 1.1.5 2.9-.9 4.3-1.3 1.3-2.8 1.8-5.1 1.8-2.6 0-4.5-.8-5.8-2.4-1.2-1.5-1.8-3.6-1.8-6.4s.6-4.9 1.8-6.4C7.8 4.5 9.7 3.7 12.3 3.7c2.6 0 4.6.8 5.9 2.4.6.8 1.1 1.8 1.5 2.9l1.8-.5c-.4-1.4-1-2.6-1.9-3.6C17.9 2.9 15.4 1.9 12.3 1.9h-.1C9 1.9 6.6 2.9 5 4.9 3.6 6.7 2.9 9.1 2.8 12c0 2.9.8 5.3 2.2 7.1 1.6 2 4 3 7.2 3h.1c2.8 0 4.8-.7 6.4-2.4 2.1-2.1 2.1-4.8 1.4-6.4-.5-1.2-1.5-2.1-2.8-2.7zm-4.8 4.6c-1.2.1-2.4-.5-2.4-1.5-.1-.8.5-1.6 2.4-1.7h.6c.7 0 1.3.1 1.9.2-.2 2.4-1.3 2.9-2.5 3z"/></svg>
+    </a>
+    <a href="https://www.youtube.com/channel/UC07gJPocSabI5b8AhCYtEoQ" target="_blank" rel="noopener" aria-label="YouTube">
+      <svg viewBox="0 0 24 24"><path d="M23 7.2s-.2-1.6-.9-2.3c-.9-.9-1.9-.9-2.3-1C16.6 3.6 12 3.6 12 3.6s-4.6 0-7.8.3c-.4 0-1.4.1-2.3 1-.7.7-.9 2.3-.9 2.3S.8 9.1.8 11v1.8c0 1.9.2 3.8.2 3.8s.2 1.6.9 2.3c.9.9 2 .9 2.5 1 1.8.2 7.6.2 7.6.2s4.6 0 7.8-.3c.4 0 1.4-.1 2.3-1 .7-.7.9-2.3.9-2.3s.2-1.9.2-3.8V11c0-1.9-.2-3.8-.2-3.8zM9.7 15.1V8.4l6.1 3.4-6.1 3.3z"/></svg>
+    </a>
+    <a href="mailto:kjh012677@gmail.com" aria-label="Email">
+      <svg viewBox="0 0 24 24"><path d="M3 5h18a1 1 0 011 1v12a1 1 0 01-1 1H3a1 1 0 01-1-1V6a1 1 0 011-1zm1 2.4V17h16V7.4l-8 5.6-8-5.6zM5.6 7l6.4 4.5L18.4 7H5.6z"/></svg>
+    </a>
+  </nav>
+
+  <a class="feature" href="/#collection">
+    <img src="data:image/webp;base64,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" alt="붉은 말 민화 블랭킷">
+    <div class="cap"><small>The First Collection</small><strong>소원을 덮어주는 첫 번째 담요</strong></div>
+  </a>
+
+  <div class="list">
+    <a class="btn primary" href="/#newsletter">
+      <div class="ic">新</div>
+      <div class="tx"><b>출시 알림 받기</b><span>첫 컬렉션이 나오면 가장 먼저 알려드려요</span></div>
+      <div class="ar">→</div>
+    </a>
+    <a class="btn" href="/">
+      <div class="ic han">溫</div>
+      <div class="tx"><b>온고원 홈페이지</b><span>ongowon.com</span></div>
+      <div class="ar">→</div>
+    </a>
+    <a class="btn" href="/#gift">
+      <div class="ic han">福</div>
+      <div class="tx"><b>출산·백일·돌 선물 세트</b><span>소원 카드와 함께 선물 상자에 담아요</span></div>
+      <div class="ar">→</div>
+    </a>
+  </div>
+
+  <div class="sec">Wish Minhwa</div>
+
+  <div class="list">
+    <a class="btn" href="/wish/#test">
+      <div class="ic han">온</div>
+      <div class="tx"><b>내 소원템 찾기</b><span>3문항으로 나에게 맞는 소원 그림 찾기</span></div>
+      <div class="ar">→</div>
+    </a>
+    <a class="btn" href="/wish/#joseon">
+      <div class="ic han">고</div>
+      <div class="tx"><b>조선시대에 태어났다면!?</b><span>내 간지·띠로 돌잡이 해 보기</span></div>
+      <div class="ar">→</div>
+    </a>
+    <a class="btn" href="/wish/#quiz">
+      <div class="ic han">원</div>
+      <div class="tx"><b>진짜 민화 맞히기</b><span>19세기 조선 민화는 어떤 소원을 빌었을까</span></div>
+      <div class="ar">→</div>
+    </a>
+  </div>
+
+  <div class="sec">Follow</div>
+
+  <div class="list">
+    <a class="btn" href="https://www.instagram.com/ongo.won_archive/" target="_blank" rel="noopener">
+      <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 7.1a4.9 4.9 0 110 9.8 4.9 4.9 0 010-9.8zm0 8a3.1 3.1 0 100-6.2 3.1 3.1 0 000 6.2zM17.1 6.9a1.1 1.1 0 110-2.3 1.1 1.1 0 010 2.3zM7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm0 1.8A3.2 3.2 0 003.8 7v10A3.2 3.2 0 007 20.2h10a3.2 3.2 0 003.2-3.2V7A3.2 3.2 0 0017 3.8H7z"/></svg></div>
+      <div class="tx"><b>Instagram</b><span>@ongo.won_archive · 제작 과정 공개 중</span></div>
+      <div class="ar">↗</div>
+    </a>
+    <a class="btn" href="https://www.youtube.com/channel/UC07gJPocSabI5b8AhCYtEoQ" target="_blank" rel="noopener">
+      <div class="ic"><svg viewBox="0 0 24 24"><path d="M23 7.2s-.2-1.6-.9-2.3c-.9-.9-1.9-.9-2.3-1C16.6 3.6 12 3.6 12 3.6s-4.6 0-7.8.3c-.4 0-1.4.1-2.3 1-.7.7-.9 2.3-.9 2.3S.8 9.1.8 11v1.8c0 1.9.2 3.8.2 3.8s.2 1.6.9 2.3c.9.9 2 .9 2.5 1 1.8.2 7.6.2 7.6.2s4.6 0 7.8-.3c.4 0 1.4-.1 2.3-1 .7-.7.9-2.3.9-2.3s.2-1.9.2-3.8V11c0-1.9-.2-3.8-.2-3.8zM9.7 15.1V8.4l6.1 3.4-6.1 3.3z"/></svg></div>
+      <div class="tx"><b>YouTube</b><span>온고원 영상 보기</span></div>
+      <div class="ar">↗</div>
+    </a>
+    <a class="btn" href="https://www.threads.com/@ongo.won_archive" target="_blank" rel="noopener">
+      <div class="ic"><svg viewBox="0 0 24 24"><path d="M17.3 11.1c-.1 0-.2-.1-.3-.1-.2-3-1.8-4.7-4.6-4.7h-.1c-1.6 0-3 .7-3.9 2l1.5 1c.6-.9 1.6-1.1 2.4-1.1 1 0 1.7.3 2.2.9.3.4.6 1 .7 1.7-.8-.1-1.7-.2-2.6-.1-2.6.2-4.3 1.7-4.2 3.8.1 1.1.6 2 1.5 2.6.8.5 1.8.8 2.8.7 1.4-.1 2.5-.6 3.2-1.6.6-.7.9-1.7 1-2.9.7.4 1.2.9 1.4 1.6.5 1.1.5 2.9-.9 4.3-1.3 1.3-2.8 1.8-5.1 1.8-2.6 0-4.5-.8-5.8-2.4-1.2-1.5-1.8-3.6-1.8-6.4s.6-4.9 1.8-6.4C7.8 4.5 9.7 3.7 12.3 3.7c2.6 0 4.6.8 5.9 2.4.6.8 1.1 1.8 1.5 2.9l1.8-.5c-.4-1.4-1-2.6-1.9-3.6C17.9 2.9 15.4 1.9 12.3 1.9h-.1C9 1.9 6.6 2.9 5 4.9 3.6 6.7 2.9 9.1 2.8 12c0 2.9.8 5.3 2.2 7.1 1.6 2 4 3 7.2 3h.1c2.8 0 4.8-.7 6.4-2.4 2.1-2.1 2.1-4.8 1.4-6.4-.5-1.2-1.5-2.1-2.8-2.7zm-4.8 4.6c-1.2.1-2.4-.5-2.4-1.5-.1-.8.5-1.6 2.4-1.7h.6c.7 0 1.3.1 1.9.2-.2 2.4-1.3 2.9-2.5 3z"/></svg></div>
+      <div class="tx"><b>Threads</b><span>@ongo.won_archive · 민화 이야기</span></div>
+      <div class="ar">↗</div>
+    </a>
+    <a class="btn" href="mailto:kjh012677@gmail.com">
+      <div class="ic"><svg viewBox="0 0 24 24"><path d="M3 5h18a1 1 0 011 1v12a1 1 0 01-1 1H3a1 1 0 01-1-1V6a1 1 0 011-1zm1 2.4V17h16V7.4l-8 5.6-8-5.6zM5.6 7l6.4 4.5L18.4 7H5.6z"/></svg></div>
+      <div class="tx"><b>문의 · 협업</b><span>kjh012677@gmail.com</span></div>
+      <div class="ar">→</div>
+    </a>
+  </div>
+
+  <div class="lang">
+    <a href="/">한국어</a><a href="/en/">English</a><a href="/ja/">日本語</a>
+  </div>
+
+  <footer>
+    <div class="han">溫故園</div>
+    옛것을 익혀 새것을 안다<br>© 2026 ONGOWON 온고원
+  </footer>
+</main>
+<script>document.querySelectorAll("img").forEach(function(i){function h(){i.style.visibility="hidden"}if(i.complete&&!i.naturalWidth)h();i.addEventListener("error",h)})</script>
+</body>
+</html>
