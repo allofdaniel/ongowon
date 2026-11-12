@@ -75,6 +75,14 @@ header{position:sticky;top:0;z-index:20;background:rgba(251,247,240,.94);backdro
 
 /* product grid */
 .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px 28px}
+.cnav{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin:0 0 44px}
+.cnav a{border:1px solid var(--line);padding:7px 16px;font-size:13px;letter-spacing:.04em;border-radius:999px;transition:background .2s,color .2s}
+.cnav a:hover{background:var(--seal);border-color:var(--seal);color:#fff}
+.cgrp{margin-bottom:64px;scroll-margin-top:90px}
+.cgrp .gh{display:flex;align-items:baseline;gap:14px;border-bottom:1px solid var(--line);padding-bottom:12px;margin-bottom:28px}
+.cgrp .gh h3{font-family:var(--serif);font-weight:700;font-size:22px;margin:0}
+.cgrp .gh p{margin:0;font-size:13px;color:var(--soft)}
+@media (max-width:960px){.cgrp .gh{flex-direction:column;gap:4px}.cgrp .gh h3{font-size:19px}.cgrp{margin-bottom:48px}}
 .card .ph{position:relative;aspect-ratio:1;overflow:hidden;background:var(--paper)}
 .card .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .6s,transform 1.2s}
 .card .ph img.b{opacity:0}
@@ -248,85 +256,99 @@ footer a:hover{color:var(--seal)}
 <section class="sec" id="collection">
   <div class="wrap">
     <div class="title rv">
-      <div class="en">Wish Minhwa Blankets</div>
-      <h2>소원 민화 블랭킷</h2>
+      <div class="en">Blankets</div>
+      <h2>블랭킷</h2>
       <p>민화는 본래 장식이 아니라, 집 안에 걸어 두고 소원을 비는 그림이었어요. 아이에게 바라는 마음을 한 장의 담요에 담았습니다.</p>
       <div class="note">아래 그림은 AI로 만든 디자인 시안이며, 아직 판매하지 않는 제품이에요.</div>
       <div class="divider"></div>
     </div>
-    <div class="grid">
-      <a class="card rv" href="#newsletter">
-        <div class="ph"><span class="tag">출시 예정</span>
-          <img class="a" src="/images/p_sheep.jpg" alt="아기 양 민화 담요" loading="lazy">
-          <img class="b" src="/images/d_sheep.jpg" alt="" loading="lazy">
-        </div>
-        <h3>아기 양</h3>
-        <div class="st">Carré Blanket · 출시 알림 받기</div>
-      </a>
-      <a class="card rv" href="#newsletter">
-        <div class="ph"><span class="tag">출시 예정</span>
-          <img class="a" src="/images/p_horse.jpg" alt="붉은 말 민화 담요" loading="lazy">
-          <img class="b" src="/images/d_horse.jpg" alt="" loading="lazy">
-        </div>
-        <h3>붉은 말</h3><div class="wish">2026 병오년, 말의 해</div>
-        <div class="st">Carré Blanket · 출시 알림 받기</div>
-      </a>
-      <a class="card rv" href="#newsletter">
-        <div class="ph"><span class="tag">출시 예정</span>
-          <img class="a" src="/images/p_crane.jpg" alt="학과 소나무 민화 담요" loading="lazy">
-          <img class="b" src="/images/d_crane.jpg" alt="" loading="lazy">
-        </div>
-        <h3>학과 소나무</h3><div class="wish">건강 · 장수</div>
-        <div class="st">Carré Blanket · 출시 알림 받기</div>
-      </a>
-      <a class="card rv" href="#newsletter">
-        <div class="ph"><span class="tag">출시 예정</span>
-          <img class="a" src="/images/p_carp.jpg" alt="연꽃 잉어 민화 담요" loading="lazy">
-          <img class="b" src="/images/d_carp.jpg" alt="" loading="lazy">
-        </div>
-        <h3>연꽃 잉어</h3><div class="wish">합격 · 취업</div>
-        <div class="st">Carré Blanket · 출시 알림 받기</div>
-      </a>
-      <a class="card rv" href="#newsletter">
-        <div class="ph"><span class="tag">출시 예정</span>
-          <img class="a" src="/images/p_peony.jpg" alt="모란 민화 담요" loading="lazy">
-          <img class="b" src="/images/d_peony.jpg" alt="" loading="lazy">
-        </div>
-        <h3>모란</h3><div class="wish">재물 · 부귀</div>
-        <div class="st">Carré Blanket · 출시 알림 받기</div>
-      </a>
-      <a class="card rv" href="#newsletter">
-        <div class="ph"><span class="tag">출시 예정</span>
-          <img class="a" src="/images/p_monkey.jpg" alt="천도복숭아 민화 담요" loading="lazy">
-          <img class="b" src="/images/d_monkey.jpg" alt="" loading="lazy">
-        </div>
-        <h3>천도복숭아</h3><div class="wish">무병 · 장수</div>
-        <div class="st">Carré Blanket · 출시 알림 받기</div>
-      </a>
-      <a class="card rv" href="#newsletter">
-        <div class="ph"><span class="tag">출시 예정</span>
-          <img class="a" src="/images/p_books.jpg" alt="책가도 민화 담요" loading="lazy">
-          <img class="b" src="/images/d_books.jpg" alt="" loading="lazy">
-        </div>
-        <h3>책가도</h3><div class="wish">공부 · 실력</div>
-        <div class="st">Carré Blanket · 출시 알림 받기</div>
-      </a>
-      <a class="card rv" href="#newsletter">
-        <div class="ph"><span class="tag">출시 예정</span>
-          <img class="a" src="/images/p_moon.jpg" alt="보름달 민화 담요" loading="lazy">
-          <img class="b" src="/images/d_moon.jpg" alt="" loading="lazy">
-        </div>
-        <h3>보름달</h3><div class="wish">소원 빌기</div>
-        <div class="st">Carré Blanket · 출시 알림 받기</div>
-      </a>
-      <a class="card rv" href="#newsletter">
-        <div class="ph"><span class="tag">출시 예정</span>
-          <img class="a" src="/images/p_jar.jpg" alt="달항아리 민화 담요" loading="lazy">
-          <img class="b" src="/images/d_jar.jpg" alt="" loading="lazy">
-        </div>
-        <h3>달항아리</h3>
-        <div class="st">Carré Blanket · 출시 알림 받기</div>
-      </a>
+        <nav class="cnav rv"><a href="#c-wish">소원 민화</a><a href="#c-zodiac">띠 동물</a><a href="#c-joseon">조선의 풍경</a></nav>
+    <div class="cgrp" id="c-wish">
+      <div class="gh rv"><h3>소원 민화</h3><p>아이에게 바라는 소원을 담은 그림</p></div>
+      <div class="grid">
+        <a class="card rv" href="#newsletter">
+          <div class="ph"><span class="tag">출시 예정</span>
+            <img class="a" src="/images/p_crane.jpg" alt="학과 소나무 민화 담요" loading="lazy">
+            <img class="b" src="/images/d_crane.jpg" alt="" loading="lazy">
+          </div>
+          <h3>학과 소나무</h3><div class="wish">건강 · 장수</div>
+          <div class="st">Carré Blanket · 출시 알림 받기</div>
+        </a>
+        <a class="card rv" href="#newsletter">
+          <div class="ph"><span class="tag">출시 예정</span>
+            <img class="a" src="/images/p_carp.jpg" alt="연꽃 잉어 민화 담요" loading="lazy">
+            <img class="b" src="/images/d_carp.jpg" alt="" loading="lazy">
+          </div>
+          <h3>연꽃 잉어</h3><div class="wish">합격 · 취업</div>
+          <div class="st">Carré Blanket · 출시 알림 받기</div>
+        </a>
+        <a class="card rv" href="#newsletter">
+          <div class="ph"><span class="tag">출시 예정</span>
+            <img class="a" src="/images/p_peony.jpg" alt="모란 민화 담요" loading="lazy">
+            <img class="b" src="/images/d_peony.jpg" alt="" loading="lazy">
+          </div>
+          <h3>모란</h3><div class="wish">재물 · 부귀</div>
+          <div class="st">Carré Blanket · 출시 알림 받기</div>
+        </a>
+        <a class="card rv" href="#newsletter">
+          <div class="ph"><span class="tag">출시 예정</span>
+            <img class="a" src="/images/p_monkey.jpg" alt="천도복숭아 민화 담요" loading="lazy">
+            <img class="b" src="/images/d_monkey.jpg" alt="" loading="lazy">
+          </div>
+          <h3>천도복숭아</h3><div class="wish">무병 · 장수</div>
+          <div class="st">Carré Blanket · 출시 알림 받기</div>
+        </a>
+        <a class="card rv" href="#newsletter">
+          <div class="ph"><span class="tag">출시 예정</span>
+            <img class="a" src="/images/p_books.jpg" alt="책가도 민화 담요" loading="lazy">
+            <img class="b" src="/images/d_books.jpg" alt="" loading="lazy">
+          </div>
+          <h3>책가도</h3><div class="wish">공부 · 실력</div>
+          <div class="st">Carré Blanket · 출시 알림 받기</div>
+        </a>
+      </div>
+    </div>
+    <div class="cgrp" id="c-zodiac">
+      <div class="gh rv"><h3>띠 동물</h3><p>아이가 태어난 해의 띠를 담은 그림</p></div>
+      <div class="grid">
+        <a class="card rv" href="#newsletter">
+          <div class="ph"><span class="tag">출시 예정</span>
+            <img class="a" src="/images/p_sheep.jpg" alt="아기 양 민화 담요" loading="lazy">
+            <img class="b" src="/images/d_sheep.jpg" alt="" loading="lazy">
+          </div>
+          <h3>아기 양</h3>
+          <div class="st">Carré Blanket · 출시 알림 받기</div>
+        </a>
+        <a class="card rv" href="#newsletter">
+          <div class="ph"><span class="tag">출시 예정</span>
+            <img class="a" src="/images/p_horse.jpg" alt="붉은 말 민화 담요" loading="lazy">
+            <img class="b" src="/images/d_horse.jpg" alt="" loading="lazy">
+          </div>
+          <h3>붉은 말</h3><div class="wish">2026 병오년, 말의 해</div>
+          <div class="st">Carré Blanket · 출시 알림 받기</div>
+        </a>
+      </div>
+    </div>
+    <div class="cgrp" id="c-joseon">
+      <div class="gh rv"><h3>조선의 풍경</h3><p>조선의 정취를 담은 그림</p></div>
+      <div class="grid">
+        <a class="card rv" href="#newsletter">
+          <div class="ph"><span class="tag">출시 예정</span>
+            <img class="a" src="/images/p_moon.jpg" alt="보름달 민화 담요" loading="lazy">
+            <img class="b" src="/images/d_moon.jpg" alt="" loading="lazy">
+          </div>
+          <h3>보름달</h3><div class="wish">소원 빌기</div>
+          <div class="st">Carré Blanket · 출시 알림 받기</div>
+        </a>
+        <a class="card rv" href="#newsletter">
+          <div class="ph"><span class="tag">출시 예정</span>
+            <img class="a" src="/images/p_jar.jpg" alt="달항아리 민화 담요" loading="lazy">
+            <img class="b" src="/images/d_jar.jpg" alt="" loading="lazy">
+          </div>
+          <h3>달항아리</h3>
+          <div class="st">Carré Blanket · 출시 알림 받기</div>
+        </a>
+      </div>
     </div>
     <div class="more rv"><a class="btn" href="#newsletter">출시 알림 받기</a></div>
   </div>
@@ -429,7 +451,7 @@ footer a:hover{color:var(--seal)}
         <a href="/" class="logo" style="margin-bottom:18px"><div class="seal"><span><em>온</em><em>고</em><em>원</em></span></div><div class="wm"><b style="font-size:22px">ONGOWON</b><small>온고원<i></i>KOREA</small></div></a>
         <p style="max-width:300px">그림으로 소원을 비는 조선의 방식을, 지금의 아기 담요로.</p>
       </div>
-      <div><h4>Shop</h4><ul><li><a href="#collection">소원 민화 블랭킷</a></li><li><a href="#gift">선물 세트</a></li></ul></div>
+      <div><h4>Shop</h4><ul><li><a href="#collection">블랭킷</a></li><li><a href="#gift">선물 세트</a></li></ul></div>
       <div><h4>About</h4><ul><li><a href="#story">온고원 이야기</a></li><li><a href="#life">일상 속 온고원</a></li><li><a href="/wish/">소원 민화</a></li><li><a href="https://www.instagram.com/ongo.won_archive/" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://www.youtube.com/channel/UC07gJPocSabI5b8AhCYtEoQ" target="_blank" rel="noopener">YouTube</a></li></ul></div>
       <div><h4>Contact</h4><ul><li><a href="mailto:kjh012677@gmail.com">kjh012677@gmail.com</a></li></ul><div class="langs ft-langs"><a href="/" data-lang="ko" class=cur aria-current=page>KO</a><a href="/en/" data-lang="en">EN</a><a href="/ja/" data-lang="ja">JA</a></div></div>
     </div>
