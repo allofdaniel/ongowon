@@ -75,6 +75,14 @@ header{position:sticky;top:0;z-index:20;background:rgba(251,247,240,.94);backdro
 
 /* product grid */
 .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px 28px}
+.cnav{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin:0 0 44px}
+.cnav a{border:1px solid var(--line);padding:7px 16px;font-size:13px;letter-spacing:.04em;border-radius:999px;transition:background .2s,color .2s}
+.cnav a:hover{background:var(--seal);border-color:var(--seal);color:#fff}
+.cgrp{margin-bottom:64px;scroll-margin-top:90px}
+.cgrp .gh{display:flex;align-items:baseline;gap:14px;border-bottom:1px solid var(--line);padding-bottom:12px;margin-bottom:28px}
+.cgrp .gh h3{font-family:var(--serif);font-weight:700;font-size:22px;margin:0}
+.cgrp .gh p{margin:0;font-size:13px;color:var(--soft)}
+@media (max-width:960px){.cgrp .gh{flex-direction:column;gap:4px}.cgrp .gh h3{font-size:19px}.cgrp{margin-bottom:48px}}
 .card .ph{position:relative;aspect-ratio:1;overflow:hidden;background:var(--paper)}
 .card .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .6s,transform 1.2s}
 .card .ph img.b{opacity:0}
@@ -248,85 +256,239 @@ footer a:hover{color:var(--seal)}
 <section class="sec" id="collection">
   <div class="wrap">
     <div class="title rv">
-      <div class="en">Wish Minhwa Blankets</div>
-      <h2>願いの民画ブランケット</h2>
+      <div class="en">Blankets</div>
+      <h2>ブランケット</h2>
       <p>民画はもともと飾りではなく、家に掛けて願いを託す絵でした。わが子への想いを、一枚のブランケットに込めました。</p>
       <div class="note">以下の絵はAIで作成したデザイン案で、まだ販売していない商品です。</div>
       <div class="divider"></div>
     </div>
-    <div class="grid">
-      <a class="card rv" href="#newsletter">
-        <div class="ph"><span class="tag">近日発売</span>
-          <img class="a" src="/images/p_sheep.jpg" alt="子羊の民画ブランケット" loading="lazy">
-          <img class="b" src="/images/d_sheep.jpg" alt="" loading="lazy">
-        </div>
-        <h3>子羊</h3>
-        <div class="st">Carré Blanket · お知らせを受け取る</div>
-      </a>
-      <a class="card rv" href="#newsletter">
-        <div class="ph"><span class="tag">近日発売</span>
-          <img class="a" src="/images/p_horse.jpg" alt="赤い馬の民画ブランケット" loading="lazy">
-          <img class="b" src="/images/d_horse.jpg" alt="" loading="lazy">
-        </div>
-        <h3>赤い馬</h3><div class="wish">2026年 丙午・午年</div>
-        <div class="st">Carré Blanket · お知らせを受け取る</div>
-      </a>
-      <a class="card rv" href="#newsletter">
-        <div class="ph"><span class="tag">近日発売</span>
-          <img class="a" src="/images/p_crane.jpg" alt="鶴と松の民画ブランケット" loading="lazy">
-          <img class="b" src="/images/d_crane.jpg" alt="" loading="lazy">
-        </div>
-        <h3>鶴と松</h3><div class="wish">健康・長寿</div>
-        <div class="st">Carré Blanket · お知らせを受け取る</div>
-      </a>
-      <a class="card rv" href="#newsletter">
-        <div class="ph"><span class="tag">近日発売</span>
-          <img class="a" src="/images/p_carp.jpg" alt="蓮と鯉の民画ブランケット" loading="lazy">
-          <img class="b" src="/images/d_carp.jpg" alt="" loading="lazy">
-        </div>
-        <h3>蓮と鯉</h3><div class="wish">合格・就職</div>
-        <div class="st">Carré Blanket · お知らせを受け取る</div>
-      </a>
-      <a class="card rv" href="#newsletter">
-        <div class="ph"><span class="tag">近日発売</span>
-          <img class="a" src="/images/p_peony.jpg" alt="牡丹の民画ブランケット" loading="lazy">
-          <img class="b" src="/images/d_peony.jpg" alt="" loading="lazy">
-        </div>
-        <h3>牡丹</h3><div class="wish">富・繁栄</div>
-        <div class="st">Carré Blanket · お知らせを受け取る</div>
-      </a>
-      <a class="card rv" href="#newsletter">
-        <div class="ph"><span class="tag">近日発売</span>
-          <img class="a" src="/images/p_monkey.jpg" alt="仙桃の民画ブランケット" loading="lazy">
-          <img class="b" src="/images/d_monkey.jpg" alt="" loading="lazy">
-        </div>
-        <h3>仙桃</h3><div class="wish">無病・長寿</div>
-        <div class="st">Carré Blanket · お知らせを受け取る</div>
-      </a>
-      <a class="card rv" href="#newsletter">
-        <div class="ph"><span class="tag">近日発売</span>
-          <img class="a" src="/images/p_books.jpg" alt="冊架図（チェッカド）の民画ブランケット" loading="lazy">
-          <img class="b" src="/images/d_books.jpg" alt="" loading="lazy">
-        </div>
-        <h3>冊架図（チェッカド）</h3><div class="wish">学業・実力</div>
-        <div class="st">Carré Blanket · お知らせを受け取る</div>
-      </a>
-      <a class="card rv" href="#newsletter">
-        <div class="ph"><span class="tag">近日発売</span>
-          <img class="a" src="/images/p_moon.jpg" alt="満月の民画ブランケット" loading="lazy">
-          <img class="b" src="/images/d_moon.jpg" alt="" loading="lazy">
-        </div>
-        <h3>満月</h3><div class="wish">願いごと</div>
-        <div class="st">Carré Blanket · お知らせを受け取る</div>
-      </a>
-      <a class="card rv" href="#newsletter">
-        <div class="ph"><span class="tag">近日発売</span>
-          <img class="a" src="/images/p_jar.jpg" alt="月壺（タルハンアリ）の民画ブランケット" loading="lazy">
-          <img class="b" src="/images/d_jar.jpg" alt="" loading="lazy">
-        </div>
-        <h3>月壺（タルハンアリ）</h3>
-        <div class="st">Carré Blanket · お知らせを受け取る</div>
-      </a>
+        <nav class="cnav rv"><a href="#c-wish">願いの民画</a><a href="#c-zodiac">干支の動物</a><a href="#c-joseon">朝鮮の風景</a></nav>
+    <div class="cgrp" id="c-wish">
+      <div class="gh rv"><h3>願いの民画</h3><p>子どもへの願いを込めた絵</p></div>
+      <div class="grid">
+        <a class="card rv" href="#newsletter">
+          <div class="ph"><span class="tag">近日発売</span>
+            <img class="a" src="/images/p_crane.jpg" alt="鶴と松の民画ブランケット" loading="lazy">
+            <img class="b" src="/images/d_crane.jpg" alt="" loading="lazy">
+          </div>
+          <h3>鶴と松</h3><div class="wish">健康・長寿</div>
+          <div class="st">Carré Blanket · お知らせを受け取る</div>
+        </a>
+        <a class="card rv" href="#newsletter">
+          <div class="ph"><span class="tag">近日発売</span>
+            <img class="a" src="/images/p_carp.jpg" alt="蓮と鯉の民画ブランケット" loading="lazy">
+            <img class="b" src="/images/d_carp.jpg" alt="" loading="lazy">
+          </div>
+          <h3>蓮と鯉</h3><div class="wish">合格・就職</div>
+          <div class="st">Carré Blanket · お知らせを受け取る</div>
+        </a>
+        <a class="card rv" href="#newsletter">
+          <div class="ph"><span class="tag">近日発売</span>
+            <img class="a" src="/images/p_peony.jpg" alt="牡丹の民画ブランケット" loading="lazy">
+            <img class="b" src="/images/d_peony.jpg" alt="" loading="lazy">
+          </div>
+          <h3>牡丹</h3><div class="wish">富・繁栄</div>
+          <div class="st">Carré Blanket · お知らせを受け取る</div>
+        </a>
+        <a class="card rv" href="#newsletter">
+          <div class="ph"><span class="tag">近日発売</span>
+            <img class="a" src="/images/p_monkey.jpg" alt="仙桃の民画ブランケット" loading="lazy">
+            <img class="b" src="/images/d_monkey.jpg" alt="" loading="lazy">
+          </div>
+          <h3>仙桃</h3><div class="wish">無病・長寿</div>
+          <div class="st">Carré Blanket · お知らせを受け取る</div>
+        </a>
+        <a class="card rv" href="#newsletter">
+          <div class="ph"><span class="tag">近日発売</span>
+            <img class="a" src="/images/p_books.jpg" alt="冊架図（チェッカド）の民画ブランケット" loading="lazy">
+            <img class="b" src="/images/d_books.jpg" alt="" loading="lazy">
+          </div>
+          <h3>冊架図（チェッカド）</h3><div class="wish">学業・実力</div>
+          <div class="st">Carré Blanket · お知らせを受け取る</div>
+        </a>
+        <a class="card rv" href="#newsletter">
+          <div class="ph"><span class="tag">近日発売</span>
+            <img class="a" src="/images/p_moon.jpg" alt="満月の民画ブランケット" loading="lazy">
+            <img class="b" src="/images/d_moon.jpg" alt="" loading="lazy">
+          </div>
+          <h3>満月</h3><div class="wish">願いごと</div>
+          <div class="st">Carré Blanket · お知らせを受け取る</div>
+        </a>
+        <a class="card rv" href="#newsletter">
+          <div class="ph"><span class="tag">近日発売</span>
+            <img class="a" src="/images/p_jar.jpg" alt="月壺（タルハンアリ）の民画ブランケット" loading="lazy">
+            <img class="b" src="/images/d_jar.jpg" alt="" loading="lazy">
+          </div>
+          <h3>月壺（タルハンアリ）</h3>
+          <div class="st">Carré Blanket · お知らせを受け取る</div>
+        </a>
+      </div>
+    </div>
+    <div class="cgrp" id="c-zodiac">
+      <div class="gh rv"><h3>干支の動物</h3><p>生まれ年の干支を描いた絵</p></div>
+      <div class="grid">
+        <a class="card rv" href="#newsletter">
+          <div class="ph"><span class="tag">近日発売</span>
+            <img class="a" src="/images/p_sheep.jpg" alt="子羊の民画ブランケット" loading="lazy">
+            <img class="b" src="/images/d_sheep.jpg" alt="" loading="lazy">
+          </div>
+          <h3>子羊</h3>
+          <div class="st">Carré Blanket · お知らせを受け取る</div>
+        </a>
+        <a class="card rv" href="#newsletter">
+          <div class="ph"><span class="tag">近日発売</span>
+            <img class="a" src="/images/p_horse.jpg" alt="赤い馬の民画ブランケット" loading="lazy">
+            <img class="b" src="/images/d_horse.jpg" alt="" loading="lazy">
+          </div>
+          <h3>赤い馬</h3><div class="wish">2026年 丙午・午年</div>
+          <div class="st">Carré Blanket · お知らせを受け取る</div>
+        </a>
+      </div>
+    </div>
+    <div class="cgrp" id="c-joseon">
+      <div class="gh rv"><h3>朝鮮の風景</h3><p>朝鮮時代の趣を描いた絵</p></div>
+      <div class="grid">
+        <a class="card rv" href="#newsletter">
+          <div class="ph"><span class="tag">近日発売</span>
+            <img class="a" src="/images/j_carousel_pastel.jpg" alt="十長生のメリーゴーランド・パステル 民画ブランケット" loading="lazy">
+          </div>
+          <h3>十長生のメリーゴーランド・パステル</h3>
+          <div class="st">Carré Blanket · お知らせを受け取る</div>
+        </a>
+        <a class="card rv" href="#newsletter">
+          <div class="ph"><span class="tag">近日発売</span>
+            <img class="a" src="/images/j_palace_pastel.jpg" alt="宮殿の物語・パステル 民画ブランケット" loading="lazy">
+          </div>
+          <h3>宮殿の物語・パステル</h3>
+          <div class="st">Carré Blanket · お知らせを受け取る</div>
+        </a>
+        <a class="card rv" href="#newsletter">
+          <div class="ph"><span class="tag">近日発売</span>
+            <img class="a" src="/images/j_kite_pastel.jpg" alt="凧揚げの空・パステル 民画ブランケット" loading="lazy">
+          </div>
+          <h3>凧揚げの空・パステル</h3>
+          <div class="st">Carré Blanket · お知らせを受け取る</div>
+        </a>
+        <a class="card rv" href="#newsletter">
+          <div class="ph"><span class="tag">近日発売</span>
+            <img class="a" src="/images/j_peonyfield_pastel.jpg" alt="牡丹の花畑・パステル 民画ブランケット" loading="lazy">
+          </div>
+          <h3>牡丹の花畑・パステル</h3>
+          <div class="st">Carré Blanket · お知らせを受け取る</div>
+        </a>
+        <a class="card rv" href="#newsletter">
+          <div class="ph"><span class="tag">近日発売</span>
+            <img class="a" src="/images/j_kite.jpg" alt="凧揚げの空 民画ブランケット" loading="lazy">
+          </div>
+          <h3>凧揚げの空</h3>
+          <div class="st">Carré Blanket · お知らせを受け取る</div>
+        </a>
+        <a class="card rv" href="#newsletter">
+          <div class="ph"><span class="tag">近日発売</span>
+            <img class="a" src="/images/j_village.jpg" alt="韓屋村の地図 民画ブランケット" loading="lazy">
+          </div>
+          <h3>韓屋村の地図</h3>
+          <div class="st">Carré Blanket · お知らせを受け取る</div>
+        </a>
+        <a class="card rv" href="#newsletter">
+          <div class="ph"><span class="tag">近日発売</span>
+            <img class="a" src="/images/j_boat.jpg" alt="黄布帆船の航海 民画ブランケット" loading="lazy">
+          </div>
+          <h3>黄布帆船の航海</h3>
+          <div class="st">Carré Blanket · お知らせを受け取る</div>
+        </a>
+        <a class="card rv" href="#newsletter">
+          <div class="ph"><span class="tag">近日発売</span>
+            <img class="a" src="/images/j_play.jpg" alt="男寺党の遊び場 民画ブランケット" loading="lazy">
+          </div>
+          <h3>男寺党の遊び場</h3>
+          <div class="st">Carré Blanket · お知らせを受け取る</div>
+        </a>
+        <a class="card rv" href="#newsletter">
+          <div class="ph"><span class="tag">近日発売</span>
+            <img class="a" src="/images/j_garden.jpg" alt="蓮池の庭 民画ブランケット" loading="lazy">
+          </div>
+          <h3>蓮池の庭</h3>
+          <div class="st">Carré Blanket · お知らせを受け取る</div>
+        </a>
+        <a class="card rv" href="#newsletter">
+          <div class="ph"><span class="tag">近日発売</span>
+            <img class="a" src="/images/j_parade.jpg" alt="動物の赤ちゃんの行列 民画ブランケット" loading="lazy">
+          </div>
+          <h3>動物の赤ちゃんの行列</h3>
+          <div class="st">Carré Blanket · お知らせを受け取る</div>
+        </a>
+        <a class="card rv" href="#newsletter">
+          <div class="ph"><span class="tag">近日発売</span>
+            <img class="a" src="/images/j_tree.jpg" alt="松の東屋ツリーハウス 民画ブランケット" loading="lazy">
+          </div>
+          <h3>松の東屋ツリーハウス</h3>
+          <div class="st">Carré Blanket · お知らせを受け取る</div>
+        </a>
+        <a class="card rv" href="#newsletter">
+          <div class="ph"><span class="tag">近日発売</span>
+            <img class="a" src="/images/j_pattern.jpg" alt="民画オールオーバーパターン 民画ブランケット" loading="lazy">
+          </div>
+          <h3>民画オールオーバーパターン</h3>
+          <div class="st">Carré Blanket · お知らせを受け取る</div>
+        </a>
+        <a class="card rv" href="#newsletter">
+          <div class="ph"><span class="tag">近日発売</span>
+            <img class="a" src="/images/j_dc_carousel.jpg" alt="丹青・十長生のメリーゴーランド 民画ブランケット" loading="lazy">
+          </div>
+          <h3>丹青・十長生のメリーゴーランド</h3>
+          <div class="st">Carré Blanket · お知らせを受け取る</div>
+        </a>
+        <a class="card rv" href="#newsletter">
+          <div class="ph"><span class="tag">近日発売</span>
+            <img class="a" src="/images/j_dc_palace.jpg" alt="丹青・宮殿の物語 民画ブランケット" loading="lazy">
+          </div>
+          <h3>丹青・宮殿の物語</h3>
+          <div class="st">Carré Blanket · お知らせを受け取る</div>
+        </a>
+        <a class="card rv" href="#newsletter">
+          <div class="ph"><span class="tag">近日発売</span>
+            <img class="a" src="/images/j_dc_carousel2.jpg" alt="丹青・メリーゴーランド 民画ブランケット" loading="lazy">
+          </div>
+          <h3>丹青・メリーゴーランド</h3>
+          <div class="st">Carré Blanket · お知らせを受け取る</div>
+        </a>
+        <a class="card rv" href="#newsletter">
+          <div class="ph"><span class="tag">近日発売</span>
+            <img class="a" src="/images/j_dc_medallion.jpg" alt="丹青・宮殿メダリオン 民画ブランケット" loading="lazy">
+          </div>
+          <h3>丹青・宮殿メダリオン</h3>
+          <div class="st">Carré Blanket · お知らせを受け取る</div>
+        </a>
+        <a class="card rv" href="#newsletter">
+          <div class="ph"><span class="tag">近日発売</span>
+            <img class="a" src="/images/j_dc_garden.jpg" alt="丹青・蓮池の庭 民画ブランケット" loading="lazy">
+          </div>
+          <h3>丹青・蓮池の庭</h3>
+          <div class="st">Carré Blanket · お知らせを受け取る</div>
+        </a>
+        <a class="card rv" href="#newsletter">
+          <div class="ph"><span class="tag">近日発売</span>
+            <img class="a" src="/images/j_dc_tree.jpg" alt="丹青・松のツリーハウス 民画ブランケット" loading="lazy">
+          </div>
+          <h3>丹青・松のツリーハウス</h3>
+          <div class="st">Carré Blanket · お知らせを受け取る</div>
+        </a>
+        <a class="card rv" href="#newsletter">
+          <div class="ph"><span class="tag">近日発売</span>
+            <img class="a" src="/images/j_neol.jpg" alt="板跳び（ノルティギ）の庭 民画ブランケット" loading="lazy">
+          </div>
+          <h3>板跳び（ノルティギ）の庭</h3>
+          <div class="st">Carré Blanket · お知らせを受け取る</div>
+        </a>
+        <a class="card rv" href="#newsletter">
+          <div class="ph"><span class="tag">近日発売</span>
+            <img class="a" src="/images/j_neol_medallion.jpg" alt="お正月の板跳びメダリオン 民画ブランケット" loading="lazy">
+          </div>
+          <h3>お正月の板跳びメダリオン</h3>
+          <div class="st">Carré Blanket · お知らせを受け取る</div>
+        </a>
+      </div>
     </div>
     <div class="more rv"><a class="btn" href="#newsletter">発売のお知らせを受け取る</a></div>
   </div>
@@ -429,7 +591,7 @@ footer a:hover{color:var(--seal)}
         <a href="/ja/" class="logo" style="margin-bottom:18px"><div class="seal"><span><em>온</em><em>고</em><em>원</em></span></div><div class="wm"><b style="font-size:22px">ONGOWON</b><small>온고원<i></i>KOREA</small></div></a>
         <p style="max-width:300px">絵に願いを託した朝鮮の習わしを、今のベビーブランケットに。</p>
       </div>
-      <div><h4>Shop</h4><ul><li><a href="#collection">願いの民画ブランケット</a></li><li><a href="#gift">ギフトセット</a></li></ul></div>
+      <div><h4>Shop</h4><ul><li><a href="#collection">ブランケット</a></li><li><a href="#gift">ギフトセット</a></li></ul></div>
       <div><h4>About</h4><ul><li><a href="#story">ストーリー</a></li><li><a href="#life">暮らしの中で</a></li><li><a href="/wish/">願いの民画</a></li><li><a href="https://www.instagram.com/ongo.won_archive/" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://www.youtube.com/channel/UC07gJPocSabI5b8AhCYtEoQ" target="_blank" rel="noopener">YouTube</a></li></ul></div>
       <div><h4>Contact</h4><ul><li><a href="mailto:kjh012677@gmail.com">kjh012677@gmail.com</a></li></ul><div class="langs ft-langs"><a href="/" data-lang="ko">KO</a><a href="/en/" data-lang="en">EN</a><a href="/ja/" data-lang="ja" class=cur aria-current=page>JA</a></div></div>
     </div>
