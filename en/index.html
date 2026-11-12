@@ -75,6 +75,14 @@ header{position:sticky;top:0;z-index:20;background:rgba(251,247,240,.94);backdro
 
 /* product grid */
 .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px 28px}
+.cnav{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin:0 0 44px}
+.cnav a{border:1px solid var(--line);padding:7px 16px;font-size:13px;letter-spacing:.04em;border-radius:999px;transition:background .2s,color .2s}
+.cnav a:hover{background:var(--seal);border-color:var(--seal);color:#fff}
+.cgrp{margin-bottom:64px;scroll-margin-top:90px}
+.cgrp .gh{display:flex;align-items:baseline;gap:14px;border-bottom:1px solid var(--line);padding-bottom:12px;margin-bottom:28px}
+.cgrp .gh h3{font-family:var(--serif);font-weight:700;font-size:22px;margin:0}
+.cgrp .gh p{margin:0;font-size:13px;color:var(--soft)}
+@media (max-width:960px){.cgrp .gh{flex-direction:column;gap:4px}.cgrp .gh h3{font-size:19px}.cgrp{margin-bottom:48px}}
 .card .ph{position:relative;aspect-ratio:1;overflow:hidden;background:var(--paper)}
 .card .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .6s,transform 1.2s}
 .card .ph img.b{opacity:0}
@@ -248,85 +256,239 @@ footer a:hover{color:var(--seal)}
 <section class="sec" id="collection">
   <div class="wrap">
     <div class="title rv">
-      <div class="en">Wish Minhwa Blankets</div>
-      <h2>Wish Minhwa Blankets</h2>
+      <div class="en">Blankets</div>
+      <h2>Blankets</h2>
       <p>In Joseon-era Korea, minhwa paintings were not mere decoration — they were hung at home to wish for good fortune. We put that same wish for your child into a single blanket.</p>
       <div class="note">The designs below are AI-made drafts and not yet for sale.</div>
       <div class="divider"></div>
     </div>
-    <div class="grid">
-      <a class="card rv" href="#newsletter">
-        <div class="ph"><span class="tag">Coming soon</span>
-          <img class="a" src="/images/p_sheep.jpg" alt="Little Lamb minhwa blanket" loading="lazy">
-          <img class="b" src="/images/d_sheep.jpg" alt="" loading="lazy">
-        </div>
-        <h3>Little Lamb</h3>
-        <div class="st">Carré Blanket · Get notified</div>
-      </a>
-      <a class="card rv" href="#newsletter">
-        <div class="ph"><span class="tag">Coming soon</span>
-          <img class="a" src="/images/p_horse.jpg" alt="Red Horse minhwa blanket" loading="lazy">
-          <img class="b" src="/images/d_horse.jpg" alt="" loading="lazy">
-        </div>
-        <h3>Red Horse</h3><div class="wish">2026 · Year of the Horse</div>
-        <div class="st">Carré Blanket · Get notified</div>
-      </a>
-      <a class="card rv" href="#newsletter">
-        <div class="ph"><span class="tag">Coming soon</span>
-          <img class="a" src="/images/p_crane.jpg" alt="Crane & Pine minhwa blanket" loading="lazy">
-          <img class="b" src="/images/d_crane.jpg" alt="" loading="lazy">
-        </div>
-        <h3>Crane & Pine</h3><div class="wish">Health · Long life</div>
-        <div class="st">Carré Blanket · Get notified</div>
-      </a>
-      <a class="card rv" href="#newsletter">
-        <div class="ph"><span class="tag">Coming soon</span>
-          <img class="a" src="/images/p_carp.jpg" alt="Lotus Carp minhwa blanket" loading="lazy">
-          <img class="b" src="/images/d_carp.jpg" alt="" loading="lazy">
-        </div>
-        <h3>Lotus Carp</h3><div class="wish">Success in exams & career</div>
-        <div class="st">Carré Blanket · Get notified</div>
-      </a>
-      <a class="card rv" href="#newsletter">
-        <div class="ph"><span class="tag">Coming soon</span>
-          <img class="a" src="/images/p_peony.jpg" alt="Peony minhwa blanket" loading="lazy">
-          <img class="b" src="/images/d_peony.jpg" alt="" loading="lazy">
-        </div>
-        <h3>Peony</h3><div class="wish">Wealth · Prosperity</div>
-        <div class="st">Carré Blanket · Get notified</div>
-      </a>
-      <a class="card rv" href="#newsletter">
-        <div class="ph"><span class="tag">Coming soon</span>
-          <img class="a" src="/images/p_monkey.jpg" alt="Peach of Immortality minhwa blanket" loading="lazy">
-          <img class="b" src="/images/d_monkey.jpg" alt="" loading="lazy">
-        </div>
-        <h3>Peach of Immortality</h3><div class="wish">Good health · Long life</div>
-        <div class="st">Carré Blanket · Get notified</div>
-      </a>
-      <a class="card rv" href="#newsletter">
-        <div class="ph"><span class="tag">Coming soon</span>
-          <img class="a" src="/images/p_books.jpg" alt="Chaekgado Bookshelf minhwa blanket" loading="lazy">
-          <img class="b" src="/images/d_books.jpg" alt="" loading="lazy">
-        </div>
-        <h3>Chaekgado Bookshelf</h3><div class="wish">Learning · Skill</div>
-        <div class="st">Carré Blanket · Get notified</div>
-      </a>
-      <a class="card rv" href="#newsletter">
-        <div class="ph"><span class="tag">Coming soon</span>
-          <img class="a" src="/images/p_moon.jpg" alt="Full Moon minhwa blanket" loading="lazy">
-          <img class="b" src="/images/d_moon.jpg" alt="" loading="lazy">
-        </div>
-        <h3>Full Moon</h3><div class="wish">Making a wish</div>
-        <div class="st">Carré Blanket · Get notified</div>
-      </a>
-      <a class="card rv" href="#newsletter">
-        <div class="ph"><span class="tag">Coming soon</span>
-          <img class="a" src="/images/p_jar.jpg" alt="Moon Jar minhwa blanket" loading="lazy">
-          <img class="b" src="/images/d_jar.jpg" alt="" loading="lazy">
-        </div>
-        <h3>Moon Jar</h3>
-        <div class="st">Carré Blanket · Get notified</div>
-      </a>
+        <nav class="cnav rv"><a href="#c-wish">Wish Minhwa</a><a href="#c-zodiac">Zodiac Animals</a><a href="#c-joseon">Scenes of Joseon</a></nav>
+    <div class="cgrp" id="c-wish">
+      <div class="gh rv"><h3>Wish Minhwa</h3><p>Paintings that carry a wish for your child</p></div>
+      <div class="grid">
+        <a class="card rv" href="#newsletter">
+          <div class="ph"><span class="tag">Coming soon</span>
+            <img class="a" src="/images/p_crane.jpg" alt="Crane & Pine minhwa blanket" loading="lazy">
+            <img class="b" src="/images/d_crane.jpg" alt="" loading="lazy">
+          </div>
+          <h3>Crane & Pine</h3><div class="wish">Health · Long life</div>
+          <div class="st">Carré Blanket · Get notified</div>
+        </a>
+        <a class="card rv" href="#newsletter">
+          <div class="ph"><span class="tag">Coming soon</span>
+            <img class="a" src="/images/p_carp.jpg" alt="Lotus Carp minhwa blanket" loading="lazy">
+            <img class="b" src="/images/d_carp.jpg" alt="" loading="lazy">
+          </div>
+          <h3>Lotus Carp</h3><div class="wish">Success in exams & career</div>
+          <div class="st">Carré Blanket · Get notified</div>
+        </a>
+        <a class="card rv" href="#newsletter">
+          <div class="ph"><span class="tag">Coming soon</span>
+            <img class="a" src="/images/p_peony.jpg" alt="Peony minhwa blanket" loading="lazy">
+            <img class="b" src="/images/d_peony.jpg" alt="" loading="lazy">
+          </div>
+          <h3>Peony</h3><div class="wish">Wealth · Prosperity</div>
+          <div class="st">Carré Blanket · Get notified</div>
+        </a>
+        <a class="card rv" href="#newsletter">
+          <div class="ph"><span class="tag">Coming soon</span>
+            <img class="a" src="/images/p_monkey.jpg" alt="Peach of Immortality minhwa blanket" loading="lazy">
+            <img class="b" src="/images/d_monkey.jpg" alt="" loading="lazy">
+          </div>
+          <h3>Peach of Immortality</h3><div class="wish">Good health · Long life</div>
+          <div class="st">Carré Blanket · Get notified</div>
+        </a>
+        <a class="card rv" href="#newsletter">
+          <div class="ph"><span class="tag">Coming soon</span>
+            <img class="a" src="/images/p_books.jpg" alt="Chaekgado Bookshelf minhwa blanket" loading="lazy">
+            <img class="b" src="/images/d_books.jpg" alt="" loading="lazy">
+          </div>
+          <h3>Chaekgado Bookshelf</h3><div class="wish">Learning · Skill</div>
+          <div class="st">Carré Blanket · Get notified</div>
+        </a>
+        <a class="card rv" href="#newsletter">
+          <div class="ph"><span class="tag">Coming soon</span>
+            <img class="a" src="/images/p_moon.jpg" alt="Full Moon minhwa blanket" loading="lazy">
+            <img class="b" src="/images/d_moon.jpg" alt="" loading="lazy">
+          </div>
+          <h3>Full Moon</h3><div class="wish">Making a wish</div>
+          <div class="st">Carré Blanket · Get notified</div>
+        </a>
+        <a class="card rv" href="#newsletter">
+          <div class="ph"><span class="tag">Coming soon</span>
+            <img class="a" src="/images/p_jar.jpg" alt="Moon Jar minhwa blanket" loading="lazy">
+            <img class="b" src="/images/d_jar.jpg" alt="" loading="lazy">
+          </div>
+          <h3>Moon Jar</h3>
+          <div class="st">Carré Blanket · Get notified</div>
+        </a>
+      </div>
+    </div>
+    <div class="cgrp" id="c-zodiac">
+      <div class="gh rv"><h3>Zodiac Animals</h3><p>The animal of the year your child was born</p></div>
+      <div class="grid">
+        <a class="card rv" href="#newsletter">
+          <div class="ph"><span class="tag">Coming soon</span>
+            <img class="a" src="/images/p_sheep.jpg" alt="Little Lamb minhwa blanket" loading="lazy">
+            <img class="b" src="/images/d_sheep.jpg" alt="" loading="lazy">
+          </div>
+          <h3>Little Lamb</h3>
+          <div class="st">Carré Blanket · Get notified</div>
+        </a>
+        <a class="card rv" href="#newsletter">
+          <div class="ph"><span class="tag">Coming soon</span>
+            <img class="a" src="/images/p_horse.jpg" alt="Red Horse minhwa blanket" loading="lazy">
+            <img class="b" src="/images/d_horse.jpg" alt="" loading="lazy">
+          </div>
+          <h3>Red Horse</h3><div class="wish">2026 · Year of the Horse</div>
+          <div class="st">Carré Blanket · Get notified</div>
+        </a>
+      </div>
+    </div>
+    <div class="cgrp" id="c-joseon">
+      <div class="gh rv"><h3>Scenes of Joseon</h3><p>The quiet charm of the Joseon era</p></div>
+      <div class="grid">
+        <a class="card rv" href="#newsletter">
+          <div class="ph"><span class="tag">Coming soon</span>
+            <img class="a" src="/images/j_carousel_pastel.jpg" alt="Ten Symbols Carousel · Pastel minhwa blanket" loading="lazy">
+          </div>
+          <h3>Ten Symbols Carousel · Pastel</h3>
+          <div class="st">Carré Blanket · Get notified</div>
+        </a>
+        <a class="card rv" href="#newsletter">
+          <div class="ph"><span class="tag">Coming soon</span>
+            <img class="a" src="/images/j_palace_pastel.jpg" alt="Palace Story · Pastel minhwa blanket" loading="lazy">
+          </div>
+          <h3>Palace Story · Pastel</h3>
+          <div class="st">Carré Blanket · Get notified</div>
+        </a>
+        <a class="card rv" href="#newsletter">
+          <div class="ph"><span class="tag">Coming soon</span>
+            <img class="a" src="/images/j_kite_pastel.jpg" alt="Kite-Flying Sky · Pastel minhwa blanket" loading="lazy">
+          </div>
+          <h3>Kite-Flying Sky · Pastel</h3>
+          <div class="st">Carré Blanket · Get notified</div>
+        </a>
+        <a class="card rv" href="#newsletter">
+          <div class="ph"><span class="tag">Coming soon</span>
+            <img class="a" src="/images/j_peonyfield_pastel.jpg" alt="Peony Garden · Pastel minhwa blanket" loading="lazy">
+          </div>
+          <h3>Peony Garden · Pastel</h3>
+          <div class="st">Carré Blanket · Get notified</div>
+        </a>
+        <a class="card rv" href="#newsletter">
+          <div class="ph"><span class="tag">Coming soon</span>
+            <img class="a" src="/images/j_kite.jpg" alt="Kite-Flying Sky minhwa blanket" loading="lazy">
+          </div>
+          <h3>Kite-Flying Sky</h3>
+          <div class="st">Carré Blanket · Get notified</div>
+        </a>
+        <a class="card rv" href="#newsletter">
+          <div class="ph"><span class="tag">Coming soon</span>
+            <img class="a" src="/images/j_village.jpg" alt="Hanok Village Map minhwa blanket" loading="lazy">
+          </div>
+          <h3>Hanok Village Map</h3>
+          <div class="st">Carré Blanket · Get notified</div>
+        </a>
+        <a class="card rv" href="#newsletter">
+          <div class="ph"><span class="tag">Coming soon</span>
+            <img class="a" src="/images/j_boat.jpg" alt="Sailing the Hwangpo Boat minhwa blanket" loading="lazy">
+          </div>
+          <h3>Sailing the Hwangpo Boat</h3>
+          <div class="st">Carré Blanket · Get notified</div>
+        </a>
+        <a class="card rv" href="#newsletter">
+          <div class="ph"><span class="tag">Coming soon</span>
+            <img class="a" src="/images/j_play.jpg" alt="Namsadang Folk Festival minhwa blanket" loading="lazy">
+          </div>
+          <h3>Namsadang Folk Festival</h3>
+          <div class="st">Carré Blanket · Get notified</div>
+        </a>
+        <a class="card rv" href="#newsletter">
+          <div class="ph"><span class="tag">Coming soon</span>
+            <img class="a" src="/images/j_garden.jpg" alt="Lotus Pond Garden minhwa blanket" loading="lazy">
+          </div>
+          <h3>Lotus Pond Garden</h3>
+          <div class="st">Carré Blanket · Get notified</div>
+        </a>
+        <a class="card rv" href="#newsletter">
+          <div class="ph"><span class="tag">Coming soon</span>
+            <img class="a" src="/images/j_parade.jpg" alt="Baby Animal Parade minhwa blanket" loading="lazy">
+          </div>
+          <h3>Baby Animal Parade</h3>
+          <div class="st">Carré Blanket · Get notified</div>
+        </a>
+        <a class="card rv" href="#newsletter">
+          <div class="ph"><span class="tag">Coming soon</span>
+            <img class="a" src="/images/j_tree.jpg" alt="Pine Pavilion Treehouse minhwa blanket" loading="lazy">
+          </div>
+          <h3>Pine Pavilion Treehouse</h3>
+          <div class="st">Carré Blanket · Get notified</div>
+        </a>
+        <a class="card rv" href="#newsletter">
+          <div class="ph"><span class="tag">Coming soon</span>
+            <img class="a" src="/images/j_pattern.jpg" alt="Minhwa All-over Pattern minhwa blanket" loading="lazy">
+          </div>
+          <h3>Minhwa All-over Pattern</h3>
+          <div class="st">Carré Blanket · Get notified</div>
+        </a>
+        <a class="card rv" href="#newsletter">
+          <div class="ph"><span class="tag">Coming soon</span>
+            <img class="a" src="/images/j_dc_carousel.jpg" alt="Dancheong · Ten Symbols Carousel minhwa blanket" loading="lazy">
+          </div>
+          <h3>Dancheong · Ten Symbols Carousel</h3>
+          <div class="st">Carré Blanket · Get notified</div>
+        </a>
+        <a class="card rv" href="#newsletter">
+          <div class="ph"><span class="tag">Coming soon</span>
+            <img class="a" src="/images/j_dc_palace.jpg" alt="Dancheong · Palace Story minhwa blanket" loading="lazy">
+          </div>
+          <h3>Dancheong · Palace Story</h3>
+          <div class="st">Carré Blanket · Get notified</div>
+        </a>
+        <a class="card rv" href="#newsletter">
+          <div class="ph"><span class="tag">Coming soon</span>
+            <img class="a" src="/images/j_dc_carousel2.jpg" alt="Dancheong · Carousel minhwa blanket" loading="lazy">
+          </div>
+          <h3>Dancheong · Carousel</h3>
+          <div class="st">Carré Blanket · Get notified</div>
+        </a>
+        <a class="card rv" href="#newsletter">
+          <div class="ph"><span class="tag">Coming soon</span>
+            <img class="a" src="/images/j_dc_medallion.jpg" alt="Dancheong · Palace Medallion minhwa blanket" loading="lazy">
+          </div>
+          <h3>Dancheong · Palace Medallion</h3>
+          <div class="st">Carré Blanket · Get notified</div>
+        </a>
+        <a class="card rv" href="#newsletter">
+          <div class="ph"><span class="tag">Coming soon</span>
+            <img class="a" src="/images/j_dc_garden.jpg" alt="Dancheong · Pond Garden minhwa blanket" loading="lazy">
+          </div>
+          <h3>Dancheong · Pond Garden</h3>
+          <div class="st">Carré Blanket · Get notified</div>
+        </a>
+        <a class="card rv" href="#newsletter">
+          <div class="ph"><span class="tag">Coming soon</span>
+            <img class="a" src="/images/j_dc_tree.jpg" alt="Dancheong · Pine Treehouse minhwa blanket" loading="lazy">
+          </div>
+          <h3>Dancheong · Pine Treehouse</h3>
+          <div class="st">Carré Blanket · Get notified</div>
+        </a>
+        <a class="card rv" href="#newsletter">
+          <div class="ph"><span class="tag">Coming soon</span>
+            <img class="a" src="/images/j_neol.jpg" alt="Neolttwigi Seesaw Yard minhwa blanket" loading="lazy">
+          </div>
+          <h3>Neolttwigi Seesaw Yard</h3>
+          <div class="st">Carré Blanket · Get notified</div>
+        </a>
+        <a class="card rv" href="#newsletter">
+          <div class="ph"><span class="tag">Coming soon</span>
+            <img class="a" src="/images/j_neol_medallion.jpg" alt="New Year Neolttwigi Medallion minhwa blanket" loading="lazy">
+          </div>
+          <h3>New Year Neolttwigi Medallion</h3>
+          <div class="st">Carré Blanket · Get notified</div>
+        </a>
+      </div>
     </div>
     <div class="more rv"><a class="btn" href="#newsletter">Get notified</a></div>
   </div>
@@ -429,7 +591,7 @@ footer a:hover{color:var(--seal)}
         <a href="/en/" class="logo" style="margin-bottom:18px"><div class="seal"><span><em>온</em><em>고</em><em>원</em></span></div><div class="wm"><b style="font-size:22px">ONGOWON</b><small>온고원<i></i>KOREA</small></div></a>
         <p style="max-width:300px">An old Korean way of wishing with pictures, for today's little ones.</p>
       </div>
-      <div><h4>Shop</h4><ul><li><a href="#collection">Wish Minhwa Blankets</a></li><li><a href="#gift">Gift sets</a></li></ul></div>
+      <div><h4>Shop</h4><ul><li><a href="#collection">Blankets</a></li><li><a href="#gift">Gift sets</a></li></ul></div>
       <div><h4>About</h4><ul><li><a href="#story">Our story</a></li><li><a href="#life">At home</a></li><li><a href="/wish/">Wish test</a></li><li><a href="https://www.instagram.com/ongo.won_archive/" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://www.youtube.com/channel/UC07gJPocSabI5b8AhCYtEoQ" target="_blank" rel="noopener">YouTube</a></li></ul></div>
       <div><h4>Contact</h4><ul><li><a href="mailto:kjh012677@gmail.com">kjh012677@gmail.com</a></li></ul><div class="langs ft-langs"><a href="/" data-lang="ko">KO</a><a href="/en/" data-lang="en" class=cur aria-current=page>EN</a><a href="/ja/" data-lang="ja">JA</a></div></div>
     </div>
