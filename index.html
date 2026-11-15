@@ -3,24 +3,31 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ONGOWON 온고원 — 그림으로 비는 소원, 민화 아기 담요</title>
-<meta name="description" content="온고원(溫故園)은 조선의 민화가 품었던 소원을 오늘의 아기 담요와 패브릭으로 다시 짓는 브랜드입니다. 첫 컬렉션 준비 중.">
+<title>온고원 ONGOWON | 민화 아기 담요 · 출산·백일·돌 선물</title>
+<meta name="description" content="조선 민화에 담긴 소원을 아기 담요로 짓는 한국 브랜드 온고원. 합격의 잉어, 장수의 학과 소나무, 부귀의 모란을 담은 소원 민화·띠 동물·조선의 풍경 블랭킷 시안과 출시 알림. 첫 컬렉션 준비 중.">
 <link rel="canonical" href="https://ongowon.com/">
 <link rel="alternate" hreflang="ko" href="https://ongowon.com/"><link rel="alternate" hreflang="en" href="https://ongowon.com/en/"><link rel="alternate" hreflang="ja" href="https://ongowon.com/ja/"><link rel="alternate" hreflang="x-default" href="https://ongowon.com/">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ko_KR">
-<meta property="og:title" content="ONGOWON 온고원 — 그림으로 비는 소원, 민화 아기 담요">
-<meta property="og:description" content="온고원(溫故園)은 조선의 민화가 품었던 소원을 오늘의 아기 담요와 패브릭으로 다시 짓는 브랜드입니다. 첫 컬렉션 준비 중.">
+<meta property="og:title" content="온고원 ONGOWON | 민화 아기 담요 · 출산·백일·돌 선물">
+<meta property="og:description" content="조선 민화에 담긴 소원을 아기 담요로 짓는 한국 브랜드 온고원. 합격의 잉어, 장수의 학과 소나무, 부귀의 모란을 담은 소원 민화·띠 동물·조선의 풍경 블랭킷 시안과 출시 알림. 첫 컬렉션 준비 중.">
 <meta property="og:image" content="https://ongowon.com/images/og.jpg">
 <meta property="og:url" content="https://ongowon.com/">
 <meta name="twitter:card" content="summary_large_image">
+<meta property="og:site_name" content="ONGOWON 온고원">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:title" content="온고원 ONGOWON | 민화 아기 담요 · 출산·백일·돌 선물">
+<meta name="twitter:description" content="조선 민화에 담긴 소원을 아기 담요로 짓는 한국 브랜드 온고원. 합격의 잉어, 장수의 학과 소나무, 부귀의 모란을 담은 소원 민화·띠 동물·조선의 풍경 블랭킷 시안과 출시 알림. 첫 컬렉션 준비 중.">
+<meta name="twitter:image" content="https://ongowon.com/images/og.jpg">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<link rel="preload" as="image" href="/images/life_picnic.jpg" fetchpriority="high">
 <meta name="theme-color" content="#FBF7F0">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@300;400;500&family=Noto+Sans+JP:wght@300;400;500&family=Shippori+Mincho:wght@500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 :root{
   --bg:#FBF7F0; --paper:#F2E9DA; --sand:#E8DCC6; --ink:#2B2520; --soft:#6A5E52;
@@ -218,9 +225,31 @@ footer a:hover{color:var(--seal)}
 .l-ja .wc h3{font-family:'Shippori Mincho',var(--serif)} .l-en .wc h3{font-family:var(--latin);font-size:23px}
 @media (max-width:960px){.wcards{grid-template-columns:1fr;gap:16px}.hd nav{display:none}}
 @media (min-width:961px) and (max-width:1180px){.hd nav{gap:16px;font-size:12px}}
+
+/* FAQ + guide link (SEO overhaul) */
+.faq{background:var(--bg)}
+.faq .list{max-width:860px;margin:0 auto;border-top:1px solid var(--line)}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;padding:22px 40px 22px 4px;position:relative;font-family:var(--serif);font-weight:700;font-size:17px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:'+';position:absolute;right:8px;top:18px;font-family:var(--latin);font-size:26px;color:var(--seal);transition:transform .25s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{margin:0 4px 24px;color:#4A413A;max-width:760px}
+.faq details a{color:var(--seal);border-bottom:1px solid currentColor}
+.l-ja .faq summary{font-family:'Shippori Mincho',var(--serif)}
+.l-en .faq summary{font-family:var(--latin);font-size:20px;font-weight:600}
+.glink{text-align:center;margin:26px 0 0;font-size:14px}
+.glink a{color:var(--seal);border-bottom:1px solid currentColor}
+.glink b{font-family:var(--serif);margin-right:8px;color:var(--ink)}
+.langbar{display:none;background:var(--ink);color:var(--bg);font-size:13px;text-align:center;padding:10px 44px 10px 16px;position:relative}
+.langbar.on{display:block}
+.langbar a{color:#E9CFC6;border-bottom:1px solid currentColor;margin-left:10px}
+.langbar button{position:absolute;right:10px;top:50%;transform:translateY(-50%);background:none;border:0;color:var(--bg);font-size:16px;cursor:pointer}
 </style>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://ongowon.com/#org","name":"ONGOWON","alternateName":["온고원","溫故園","温故園","Ongowon"],"url":"https://ongowon.com/","logo":{"@type":"ImageObject","url":"https://ongowon.com/icon-512.png","width":512,"height":512},"email":"kjh012677@gmail.com","sameAs":["https://www.instagram.com/ongo.won_archive/","https://www.youtube.com/channel/UC07gJPocSabI5b8AhCYtEoQ","https://www.threads.com/@ongo.won_archive"],"description":"조선 민화에 담긴 소원을 아기 담요와 패브릭으로 다시 짓는 한국 브랜드. 첫 컬렉션 준비 중."},{"@type":"WebSite","@id":"https://ongowon.com/#website","url":"https://ongowon.com/","name":"ONGOWON 온고원","alternateName":["온고원","温故園"],"inLanguage":["ko","en","ja"],"publisher":{"@id":"https://ongowon.com/#org"}},{"@type":"WebPage","@id":"https://ongowon.com/#webpage","url":"https://ongowon.com/","name":"온고원 ONGOWON | 민화 아기 담요 · 출산·백일·돌 선물","description":"조선 민화에 담긴 소원을 아기 담요로 짓는 한국 브랜드 온고원. 합격의 잉어, 장수의 학과 소나무, 부귀의 모란을 담은 소원 민화·띠 동물·조선의 풍경 블랭킷 시안과 출시 알림. 첫 컬렉션 준비 중.","inLanguage":"ko","isPartOf":{"@id":"https://ongowon.com/#website"},"about":{"@id":"https://ongowon.com/#org"},"primaryImageOfPage":{"@type":"ImageObject","url":"https://ongowon.com/images/og.jpg"}},{"@type":"ItemList","@id":"https://ongowon.com/#collection","name":"온고원 블랭킷 디자인 시안","numberOfItems":27,"itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"CreativeWork","name":"학과 소나무","image":"https://ongowon.com/images/p_crane.jpg","creator":{"@id":"https://ongowon.com/#org"}}},{"@type":"ListItem","position":2,"item":{"@type":"CreativeWork","name":"연꽃 잉어","image":"https://ongowon.com/images/p_carp.jpg","creator":{"@id":"https://ongowon.com/#org"}}},{"@type":"ListItem","position":3,"item":{"@type":"CreativeWork","name":"모란","image":"https://ongowon.com/images/p_peony.jpg","creator":{"@id":"https://ongowon.com/#org"}}},{"@type":"ListItem","position":4,"item":{"@type":"CreativeWork","name":"천도복숭아","image":"https://ongowon.com/images/p_monkey.jpg","creator":{"@id":"https://ongowon.com/#org"}}},{"@type":"ListItem","position":5,"item":{"@type":"CreativeWork","name":"책가도","image":"https://ongowon.com/images/p_books.jpg","creator":{"@id":"https://ongowon.com/#org"}}},{"@type":"ListItem","position":6,"item":{"@type":"CreativeWork","name":"보름달","image":"https://ongowon.com/images/p_moon.jpg","creator":{"@id":"https://ongowon.com/#org"}}},{"@type":"ListItem","position":7,"item":{"@type":"CreativeWork","name":"달항아리","image":"https://ongowon.com/images/p_jar.jpg","creator":{"@id":"https://ongowon.com/#org"}}},{"@type":"ListItem","position":8,"item":{"@type":"CreativeWork","name":"아기 양","image":"https://ongowon.com/images/p_sheep.jpg","creator":{"@id":"https://ongowon.com/#org"}}},{"@type":"ListItem","position":9,"item":{"@type":"CreativeWork","name":"붉은 말","image":"https://ongowon.com/images/p_horse.jpg","creator":{"@id":"https://ongowon.com/#org"}}},{"@type":"ListItem","position":10,"item":{"@type":"CreativeWork","name":"십장생 회전목마 · 파스텔","image":"https://ongowon.com/images/j_carousel_pastel.jpg","creator":{"@id":"https://ongowon.com/#org"}}},{"@type":"ListItem","position":11,"item":{"@type":"CreativeWork","name":"궁궐 이야기 · 파스텔","image":"https://ongowon.com/images/j_palace_pastel.jpg","creator":{"@id":"https://ongowon.com/#org"}}},{"@type":"ListItem","position":12,"item":{"@type":"CreativeWork","name":"연날리기 하늘 · 파스텔","image":"https://ongowon.com/images/j_kite_pastel.jpg","creator":{"@id":"https://ongowon.com/#org"}}},{"@type":"ListItem","position":13,"item":{"@type":"CreativeWork","name":"모란 꽃밭 · 파스텔","image":"https://ongowon.com/images/j_peonyfield_pastel.jpg","creator":{"@id":"https://ongowon.com/#org"}}},{"@type":"ListItem","position":14,"item":{"@type":"CreativeWork","name":"연날리기 하늘","image":"https://ongowon.com/images/j_kite.jpg","creator":{"@id":"https://ongowon.com/#org"}}},{"@type":"ListItem","position":15,"item":{"@type":"CreativeWork","name":"한옥 마을 지도","image":"https://ongowon.com/images/j_village.jpg","creator":{"@id":"https://ongowon.com/#org"}}},{"@type":"ListItem","position":16,"item":{"@type":"CreativeWork","name":"황포돛배 항해","image":"https://ongowon.com/images/j_boat.jpg","creator":{"@id":"https://ongowon.com/#org"}}},{"@type":"ListItem","position":17,"item":{"@type":"CreativeWork","name":"남사당 놀이마당","image":"https://ongowon.com/images/j_play.jpg","creator":{"@id":"https://ongowon.com/#org"}}},{"@type":"ListItem","position":18,"item":{"@type":"CreativeWork","name":"연못 정원","image":"https://ongowon.com/images/j_garden.jpg","creator":{"@id":"https://ongowon.com/#org"}}},{"@type":"ListItem","position":19,"item":{"@type":"CreativeWork","name":"아기 동물 행렬","image":"https://ongowon.com/images/j_parade.jpg","creator":{"@id":"https://ongowon.com/#org"}}},{"@type":"ListItem","position":20,"item":{"@type":"CreativeWork","name":"소나무 정자 나무집","image":"https://ongowon.com/images/j_tree.jpg","creator":{"@id":"https://ongowon.com/#org"}}},{"@type":"ListItem","position":21,"item":{"@type":"CreativeWork","name":"민화 올오버 패턴","image":"https://ongowon.com/images/j_pattern.jpg","creator":{"@id":"https://ongowon.com/#org"}}},{"@type":"ListItem","position":22,"item":{"@type":"CreativeWork","name":"단청 · 십장생 회전목마","image":"https://ongowon.com/images/j_dc_carousel.jpg","creator":{"@id":"https://ongowon.com/#org"}}},{"@type":"ListItem","position":23,"item":{"@type":"CreativeWork","name":"단청 · 궁궐 이야기","image":"https://ongowon.com/images/j_dc_palace.jpg","creator":{"@id":"https://ongowon.com/#org"}}},{"@type":"ListItem","position":24,"item":{"@type":"CreativeWork","name":"단청 · 회전목마","image":"https://ongowon.com/images/j_dc_carousel2.jpg","creator":{"@id":"https://ongowon.com/#org"}}},{"@type":"ListItem","position":25,"item":{"@type":"CreativeWork","name":"단청 · 궁궐 메달리온","image":"https://ongowon.com/images/j_dc_medallion.jpg","creator":{"@id":"https://ongowon.com/#org"}}},{"@type":"ListItem","position":26,"item":{"@type":"CreativeWork","name":"단청 · 연못 정원","image":"https://ongowon.com/images/j_dc_garden.jpg","creator":{"@id":"https://ongowon.com/#org"}}},{"@type":"ListItem","position":27,"item":{"@type":"CreativeWork","name":"단청 · 소나무 나무집","image":"https://ongowon.com/images/j_dc_tree.jpg","creator":{"@id":"https://ongowon.com/#org"}}}]},{"@type":"FAQPage","@id":"https://ongowon.com/#faq","inLanguage":"ko","mainEntity":[{"@type":"Question","name":"온고원은 어떤 브랜드인가요?","acceptedAnswer":{"@type":"Answer","text":"온고원(ONGOWON, 溫故園)은 조선 민화에 담긴 소원을 아기 담요와 패브릭으로 다시 짓는 한국 브랜드입니다. 이름은 '옛것을 익혀 새것을 안다'는 뜻의 온고지신(溫故知新)에서 빌렸습니다."}},{"@type":"Question","name":"지금 바로 살 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"아직은 살 수 없습니다. 첫 컬렉션을 준비하고 있으며, 사이트에 보이는 담요 그림과 사용 사진은 AI로 만든 디자인 시안입니다. 출시 알림을 신청하시면 출시 소식을 이메일로 알려드립니다."}},{"@type":"Question","name":"민화는 무엇이고, 왜 아기 담요에 담나요?","acceptedAnswer":{"@type":"Answer","text":"민화는 조선 후기 사람들이 집 안에 걸어 두고 복과 소원을 빌던 그림입니다. 온고원은 그림으로 소원을 빌던 이 행위를 지금의 방식으로 되살리고 싶어, 아이가 가장 먼저 덮는 담요에 그 소원을 담습니다."}},{"@type":"Question","name":"그림마다 어떤 소원을 담고 있나요?","acceptedAnswer":{"@type":"Answer","text":"잉어는 합격과 출세(약리도, 등용문 이야기), 학과 소나무는 건강과 장수(십장생), 모란은 재물과 부귀(모란도), 책가도는 공부와 실력을 담은 그림입니다. 자세한 뜻과 출처는 민화 소원 사전에 정리해 두었습니다."}},{"@type":"Question","name":"어떤 제품을 만드나요?","acceptedAnswer":{"@type":"Answer","text":"아기 담요·스와들, 패브릭 포스터, 족자, 선물 세트를 준비하고 있습니다. 지금은 시제품을 만들며 어떤 형태가 가장 사랑받을지 확인하는 단계입니다."}},{"@type":"Question","name":"출산·백일·돌 선물로 줄 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"출산, 백일, 돌 선물로 쓸 수 있도록 그림마다 담긴 소원의 뜻을 적은 카드와 함께 온고원 선물 상자에 담아 보낼 예정입니다."}},{"@type":"Question","name":"문의는 어디로 하나요?","acceptedAnswer":{"@type":"Answer","text":"이메일 kjh012677@gmail.com 또는 인스타그램 @ongo.won_archive 로 연락해 주세요."}}]}]}</script>
 </head>
 <body class="l-ko">
+<div class="langbar" id="langbar" role="region" aria-label="Language"><span></span><a href="/en/"></a><button aria-label="close">✕</button></div>
 
 <div class="announce" aria-live="polite"><p class=on>온고원 첫 컬렉션을 준비하고 있어요 · 출시 소식을 가장 먼저 받아보세요</p><p>그림으로 소원을 빌던 조선의 방식을, 지금의 아기 담요로</p><p>Instagram @ongo.won_archive 에서 제작 과정을 공개하고 있어요</p></div>
 
@@ -245,7 +274,7 @@ footer a:hover{color:var(--seal)}
 </div>
 
 <section class="hero">
-  <div class="hero-img"><img src="/images/life_picnic.jpg" alt="모란 민화 담요 위에서 노는 아이"></div>
+  <div class="hero-img"><img fetchpriority="high" decoding="async" src="/images/life_picnic.jpg" alt="모란 민화 담요 위에서 노는 아이"></div>
   <div class="cap">
     <div class="k">The First Collection</div>
     <h1>소원을 덮어주는<br>첫 번째 담요</h1>
@@ -490,6 +519,7 @@ footer a:hover{color:var(--seal)}
     </div>
     <div class="wcards"><a class="wc rv" href="/wish/#quiz"><div class="wi"><img src="/images/met_carp.jpg" alt="" loading="lazy"></div><h3>진짜 민화 맞히기</h3><p>19세기 조선 민화 3점은 각각 어떤 소원을 빌었을까요?</p><span class="wb">맞혀 보기 →</span></a><a class="wc rv" href="/wish/#test"><div class="wi"><img src="/images/carp.jpg" alt="" loading="lazy"></div><h3>내 소원템 찾기</h3><p>3문항으로 지금 나에게 맞는 소원 그림을 찾아요.</p><span class="wb">테스트 하기 →</span></a><a class="wc rv" href="/wish/#joseon"><div class="wi"><img src="/images/horse.jpg" alt="" loading="lazy"></div><h3>조선시대에 태어났다면!?</h3><p>태어난 해로 간지와 띠를 찾고 돌잡이를 해 봐요.</p><span class="wb">알아보기 →</span></a></div>
     
+    <p class="glink rv"><b>민화 소원 사전</b><a href="/minhwa/">그림마다 담긴 소원의 뜻과 출처 보기 →</a></p>
     <div class="more rv"><a class="btn red" href="/wish/">소원 놀이터 가기</a></div>
   </div>
 </section>
@@ -554,6 +584,26 @@ footer a:hover{color:var(--seal)}
   </div>
 </section>
 
+<section class="sec faq" id="faq">
+  <div class="wrap">
+    <div class="title rv">
+      <div class="en">FAQ</div>
+      <h2>자주 묻는 질문</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="list">
+      <details><summary>온고원은 어떤 브랜드인가요?</summary><p>온고원(ONGOWON, 溫故園)은 조선 민화에 담긴 소원을 아기 담요와 패브릭으로 다시 짓는 한국 브랜드입니다. 이름은 &#x27;옛것을 익혀 새것을 안다&#x27;는 뜻의 온고지신(溫故知新)에서 빌렸습니다.</p></details>
+      <details><summary>지금 바로 살 수 있나요?</summary><p>아직은 살 수 없습니다. 첫 컬렉션을 준비하고 있으며, 사이트에 보이는 담요 그림과 사용 사진은 AI로 만든 디자인 시안입니다. 출시 알림을 신청하시면 출시 소식을 이메일로 알려드립니다.</p></details>
+      <details><summary>민화는 무엇이고, 왜 아기 담요에 담나요?</summary><p>민화는 조선 후기 사람들이 집 안에 걸어 두고 복과 소원을 빌던 그림입니다. 온고원은 그림으로 소원을 빌던 이 행위를 지금의 방식으로 되살리고 싶어, 아이가 가장 먼저 덮는 담요에 그 소원을 담습니다.</p></details>
+      <details><summary>그림마다 어떤 소원을 담고 있나요?</summary><p>잉어는 합격과 출세(약리도, 등용문 이야기), 학과 소나무는 건강과 장수(십장생), 모란은 재물과 부귀(모란도), 책가도는 공부와 실력을 담은 그림입니다. 자세한 뜻과 출처는 <a href="/minhwa/">민화 소원 사전</a>에 정리해 두었습니다.</p></details>
+      <details><summary>어떤 제품을 만드나요?</summary><p>아기 담요·스와들, 패브릭 포스터, 족자, 선물 세트를 준비하고 있습니다. 지금은 시제품을 만들며 어떤 형태가 가장 사랑받을지 확인하는 단계입니다.</p></details>
+      <details><summary>출산·백일·돌 선물로 줄 수 있나요?</summary><p>출산, 백일, 돌 선물로 쓸 수 있도록 그림마다 담긴 소원의 뜻을 적은 카드와 함께 온고원 선물 상자에 담아 보낼 예정입니다.</p></details>
+      <details><summary>문의는 어디로 하나요?</summary><p>이메일 <a href="mailto:kjh012677@gmail.com">kjh012677@gmail.com</a> 또는 인스타그램 <a href="https://www.instagram.com/ongo.won_archive/" target="_blank" rel="noopener">@ongo.won_archive</a> 로 연락해 주세요.</p></details>
+    </div>
+    <p class="glink"><b>민화 소원 사전</b><a href="/minhwa/">그림마다 담긴 소원의 뜻과 출처 보기 →</a></p>
+  </div>
+</section>
+
 <section class="sec news" id="newsletter">
   <div class="wrap">
     <div class="title">
@@ -578,7 +628,7 @@ footer a:hover{color:var(--seal)}
         <p style="max-width:300px">그림으로 소원을 비는 조선의 방식을, 지금의 아기 담요로.</p>
       </div>
       <div><h4>Shop</h4><ul><li><a href="#collection">블랭킷</a></li><li><a href="#gift">선물 세트</a></li></ul></div>
-      <div><h4>About</h4><ul><li><a href="#story">온고원 이야기</a></li><li><a href="#life">일상 속 온고원</a></li><li><a href="/wish/">소원 놀이터</a></li><li><a href="https://www.instagram.com/ongo.won_archive/" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://www.youtube.com/channel/UC07gJPocSabI5b8AhCYtEoQ" target="_blank" rel="noopener">YouTube</a></li></ul></div>
+      <div><h4>About</h4><ul><li><a href="#story">온고원 이야기</a></li><li><a href="#life">일상 속 온고원</a></li><li><a href="/wish/">소원 놀이터</a></li><li><a href="/minhwa/">민화 소원 사전</a></li><li><a href="#faq">FAQ</a></li><li><a href="https://www.instagram.com/ongo.won_archive/" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://www.youtube.com/channel/UC07gJPocSabI5b8AhCYtEoQ" target="_blank" rel="noopener">YouTube</a></li></ul></div>
       <div><h4>Contact</h4><ul><li><a href="mailto:kjh012677@gmail.com">kjh012677@gmail.com</a></li></ul><div class="langs ft-langs"><a href="/" data-lang="ko" class=cur aria-current=page>KO</a><a href="/en/" data-lang="en">EN</a><a href="/ja/" data-lang="ja">JA</a></div></div>
     </div>
     <div class="copy"><span>© 2026 ONGOWON 온고원</span><span>사이트의 제품·사용 이미지는 개발 중인 디자인 시안이며, AI로 생성되었습니다.</span></div>
@@ -605,13 +655,15 @@ document.getElementById('nl').addEventListener('submit',e=>{
     .catch(()=>{n.textContent='잠시 후 다시 시도해 주세요.';})
     .finally(()=>{b.disabled=false;b.textContent=t;});
 });
-// first visit from abroad: suggest the visitor's language once
+// visitors whose browser is not Korean: suggest their language (no automatic redirect)
 (function(){try{
   if(localStorage.getItem('ongowon_lang'))return;
-  const n=(navigator.language||'ko').toLowerCase();
-  const to=n.startsWith('ja')?'/ja/':(n.startsWith('ko')?null:'/en/');
-  localStorage.setItem('ongowon_lang',to?to.slice(1,3):'ko');
-  if(to)location.replace(to);
+  const n=(navigator.language||'ko').toLowerCase(); if(n.startsWith('ko'))return;
+  const B={"en": ["This page is also available in English.", "View in English", "/en/"], "ja": ["このページは日本語でもご覧いただけます。", "日本語で見る", "/ja/"]}; const k=n.startsWith('ja')?'ja':'en'; const b=document.getElementById('langbar');
+  b.querySelector('span').textContent=B[k][0]; const a=b.querySelector('a'); a.textContent=B[k][1]; a.href=B[k][2];
+  a.onclick=()=>{try{localStorage.setItem('ongowon_lang',k)}catch(e){}};
+  b.querySelector('button').onclick=()=>{b.classList.remove('on');try{localStorage.setItem('ongowon_lang','ko')}catch(e){}};
+  b.classList.add('on');
 }catch(e){}})();
 </script>
 </body>

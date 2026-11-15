@@ -28,3 +28,14 @@
 현재 `mailto:kjh012677@gmail.com` 으로 동작합니다 (별도 서버 없음).
 
 제품·사용 이미지는 개발 중인 디자인 시안이며 AI로 생성되었습니다.
+
+## 검색·AI 노출 (2026-11-15 개편)
+- `robots.txt` : 모든 검색엔진(구글·네이버 Yeti·다음 Daumoa·빙)과 AI 크롤러(GPTBot, ClaudeBot, PerplexityBot 등) 허용, 사이트맵 위치 표시
+- `sitemap.xml` : 한/영/일 페이지와 hreflang, 대표 이미지. **새 페이지를 만들면 여기에 추가**하고 `lastmod` 날짜를 고치세요
+- `llms.txt` : AI가 읽는 브랜드 사실 요약. 가격·출시일 등 사실이 바뀌면 같이 고치세요
+- `minhwa/`, `en/minhwa/`, `ja/minhwa/` : 민화 소원 사전 (출처 있는 상징 설명)
+- 각 홈 `<head>`의 `application/ld+json` : 브랜드·FAQ·컬렉션 구조화 데이터. FAQ 문구를 바꾸면 이 안의 문구도 같이 바꿔야 합니다
+- 홈 하단 FAQ 섹션
+- 한국어 홈의 자동 언어 이동은 없앴고, 한국어가 아닌 브라우저에는 상단에 언어 안내 띠만 보입니다 (검색엔진이 한국어 페이지를 정상 수집하도록)
+- `7f3c9a1e…txt` : IndexNow 키 파일 (네이버·빙에 새 글 알림용, 지우지 마세요)
+- `vercel.json` : 끝 슬래시 통일, llms.txt 한글 인코딩, 이미지 캐시
