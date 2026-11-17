@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>온고원 ONGOWON</title>
+  <link>https://ongowon.com/</link>
+  <atom:link href="https://ongowon.com/rss.xml" rel="self" type="application/rss+xml"/>
+  <description>조선 민화에 담긴 소원을 아기 담요로 짓는 한국 브랜드 온고원의 새 소식</description>
+  <language>ko</language>
+  <lastBuildDate>Tue, 17 Nov 2026 21:00:00 +0900</lastBuildDate>
+  <item>
+    <title>온고원 ONGOWON | 민화 아기 담요 · 출산·백일·돌 선물</title>
+    <link>https://ongowon.com/</link>
+    <guid isPermaLink="true">https://ongowon.com/</guid>
+    <description>조선 민화에 담긴 소원을 아기 담요로 짓는 한국 브랜드 온고원. 합격의 잉어, 장수의 학과 소나무, 부귀의 모란을 담은 소원 민화·띠 동물·조선의 풍경 블랭킷 시안과 출시 알림. 첫 컬렉션 준비 중.</description>
+    <pubDate>Sun, 15 Nov 2026 09:00:00 +0900</pubDate>
+    <enclosure url="https://ongowon.com/images/og/home.jpg?v=2" type="image/jpeg" length="0"/>
+  </item>
+  <item>
+    <title>민화 소원 사전 — 잉어·학·모란·책가도·까치호랑이·박쥐 그림의 뜻 | 온고원</title>
+    <link>https://ongowon.com/minhwa/</link>
+    <guid isPermaLink="true">https://ongowon.com/minhwa/</guid>
+    <description>조선 민화는 소원을 비는 그림이었습니다. 잉어(합격), 십장생 학과 소나무(장수), 모란(부귀), 책가도(학문), 까치호랑이(액막이), 박쥐(복)의 뜻을 한국민족문화대백과사전 등 출처와 함께 정리했습니다.</description>
+    <pubDate>Sun, 15 Nov 2026 09:00:00 +0900</pubDate>
+    <enclosure url="https://ongowon.com/images/og/minhwa.jpg?v=2" type="image/jpeg" length="0"/>
+  </item>
+  <item>
+    <title>온고원 소원 놀이터 — 진짜 민화 맞히기 · 내 소원템 찾기 · 조선시대 띠와 돌잡이</title>
+    <link>https://ongowon.com/wish/</link>
+    <guid isPermaLink="true">https://ongowon.com/wish/</guid>
+    <description>민화는 원래 소원을 비는 그림이었어요. 진짜 조선 민화를 맞혀 보고, 내 소원에 맞는 그림을 찾고, 조선시대에 태어났다면 어떤 돌잡이를 했을지 알아보세요.</description>
+    <pubDate>Wed, 11 Nov 2026 09:00:00 +0900</pubDate>
+    <enclosure url="https://ongowon.com/images/og/wish.jpg?v=2" type="image/jpeg" length="0"/>
+  </item>
+</channel>
+</rss>

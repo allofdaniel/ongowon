@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://ongowon.com/</loc>
-    <lastmod>2026-11-15</lastmod>
+    <lastmod>2026-11-17</lastmod>
     <xhtml:link rel="alternate" hreflang="ko" href="https://ongowon.com/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://ongowon.com/en/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ongowon.com/ja/"/>
@@ -37,7 +37,7 @@
   </url>
   <url>
     <loc>https://ongowon.com/en/</loc>
-    <lastmod>2026-11-15</lastmod>
+    <lastmod>2026-11-17</lastmod>
     <xhtml:link rel="alternate" hreflang="ko" href="https://ongowon.com/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://ongowon.com/en/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ongowon.com/ja/"/>
@@ -45,7 +45,7 @@
   </url>
   <url>
     <loc>https://ongowon.com/ja/</loc>
-    <lastmod>2026-11-15</lastmod>
+    <lastmod>2026-11-17</lastmod>
     <xhtml:link rel="alternate" hreflang="ko" href="https://ongowon.com/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://ongowon.com/en/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ongowon.com/ja/"/>
@@ -53,7 +53,7 @@
   </url>
   <url>
     <loc>https://ongowon.com/minhwa/</loc>
-    <lastmod>2026-11-15</lastmod>
+    <lastmod>2026-11-17</lastmod>
     <xhtml:link rel="alternate" hreflang="ko" href="https://ongowon.com/minhwa/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://ongowon.com/en/minhwa/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ongowon.com/ja/minhwa/"/>
@@ -61,7 +61,7 @@
   </url>
   <url>
     <loc>https://ongowon.com/en/minhwa/</loc>
-    <lastmod>2026-11-15</lastmod>
+    <lastmod>2026-11-17</lastmod>
     <xhtml:link rel="alternate" hreflang="ko" href="https://ongowon.com/minhwa/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://ongowon.com/en/minhwa/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ongowon.com/ja/minhwa/"/>
@@ -69,7 +69,7 @@
   </url>
   <url>
     <loc>https://ongowon.com/ja/minhwa/</loc>
-    <lastmod>2026-11-15</lastmod>
+    <lastmod>2026-11-17</lastmod>
     <xhtml:link rel="alternate" hreflang="ko" href="https://ongowon.com/minhwa/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://ongowon.com/en/minhwa/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ongowon.com/ja/minhwa/"/>
@@ -77,6 +77,6 @@
   </url>
   <url>
     <loc>https://ongowon.com/wish/</loc>
-    <lastmod>2026-11-15</lastmod>
+    <lastmod>2026-11-17</lastmod>
   </url>
 </urlset>

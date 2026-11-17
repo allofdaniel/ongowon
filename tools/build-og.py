@@ -3,6 +3,7 @@
 
 하는 일
 1. 페이지마다 1200×630 공유 썸네일을 만들어 images/og/<이름>.jpg 로 저장한다.
+   핵심 정보는 가운데 카드에 모아, 가운데 정사각형으로 잘려도(네이버 검색·카카오 목록) 보이게 한다.
    (카카오톡·인스타 DM·페이스북·X·슬랙·검색 미리보기에 뜨는 이미지)
 2. 각 페이지 <head> 의 og:image / twitter:image 를 새 썸네일로 바꾸고,
    빠진 태그(og:image:width/height/alt/type, twitter:card/title/description/image/alt)를 채운다.
@@ -14,11 +15,12 @@ import html
 import json
 import os
 import re
-from PIL import Image, ImageDraw, ImageFont, ImageOps
+from PIL import Image, ImageDraw, ImageFilter, ImageFont, ImageOps
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT_DIR = 'images/og'
 SITE = 'https://ongowon.com'
+OG_VERSION = '2'  # 썸네일을 바꾸면 숫자를 올린다 (카카오톡·페이스북의 옛 썸네일 캐시 무효화)
 
 W, H = 1200, 630
 BG = (251, 247, 240)      # --bg   #FBF7F0
@@ -71,43 +73,60 @@ def wrap(d, text, fnt, max_w, lang):
 
 
 def make(lang, name, title_lines, sub, img):
-    card = Image.new('RGB', (W, H), BG)
-    art = ImageOps.fit(Image.open(os.path.join(ROOT, img)).convert('RGB'), (PHOTO_W, H), Image.LANCZOS)
-    card.paste(art, (W - PHOTO_W, 0))
+    """가운데 정렬 카드형 썸네일.
+    네이버 검색 결과·카카오톡 목록·왓츠앱은 썸네일을 가운데 정사각형(630×630)으로 잘라 보여 준다.
+    그래서 브랜드·제목·주소를 가운데 카드(가로 640) 안에 모아, 가로형(1200×630)과 정사각형 어느 쪽으로 잘려도
+    핵심 정보가 남게 한다. 바깥은 민화 그림을 깔아 가로형에서는 그림이 액자처럼 보인다."""
+    art = ImageOps.fit(Image.open(os.path.join(ROOT, img)).convert('RGB'), (W, H), Image.LANCZOS, centering=(0.5, 0.45))
+    card = Image.blend(art, Image.new('RGB', (W, H), BG), 0.12)
+    # 그림자 + 카드
+    CW, CH = 640, 452
+    cx0, cy0 = (W - CW) // 2, (H - CH) // 2
+    sh = Image.new('L', (W, H), 0)
+    ImageDraw.Draw(sh).rounded_rectangle((cx0 + 4, cy0 + 10, cx0 + CW + 4, cy0 + CH + 10), 10, fill=110)
+    sh = sh.filter(ImageFilter.GaussianBlur(14))
+    card = Image.composite(Image.new('RGB', (W, H), (60, 45, 30)), card, sh)
     d = ImageDraw.Draw(card)
-    d.line((W - PHOTO_W - 1, 0, W - PHOTO_W - 1, H), fill=LINE, width=2)
-    x, tw = 72, W - PHOTO_W - 72 - 52
+    d.rounded_rectangle((cx0, cy0, cx0 + CW, cy0 + CH), 10, fill=BG, outline=LINE, width=2)
+    mid, tw = W // 2, CW - 80
 
-    # 낙관(도장) + 브랜드
-    d.rectangle((x, 62, x + 44, 106), fill=SEAL)
-    sc = f(SERIF_B, 28, 'ja' if lang == 'ja' else 'ko')
+    # 낙관(도장) + 브랜드 (가운데)
+    bf = f(SERIF_B, 30, lang)
+    sub_brand = 'ONGOWON' if lang != 'en' else ''
+    sbf = f(SANS_M, 18, lang)
+    bw = 48 + 14 + d.textlength(BRAND[lang], font=bf) + ((12 + d.textlength(sub_brand, font=sbf)) if sub_brand else 0)
+    x = mid - bw / 2
+    y = cy0 + 40
+    d.rectangle((x, y, x + 48, y + 48), fill=SEAL)
+    sc = f(SERIF_B, 30, 'ja' if lang == 'ja' else 'ko')
     cw = d.textlength(SEAL_CH[lang], font=sc)
-    d.text((x + 22 - cw / 2, 64), SEAL_CH[lang], font=sc, fill=BG)
-    d.text((x + 60, 64), BRAND[lang], font=f(SERIF_B, 28, lang), fill=INK)
-    if lang != 'en':
-        bx = x + 60 + d.textlength(BRAND[lang], font=f(SERIF_B, 28, lang)) + 12
-        d.text((bx, 72), 'ONGOWON', font=f(SANS_M, 18, lang), fill=SOFT)
+    d.text((x + 24 - cw / 2, y + 3), SEAL_CH[lang], font=sc, fill=BG)
+    d.text((x + 62, y + 3), BRAND[lang], font=bf, fill=INK)
+    if sub_brand:
+        d.text((x + 62 + d.textlength(BRAND[lang], font=bf) + 12, y + 13), sub_brand, font=sbf, fill=SOFT)
 
-    # 제목은 주어진 줄 그대로 두고, 가장 긴 줄이 폭에 들어갈 때까지 글자 크기를 줄인다
-    size = 66
-    while size > 34:
+    # 제목: 가장 긴 줄이 카드 폭에 들어갈 때까지 글자 크기를 줄인다
+    size = 60
+    while size > 32:
         tf = f(SERIF_B, size, lang)
         if max(d.textlength(t, font=tf) for t in title_lines) <= tw:
             break
         size -= 2
-    lines = title_lines
-    y = 215 if len(lines) <= 2 else 185
-    for ln in lines:
-        d.text((x, y), ln, font=tf, fill=INK)
-        y += int(size * 1.32)
+    sf = f(SANS_M, 24, lang)
+    sub_lines = wrap(d, sub, sf, tw, lang)[:2]
+    block = len(title_lines) * int(size * 1.28) + 18 + len(sub_lines) * 34
+    y = cy0 + 118 + max(0, (CH - 118 - 92 - block) // 2)
+    for ln in title_lines:
+        d.text((mid - d.textlength(ln, font=tf) / 2, y), ln, font=tf, fill=INK)
+        y += int(size * 1.28)
+    y += 18
+    for ln in sub_lines:
+        d.text((mid - d.textlength(ln, font=sf) / 2, y), ln, font=sf, fill=SOFT)
+        y += 34
 
-    sf = f(SANS_M, 25, lang)
-    for ln in wrap(d, sub, sf, tw, lang)[:2]:
-        d.text((x, y + 16), ln, font=sf, fill=SOFT)
-        y += 36
-
-    d.line((x, H - 96, x + 40, H - 96), fill=SEAL, width=3)
-    d.text((x, H - 80), 'ongowon.com', font=f(SANS_B, 24, lang), fill=INK)
+    uf = f(SANS_B, 24, lang)
+    d.line((mid - 20, cy0 + CH - 74, mid + 20, cy0 + CH - 74), fill=SEAL, width=3)
+    d.text((mid - d.textlength('ongowon.com', font=uf) / 2, cy0 + CH - 60), 'ongowon.com', font=uf, fill=INK)
 
     os.makedirs(os.path.join(ROOT, OUT_DIR), exist_ok=True)
     out = f'{OUT_DIR}/{name}.jpg'
@@ -146,7 +165,7 @@ def patch(file, img_path):
     if i < 0:
         i = src.find('<link rel="icon"')
     head, rest = src[:i], src[i:]
-    url = f'{SITE}/{img_path}'
+    url = f'{SITE}/{img_path}?v={OG_VERSION}'
     title = get(head, 'property', 'og:title') or html.escape(re.search(r'<title>([^<]*)', head).group(1))
     desc = get(head, 'property', 'og:description') or get(head, 'name', 'description') or ''
     # 공유용 og 태그
@@ -161,6 +180,9 @@ def patch(file, img_path):
         tags = re.findall(r'<meta\s+property="' + k + r'"\s+content="[^"]*"\s*/?>', head)
         for extra in tags[1:]:
             head = head.replace(extra, '', 1)
+    loc = {'ko': 'ko_KR', 'en': 'en_US', 'ja': 'ja_JP'}[LANG_OF[file]]
+    if not get(head, 'property', 'og:locale'):
+        head = set_tag(head, 'property', 'og:locale', loc, 'og:type')
     # X(트위터)
     head = set_tag(head, 'name', 'twitter:card', 'summary_large_image', 'og:image:alt')
     head = set_tag(head, 'name', 'twitter:title', title, 'twitter:card')
@@ -181,6 +203,9 @@ def patch(file, img_path):
         return m.group(1) + json.dumps(data, ensure_ascii=False, separators=(',', ':')) + m.group(3)
     out = re.sub(r'(<script type="application/ld\+json">)(.*?)(</script>)', fix_ld, out, flags=re.S)
     open(p, 'w', encoding='utf-8').write(out)
+
+
+LANG_OF = {k: v[0] for k, v in PAGES.items()}
 
 
 def main():
