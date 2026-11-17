@@ -20,7 +20,8 @@
 - `p_*.jpg` : 담요 패키샷 목업 / `d_*.jpg` : 확대 디테일 (마우스 올리면 보임)
 - `life_*.jpg` : 사용 장면 사진 (AI 생성, 온고원 민화를 참고 이미지로 사용)
 - `met_books/met_carp/met_peony.jpg` : 메트로폴리탄 미술관 퍼블릭 도메인(CC0) 민화 원본 (소원 민화 퀴즈용)
-- `hero.jpg`, `gift.jpg` : 합성 목업 / `og.jpg`, `og_wish.jpg` : 링크 공유 미리보기
+- `hero.jpg`, `gift.jpg` : 합성 목업
+- `og/*.jpg` : 페이지별 링크 공유 미리보기(1200×630). `python3 tools/build-og.py` 가 만들고, 각 페이지의 og:image·twitter:image 태그와 JSON-LD 대표 이미지까지 함께 고칩니다. 새 페이지를 만들면 스크립트의 `PAGES` 에 한 줄 추가 후 실행하세요. (`og.jpg`, `og_wish.jpg` 는 예전 공유 이미지로 남겨 둠)
 
 이미지를 바꿀 때는 같은 파일명으로 덮어 올리면 됩니다.
 
