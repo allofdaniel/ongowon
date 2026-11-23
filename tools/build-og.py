@@ -20,7 +20,7 @@ from PIL import Image, ImageDraw, ImageFilter, ImageFont, ImageOps
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT_DIR = 'images/og'
 SITE = 'https://ongowon.com'
-OG_VERSION = '3'  # 썸네일을 바꾸면 숫자를 올린다 (카카오톡·페이스북의 옛 썸네일 캐시 무효화)
+OG_VERSION = '4'  # 썸네일을 바꾸면 숫자를 올린다 (카카오톡·페이스북의 옛 썸네일 캐시 무효화)
 
 W, H = 1200, 630
 BG = (251, 247, 240)      # --bg   #FBF7F0
@@ -40,7 +40,7 @@ SEAL_CH = {'ko': '溫', 'en': '溫', 'ja': '温'}
 
 # 파일: (언어, 썸네일 이름, 제목 줄들, 부제, 그림)
 PAGES = {
-    'index.html': ('ko', 'home', ['소원을 덮어주는 첫 번째 담요'], '민화 아기 담요 · 출산·백일·돌 선물  |  ongowon.com', 'images/life_picnic.jpg'),
+    'index.html': ('ko', 'home', ['소원을 덮어주는 첫 번째 담요'], '민화 아기 담요 · 출산·백일·돌 선물  |  ongowon.com', 'images/og_home_nap.jpg'),
     'en/index.html': ('en', 'home-en', ['A blanket', 'that keeps a wish'], 'Korean minhwa baby blankets & gifts', 'images/crane.jpg'),
     'ja/index.html': ('ja', 'home-ja', ['願いをそっと包む', 'はじめてのブランケット'], '韓国民画のベビーブランケット・出産祝い', 'images/peony.jpg'),
     'minhwa/index.html': ('ko', 'minhwa', ['민화 소원 사전'], '잉어 · 학 · 모란 · 책가도 · 까치호랑이 · 박쥐 그림의 뜻', 'images/carp.jpg'),
@@ -135,7 +135,7 @@ def make(lang, name, title_lines, sub, img):
 
 
 # 사진형 썸네일을 쓰는 페이지 (사진을 꽉 채우고 아래쪽 가운데에 작은 카드)
-PHOTO = {'home': 0.3}   # 썸네일 이름: 세로 자르기 기준(0=위, 1=아래)
+PHOTO = {'home': 0.0}   # 썸네일 이름: 세로 자르기 기준(0=위, 1=아래)
 
 
 def make_photo(lang, name, title_lines, sub, img):
