@@ -20,7 +20,7 @@ from PIL import Image, ImageDraw, ImageFilter, ImageFont, ImageOps
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT_DIR = 'images/og'
 SITE = 'https://ongowon.com'
-OG_VERSION = '2'  # 썸네일을 바꾸면 숫자를 올린다 (카카오톡·페이스북의 옛 썸네일 캐시 무효화)
+OG_VERSION = '3'  # 썸네일을 바꾸면 숫자를 올린다 (카카오톡·페이스북의 옛 썸네일 캐시 무효화)
 
 W, H = 1200, 630
 BG = (251, 247, 240)      # --bg   #FBF7F0
@@ -40,7 +40,7 @@ SEAL_CH = {'ko': '溫', 'en': '溫', 'ja': '温'}
 
 # 파일: (언어, 썸네일 이름, 제목 줄들, 부제, 그림)
 PAGES = {
-    'index.html': ('ko', 'home', ['소원을 덮어주는', '첫 번째 담요'], '민화 아기 담요 · 출산·백일·돌 선물', 'images/sheep.jpg'),
+    'index.html': ('ko', 'home', ['소원을 덮어주는 첫 번째 담요'], '민화 아기 담요 · 출산·백일·돌 선물  |  ongowon.com', 'images/life_picnic.jpg'),
     'en/index.html': ('en', 'home-en', ['A blanket', 'that keeps a wish'], 'Korean minhwa baby blankets & gifts', 'images/crane.jpg'),
     'ja/index.html': ('ja', 'home-ja', ['願いをそっと包む', 'はじめてのブランケット'], '韓国民画のベビーブランケット・出産祝い', 'images/peony.jpg'),
     'minhwa/index.html': ('ko', 'minhwa', ['민화 소원 사전'], '잉어 · 학 · 모란 · 책가도 · 까치호랑이 · 박쥐 그림의 뜻', 'images/carp.jpg'),
@@ -134,6 +134,48 @@ def make(lang, name, title_lines, sub, img):
     return out
 
 
+# 사진형 썸네일을 쓰는 페이지 (사진을 꽉 채우고 아래쪽 가운데에 작은 카드)
+PHOTO = {'home': 0.3}   # 썸네일 이름: 세로 자르기 기준(0=위, 1=아래)
+
+
+def make_photo(lang, name, title_lines, sub, img):
+    """제품 사진형 썸네일. 사진을 꽉 채우고 브랜드·제목·부제를 아래쪽 가운데 카드(가로 600)에 모은다.
+    카드가 가운데 630 폭 안에 있어 정사각형으로 잘려도 사진의 아이·담요와 문구가 함께 남는다."""
+    art = ImageOps.fit(Image.open(os.path.join(ROOT, img)).convert('RGB'), (W, H), Image.LANCZOS, centering=(0.5, PHOTO[name]))
+    CW, CH = 600, 150
+    cx0, cy0 = (W - CW) // 2, H - CH - 28
+    sh = Image.new('L', (W, H), 0)
+    ImageDraw.Draw(sh).rounded_rectangle((cx0 + 3, cy0 + 8, cx0 + CW + 3, cy0 + CH + 8), 10, fill=120)
+    sh = sh.filter(ImageFilter.GaussianBlur(14))
+    card = Image.composite(Image.new('RGB', (W, H), (60, 45, 30)), art, sh)
+    ov = Image.new('RGBA', (W, H), (0, 0, 0, 0))
+    ImageDraw.Draw(ov).rounded_rectangle((cx0, cy0, cx0 + CW, cy0 + CH), 10, fill=BG + (245,), outline=LINE + (255,), width=2)
+    card = Image.alpha_composite(card.convert('RGBA'), ov).convert('RGB')
+    d = ImageDraw.Draw(card)
+    mid = W // 2
+    bf, sbf = f(SERIF_B, 22, lang), f(SANS_M, 14, lang)
+    sc = f(SERIF_B, 22, 'ja' if lang == 'ja' else 'ko')
+    sub_brand = 'ONGOWON' if lang != 'en' else ''
+    bw = 34 + 10 + d.textlength(BRAND[lang], font=bf) + ((10 + d.textlength(sub_brand, font=sbf)) if sub_brand else 0)
+    x, y = mid - bw / 2, cy0 + 18
+    d.rectangle((x, y, x + 34, y + 34), fill=SEAL)
+    d.text((x + 17 - d.textlength(SEAL_CH[lang], font=sc) / 2, y + 2), SEAL_CH[lang], font=sc, fill=BG)
+    d.text((x + 44, y + 2), BRAND[lang], font=bf, fill=INK)
+    if sub_brand:
+        d.text((x + 44 + d.textlength(BRAND[lang], font=bf) + 10, y + 11), sub_brand, font=sbf, fill=SOFT)
+    t = ' '.join(title_lines)
+    size = 38
+    while size > 26 and d.textlength(t, font=f(SERIF_B, size, lang)) > CW - 40:
+        size -= 2
+    tf = f(SERIF_B, size, lang)
+    d.text((mid - d.textlength(t, font=tf) / 2, cy0 + 58), t, font=tf, fill=INK)
+    sf = f(SANS_M, 17, lang)
+    d.text((mid - d.textlength(sub, font=sf) / 2, cy0 + 114), sub, font=sf, fill=SOFT)
+    out = f'{OUT_DIR}/{name}.jpg'
+    card.save(os.path.join(ROOT, out), 'JPEG', quality=86, optimize=True, progressive=True)
+    return out
+
+
 def meta_tag(attr, key, value):
     return f'<meta {attr}="{key}" content="{value}">'
 
@@ -210,7 +252,7 @@ LANG_OF = {k: v[0] for k, v in PAGES.items()}
 
 def main():
     for file, (lang, name, title, sub, img) in PAGES.items():
-        out = make(lang, name, title, sub, img)
+        out = (make_photo if name in PHOTO else make)(lang, name, title, sub, img)
         patch(file, out)
         print(f'{file:24s} → {out}')
 
