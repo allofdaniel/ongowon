@@ -151,6 +151,18 @@ header{position:sticky;top:0;z-index:20;background:rgba(251,247,240,.94);backdro
 .news input::placeholder{color:#9D9081}
 .news button{background:none;border:0;color:var(--bg);font:inherit;letter-spacing:.12em;cursor:pointer;padding:0 6px}
 .news .note{font-size:12px;color:#9D9081;margin-top:16px}
+.news .nl-open{background:var(--bg);color:var(--ink);border:0;font:inherit;font-size:16px;letter-spacing:.08em;padding:16px 34px;cursor:pointer;transition:background .2s}
+.news .nl-open:hover{background:var(--rose)}
+.nlm{position:fixed;inset:0;z-index:1000;background:rgba(43,37,32,.55);display:flex;align-items:center;justify-content:center;padding:20px}
+.nlm[hidden]{display:none}
+.nlm-box{position:relative;background:var(--bg);color:var(--ink);max-width:440px;width:100%;padding:44px 32px 30px;text-align:center;border-top:4px solid var(--seal);box-shadow:0 20px 60px rgba(0,0,0,.25)}
+.nlm-x{position:absolute;top:10px;right:12px;background:none;border:0;font-size:18px;color:var(--soft);cursor:pointer;padding:6px}
+.nlm-en{font-family:var(--latin);letter-spacing:.14em;color:var(--seal);font-size:15px;margin-bottom:10px}
+.nlm h3{font-family:var(--serif);font-size:22px;line-height:1.5;margin:0 0 14px}
+.nlm p{font-size:14px;line-height:1.8;color:var(--soft);margin:0 0 26px;word-break:keep-all}
+.nlm-go{display:block;background:var(--seal);color:#fff;padding:15px 18px;text-decoration:none;letter-spacing:.04em}
+.nlm-go:hover{background:#9a3526}
+.nlm-later{margin-top:12px;background:none;border:0;color:var(--soft);font:inherit;font-size:13px;cursor:pointer;text-decoration:underline}
 .news .ig{margin-top:30px;display:inline-flex;gap:10px;align-items:center;font-family:var(--latin);font-size:20px;letter-spacing:.08em}
 
 /* footer */
@@ -635,14 +647,22 @@ footer a{overflow-wrap:anywhere}
       <h2>출시 소식을 가장 먼저</h2>
       <p>첫 컬렉션이 나오면 이메일로 알려드릴게요.</p>
     </div>
-    <form id="nl">
-      <input type="email" name="email" required placeholder="이메일 주소" aria-label="이메일 주소">
-      <button type="submit">신청하기 →</button>
-    </form>
-    <div class="note" id="nlnote">신청하시면 첫 컬렉션 출시 소식을 이메일로 알려드려요.</div>
+    <button type="button" class="nl-open" id="nlopen" aria-haspopup="dialog">출시 알림 신청하기 →</button>
+    <div class="note" id="nlnote">간단한 설문과 함께 신청하시면 첫 컬렉션 출시 소식을 이메일로 알려드려요.</div>
     <div><a class="ig" href="https://www.instagram.com/ongo.won_archive/" target="_blank" rel="noopener">@ongo.won_archive</a></div>
   </div>
 </section>
+
+<div class="nlm" id="nlm" role="dialog" aria-modal="true" aria-labelledby="nlm-t" hidden>
+  <div class="nlm-box">
+    <button type="button" class="nlm-x" data-nlm-close aria-label="닫기">✕</button>
+    <div class="nlm-en">Before you sign up</div>
+    <h3 id="nlm-t">출시 알림 전에,<br>짧은 설문 하나만 부탁드려요</h3>
+    <p>온고원의 첫 담요를 만드는 데 여러분의 생각이 큰 힘이 돼요.<br>1~2분이면 끝나는 설문에 답해 주시고, 마지막에 이메일을 남겨 주시면 출시 소식을 가장 먼저 알려드릴게요.</p>
+    <a class="nlm-go" id="nlm-go" href="https://docs.google.com/forms/d/e/1FAIpQLSdpT2V3lnSBrPcMAnTbqopp4hMXRBnumrBRgYwgtY8Xgj7k1g/viewform" target="_blank" rel="noopener">설문 참여하고 알림 신청하기 →</a>
+    <button type="button" class="nlm-later" data-nlm-close>다음에 할게요</button>
+  </div>
+</div>
 
 <footer>
   <div class="wrap">
@@ -669,16 +689,16 @@ const mn=document.querySelector('.mnav');
 document.querySelectorAll('[data-open]').forEach(b=>b.onclick=()=>mn.classList.add('open'));
 document.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',()=>mn.classList.remove('open')));
 document.querySelectorAll('[data-lang]').forEach(a=>a.addEventListener('click',()=>{try{localStorage.setItem('ongowon_lang',a.dataset.lang)}catch(e){}}));
-document.getElementById('nl').addEventListener('submit',e=>{
-  e.preventDefault();
-  const f=e.target,b=f.querySelector('button'),n=document.getElementById('nlnote'),t=b.textContent;
-  b.disabled=true;b.textContent='신청 중…';
-  const d=new URLSearchParams({email:f.email.value,lang:'ko',src:location.pathname+(location.search||'')});
-  fetch('https://script.google.com/macros/s/AKfycby69IBv5Am_Cfwg8dH9tFOLktqmMjpe8eH-fsw8n4EDK6dlDfdG8hFlfUsRjU93Enfrpg/exec',{method:'POST',mode:'no-cors',body:d})
-    .then(()=>{n.textContent='신청 완료! 출시되면 가장 먼저 알려드릴게요.';f.reset();})
-    .catch(()=>{n.textContent='잠시 후 다시 시도해 주세요.';})
-    .finally(()=>{b.disabled=false;b.textContent=t;});
-});
+(function(){
+  const m=document.getElementById('nlm'),op=document.getElementById('nlopen');
+  const open=()=>{m.hidden=false;document.body.style.overflow='hidden';document.getElementById('nlm-go').focus();};
+  const close=()=>{m.hidden=true;document.body.style.overflow='';op.focus();};
+  op.addEventListener('click',open);
+  m.querySelectorAll('[data-nlm-close]').forEach(b=>b.addEventListener('click',close));
+  document.getElementById('nlm-go').addEventListener('click',()=>{setTimeout(close,300);document.getElementById('nlnote').textContent='새 창에서 설문을 마치면 신청이 완료돼요. 감사합니다!';});
+  m.addEventListener('click',e=>{if(e.target===m)close();});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!m.hidden)close();});
+})();
 // visitors whose browser is not Korean: suggest their language (no automatic redirect)
 (function(){try{
   if(localStorage.getItem('ongowon_lang'))return;
