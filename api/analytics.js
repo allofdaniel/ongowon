@@ -118,16 +118,17 @@ function applyCors(req, res) {
 }
 
 function sanitizeToken(val, maxLen = 28, allowDot = false) {
-  if (typeof val !== 'string') return '_';
-  const re = allowDot ? /[^a-z0-9._-]/g : /[^a-z0-9_-]/g;
+  if (typeof val !== 'string') return 'none';
+  const re = allowDot ? /[^a-z0-9.-]/g : /[^a-z0-9-]/g;
   const cleaned = val
     .toLowerCase()
     .trim()
+    .replace(/_/g, '-')
     .replace(re, '')
-    .replace(/__+/g, '_')
-    .replace(/^[._-]+|[._-]+$/g, '')
+    .replace(/--+/g, '-')
+    .replace(/^[.-]+|[.-]+$/g, '')
     .slice(0, maxLen);
-  return cleaned || '_';
+  return cleaned || 'none';
 }
 
 function normalizeRoute(rawPath) {
@@ -277,18 +278,18 @@ function classifyTraffic({ referrer, utmSource, utmMedium, utmCampaign, utmConte
     return { channel: 'referral', refHost: sanitizeToken(refHost, 32, true) };
   }
 
-  return { channel: 'direct', refHost: '_' };
+  return { channel: 'direct', refHost: 'none' };
 }
 
 function extractExtra(eventName, meta) {
-  if (!meta || typeof meta !== 'object') return '_';
+  if (!meta || typeof meta !== 'object') return 'none';
   if (eventName === 'minhwa_generate') {
     return sanitizeToken(String(meta.theme || ''), 20);
   }
   if (eventName === 'mockup_download') {
     const kind = meta.kind === 'raw_png' ? 'raw' : 'blanket';
     const theme = sanitizeToken(String(meta.theme || ''), 14);
-    return theme !== '_' ? `${kind}-${theme}` : kind;
+    return theme !== 'none' ? `${kind}-${theme}` : kind;
   }
   if (eventName === 'notify_signup') {
     const ch = sanitizeToken(String(meta.channel || meta.source || ''), 20);
@@ -297,10 +298,10 @@ function extractExtra(eventName, meta) {
   if (eventName === 'language_switch') {
     const f = sanitizeToken(String(meta.from_lang || ''), 4);
     const t = sanitizeToken(String(meta.to_lang || ''), 4);
-    if (f !== '_' && t !== '_') return `${f}-${t}`;
+    if (f !== 'none' && t !== 'none') return `${f}-${t}`;
     return t;
   }
-  return '_';
+  return 'none';
 }
 
 function getPublicConfig() {
@@ -368,9 +369,9 @@ function parseBlobPathname(pathname, url) {
     lc: lc === 'en' || lc === 'ja' ? lc : 'ko',
     dv: dv === 'm' || dv === 't' ? dv : 'd',
     ch: CHANNEL_DEFS[ch] ? ch : 'direct',
-    rh: rh === '_' ? '' : rh,
-    uc: uc === '_' ? '' : uc,
-    ex: ex === '_' ? '' : ex,
+    rh: rh === 'none' || rh === '_' ? '' : rh,
+    uc: uc === 'none' || uc === '_' ? '' : uc,
+    ex: ex === 'none' || ex === '_' ? '' : ex,
     url: url || '',
     pathname,
   };
@@ -889,7 +890,7 @@ module.exports = async function handler(req, res) {
     const lc = normalizeLocale(body.locale, rt);
     const dv = normalizeDevice(body.device);
     const sidRaw = sanitizeToken(String(body.sid || ''), 12);
-    const sid = sidRaw !== '_' ? sidRaw : crypto.randomBytes(4).toString('hex');
+    const sid = sidRaw !== 'none' ? sidRaw : crypto.randomBytes(4).toString('hex');
 
     const { channel, refHost } = classifyTraffic({
       referrer: body.referrer,
@@ -926,12 +927,12 @@ module.exports = async function handler(req, res) {
       device: dv,
       sid,
       channel,
-      refHost: refHost === '_' ? '' : refHost,
+      refHost: refHost === 'none' ? '' : refHost,
       utmSource: String(body.utm_source || '').slice(0, 60),
       utmMedium: String(body.utm_medium || '').slice(0, 60),
       utmCampaign: String(body.utm_campaign || '').slice(0, 80),
       utmContent: String(body.utm_content || '').slice(0, 80),
-      extra: ex === '_' ? '' : ex,
+      extra: ex === 'none' ? '' : ex,
     };
 
     try {
@@ -942,9 +943,9 @@ module.exports = async function handler(req, res) {
       } else {
         memoryEvents.push({
           ...rec,
-          rh: rec.rh === '_' ? '' : rec.rh,
-          uc: rec.uc === '_' ? '' : rec.uc,
-          ex: rec.ex === '_' ? '' : rec.ex,
+          rh: rec.rh === 'none' ? '' : rec.rh,
+          uc: rec.uc === 'none' ? '' : rec.uc,
+          ex: rec.ex === 'none' ? '' : rec.ex,
         });
         if (memoryEvents.length > 2000) memoryEvents.shift();
       }
@@ -1027,7 +1028,7 @@ module.exports = async function handler(req, res) {
       urlObj = new URL('/', 'https://ongowon.com');
     }
     const targetSid = sanitizeToken(urlObj.searchParams.get('sid') || '', 12);
-    if (targetSid === '_') {
+    if (targetSid === 'none') {
       return res.status(400).json({ ok: false, error: 'sid_required' });
     }
 
