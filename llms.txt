@@ -30,6 +30,7 @@
 - [Minhwa symbol guide (Korean)](https://ongowon.com/minhwa/): meanings of minhwa symbols with sources
 - [Minhwa symbol guide (English)](https://ongowon.com/en/minhwa/)
 - [Minhwa symbol guide (Japanese)](https://ongowon.com/ja/minhwa/)
+- [AI Minhwa Studio (Korean, interactive AI)](https://ongowon.com/studio/): generate custom Ongowon Joseon minhwa baby blanket designs, 95×95cm cotton muslin blanket mockups, historical iconography citations, and wish postcards from a baby's nickname and wish
 - [Wish Playground (Korean, interactive)](https://ongowon.com/wish/): quiz on real Joseon minhwa, wish-painting test, zodiac year and doljabi
 
 ## Links

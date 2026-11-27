@@ -1,5 +1,10 @@
 {
   "trailingSlash": true,
+  "functions": {
+    "api/minhwa-generate.js": {
+      "maxDuration": 60
+    }
+  },
   "headers": [
     {
       "source": "/llms.txt",

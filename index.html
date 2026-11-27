@@ -234,6 +234,18 @@ footer a:hover{color:var(--seal)}
 }
 
 /* wish minhwa band */
+.studio-band{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.studio-box{display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:center}
+.studio-box .en{font-family:var(--latin);font-style:italic;font-size:21px;color:var(--seal)}
+.studio-box h2{font-family:var(--serif);font-size:clamp(26px,3.2vw,38px);line-height:1.32;margin:6px 0 14px;word-break:keep-all}
+.studio-box p{color:#4A413A;margin:0 0 22px;word-break:keep-all}
+.studio-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:26px}
+.studio-tags span{font-size:12px;color:var(--soft);background:var(--bg);border:1px solid var(--line);padding:4px 12px;letter-spacing:.03em}
+.studio-prev{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.studio-prev figure{margin:0;background:var(--bg);border:1px solid var(--line);padding:10px}
+.studio-prev img{width:100%;aspect-ratio:1;object-fit:cover}
+.studio-prev figcaption{font-size:11.5px;color:var(--soft);text-align:center;margin-top:8px;letter-spacing:.03em}
+@media (max-width:960px){.studio-box{grid-template-columns:1fr;gap:28px}}
 .wish{background:var(--rose)}
 .wcards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 .wc{background:var(--bg);display:flex;flex-direction:column;padding:0 0 26px;transition:transform .3s,box-shadow .3s}
@@ -291,7 +303,7 @@ footer a{overflow-wrap:anywhere}
 
 <header>
   <div class="wrap hd">
-    <nav><a href="#collection">컬렉션</a><a href="/wish/">소원 놀이터</a><a href="#life">일상 속 온고원</a><a href="#gift">선물</a><a href="#story">이야기</a></nav>
+    <nav><a href="#collection">컬렉션</a><a href="/studio/" style="color:var(--seal);font-weight:500">AI 민화 스튜디오</a><a href="/wish/">소원 놀이터</a><a href="#life">일상 속 온고원</a><a href="#gift">선물</a><a href="#story">이야기</a></nav>
     <button class="menu-btn" aria-label="메뉴" data-open>☰<span class="ml"> 메뉴</span></button>
     <a href="/" class="logo" aria-label="ONGOWON"><div class="seal"><span><em>온</em><em>고</em><em>원</em></span></div><div class="wm"><b>ONGOWON</b><small>온고원<i></i>KOREA</small></div></a>
     <div class="right">
@@ -303,7 +315,7 @@ footer a{overflow-wrap:anywhere}
 
 <div class="mnav" role="dialog" aria-label="메뉴">
   <button data-close>닫기 ✕</button>
-  <a href="#collection" data-close>컬렉션</a><a href="/wish/" data-close>소원 놀이터</a><a href="#life" data-close>일상 속 온고원</a><a href="#gift" data-close>선물</a><a href="#story" data-close>이야기</a>
+  <a href="#collection" data-close>컬렉션</a><a href="/studio/" data-close style="color:var(--seal)">AI 민화 스튜디오</a><a href="/wish/" data-close>소원 놀이터</a><a href="#life" data-close>일상 속 온고원</a><a href="#gift" data-close>선물</a><a href="#story" data-close>이야기</a>
   <a href="#newsletter" data-close>출시 알림</a>
   <a href="https://www.instagram.com/ongo.won_archive/" target="_blank" rel="noopener">Instagram</a>
   <div class="langs"><a href="/" data-lang="ko" class=cur aria-current=page>KO</a><a href="/en/" data-lang="en">EN</a><a href="/ja/" data-lang="ja">JA</a></div>
@@ -314,7 +326,10 @@ footer a{overflow-wrap:anywhere}
   <div class="cap">
     <div class="k">The First Collection</div>
     <h1>소원을 덮어주는<br>첫 번째 담요</h1>
-    <a class="btn" href="#collection">컬렉션 보기</a>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+      <a class="btn red" href="/studio/">AI 소원 민화 짓기 →</a>
+      <a class="btn" href="#collection">컬렉션 보기</a>
+    </div>
   </div>
 </section>
 
@@ -545,6 +560,27 @@ footer a{overflow-wrap:anywhere}
   </div>
 </section>
 
+<section class="sec studio-band" id="ai-studio">
+  <div class="wrap studio-box">
+    <div class="rv">
+      <div class="en">Ongowon AI Minhwa Studio</div>
+      <h2>아기의 태몽과 소원으로<br>세상에 하나뿐인 민화를 지어요</h2>
+      <p>태명과 길상 소원 테마(십장생도·모란도·약리도·책가도·색동조각보), 바라는 마음 한 줄을 입력하면 온고원의 조선 민화 고증 도상과 저염료 KC 안전 파스텔 규칙으로 95×95cm 아기 담요 시안과 고증 소원 엽서를 바로 완성해 드립니다.</p>
+      <div class="studio-tags">
+        <span>조선 민화 고증 5종</span>
+        <span>저염료 KC-Safe 파스텔</span>
+        <span>95×95cm 담요 목업 · 엽서</span>
+        <span>무료 일 5회 체험</span>
+      </div>
+      <a class="btn red" href="/studio/">AI 민화 스튜디오 체험하기 →</a>
+    </div>
+    <div class="studio-prev rv">
+      <figure><img src="/images/p_carp.jpg" alt="약리도 95×95cm 아기 담요 목업" loading="lazy"><figcaption>95×95cm 까레 담요 목업</figcaption></figure>
+      <figure><img src="/images/crane.jpg" alt="십장생도 온고원 민화 원화" loading="lazy"><figcaption>저염료 파스텔 민화 원화</figcaption></figure>
+    </div>
+  </div>
+</section>
+
 <section class="sec wish" id="wish">
   <div class="wrap">
     <div class="title rv">
@@ -671,7 +707,7 @@ footer a{overflow-wrap:anywhere}
         <a href="/" class="logo" style="margin-bottom:18px"><div class="seal"><span><em>온</em><em>고</em><em>원</em></span></div><div class="wm"><b style="font-size:22px">ONGOWON</b><small>온고원<i></i>KOREA</small></div></a>
         <p style="max-width:300px">그림으로 소원을 비는 조선의 방식을, 지금의 아기 담요로.</p>
       </div>
-      <div><h4>Shop</h4><ul><li><a href="#collection">블랭킷</a></li><li><a href="#gift">선물 세트</a></li></ul></div>
+      <div><h4>Shop</h4><ul><li><a href="/studio/">AI 민화 스튜디오</a></li><li><a href="#collection">블랭킷</a></li><li><a href="#gift">선물 세트</a></li></ul></div>
       <div><h4>About</h4><ul><li><a href="#story">온고원 이야기</a></li><li><a href="#life">일상 속 온고원</a></li><li><a href="/wish/">소원 놀이터</a></li><li><a href="/minhwa/">민화 소원 사전</a></li><li><a href="#faq">FAQ</a></li><li><a href="https://www.instagram.com/ongo.won_archive/" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://www.youtube.com/channel/UC07gJPocSabI5b8AhCYtEoQ" target="_blank" rel="noopener">YouTube</a></li></ul></div>
       <div><h4>Contact</h4><ul><li><a href="mailto:kjh012677@gmail.com">kjh012677@gmail.com</a></li></ul><div class="langs ft-langs"><a href="/" data-lang="ko" class=cur aria-current=page>KO</a><a href="/en/" data-lang="en">EN</a><a href="/ja/" data-lang="ja">JA</a></div></div>
     </div>
