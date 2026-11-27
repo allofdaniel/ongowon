@@ -316,7 +316,7 @@ footer a{overflow-wrap:anywhere}
 
 <div class="mnav" role="dialog" aria-label="메뉴">
   <button data-close>닫기 ✕</button>
-  <a href="/#collection" data-close>컬렉션</a><a href="/wish/" data-close>소원 놀이터</a><a href="/#life" data-close>일상 속 온고원</a><a href="/#gift" data-close>선물</a><a href="/#story" data-close>이야기</a>
+  <a href="/#collection" data-close>컬렉션</a><a href="/studio/" data-close style="color:var(--seal)">AI 민화 스튜디오</a><a href="/wish/" data-close>소원 놀이터</a><a href="/#life" data-close>일상 속 온고원</a><a href="/#gift" data-close>선물</a><a href="/#story" data-close>이야기</a>
   <a href="/#newsletter" data-close>출시 알림</a>
   <a href="https://www.instagram.com/ongo.won_archive/" target="_blank" rel="noopener">Instagram</a>
   <div class="langs"><a href="/minhwa/" data-lang="ko" class=cur aria-current=page>KO</a><a href="/en/minhwa/" data-lang="en">EN</a><a href="/ja/minhwa/" data-lang="ja">JA</a></div>
@@ -428,7 +428,7 @@ footer a{overflow-wrap:anywhere}
         <a href="/" class="logo" style="margin-bottom:18px"><div class="seal"><span><em>온</em><em>고</em><em>원</em></span></div><div class="wm"><b style="font-size:22px">ONGOWON</b><small>온고원<i></i>KOREA</small></div></a>
         <p style="max-width:300px">그림으로 소원을 비는 조선의 방식을, 지금의 아기 담요로.</p>
       </div>
-      <div><h4>Shop</h4><ul><li><a href="/#collection">블랭킷</a></li><li><a href="/#gift">선물 세트</a></li></ul></div>
+      <div><h4>Shop</h4><ul><li><a href="/studio/">AI 민화 스튜디오</a></li><li><a href="/#collection">블랭킷</a></li><li><a href="/#gift">선물 세트</a></li></ul></div>
       <div><h4>About</h4><ul><li><a href="/#story">온고원 이야기</a></li><li><a href="/#life">일상 속 온고원</a></li><li><a href="/wish/">소원 놀이터</a></li><li><a href="/minhwa/">민화 소원 사전</a></li><li><a href="/#faq">FAQ</a></li><li><a href="https://www.instagram.com/ongo.won_archive/" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://www.youtube.com/channel/UC07gJPocSabI5b8AhCYtEoQ" target="_blank" rel="noopener">YouTube</a></li></ul></div>
       <div><h4>Contact</h4><ul><li><a href="mailto:kjh012677@gmail.com">kjh012677@gmail.com</a></li></ul><div class="langs ft-langs"><a href="/minhwa/" data-lang="ko" class=cur aria-current=page>KO</a><a href="/en/minhwa/" data-lang="en">EN</a><a href="/ja/minhwa/" data-lang="ja">JA</a></div></div>
     </div>
@@ -442,5 +442,7 @@ document.querySelectorAll('[data-open]').forEach(b=>b.onclick=()=>mn.classList.a
 document.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',()=>mn.classList.remove('open')));
 document.querySelectorAll('[data-lang]').forEach(a=>a.addEventListener('click',()=>{try{localStorage.setItem('ongowon_lang',a.dataset.lang)}catch(e){}}));
 </script>
+<script defer src="/js/analytics-config.js"></script>
+<script defer src="/js/analytics.js"></script>
 </body>
 </html>

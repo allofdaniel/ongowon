@@ -303,7 +303,7 @@ footer a{overflow-wrap:anywhere}
 
 <header>
   <div class="wrap hd">
-    <nav><a href="/en/#collection">Collection</a><a href="/wish/">Wish Playground</a><a href="/en/#life">At home</a><a href="/en/#gift">Gifts</a><a href="/en/#story">Our story</a></nav>
+    <nav><a href="/en/#collection">Collection</a><a href="/studio/?lang=en" style="color:var(--seal);font-weight:500">AI Studio</a><a href="/wish/">Wish Playground</a><a href="/en/#life">At home</a><a href="/en/#gift">Gifts</a><a href="/en/#story">Our story</a></nav>
     <button class="menu-btn" aria-label="Menu" data-open>☰<span class="ml"> Menu</span></button>
     <a href="/en/" class="logo" aria-label="ONGOWON"><div class="seal"><span><em>온</em><em>고</em><em>원</em></span></div><div class="wm"><b>ONGOWON</b><small>온고원<i></i>KOREA</small></div></a>
     <div class="right">
@@ -315,7 +315,7 @@ footer a{overflow-wrap:anywhere}
 
 <div class="mnav" role="dialog" aria-label="Menu">
   <button data-close>Close ✕</button>
-  <a href="/en/#collection" data-close>Collection</a><a href="/wish/" data-close>Wish Playground</a><a href="/en/#life" data-close>At home</a><a href="/en/#gift" data-close>Gifts</a><a href="/en/#story" data-close>Our story</a>
+  <a href="/en/#collection" data-close>Collection</a><a href="/studio/?lang=en" data-close style="color:var(--seal)">AI Studio</a><a href="/wish/" data-close>Wish Playground</a><a href="/en/#life" data-close>At home</a><a href="/en/#gift" data-close>Gifts</a><a href="/en/#story" data-close>Our story</a>
   <a href="/en/#newsletter" data-close>Notify me</a>
   <a href="https://www.instagram.com/ongo.won_archive/" target="_blank" rel="noopener">Instagram</a>
   <div class="langs"><a href="/minhwa/" data-lang="ko">KO</a><a href="/en/minhwa/" data-lang="en" class=cur aria-current=page>EN</a><a href="/ja/minhwa/" data-lang="ja">JA</a></div>
@@ -427,7 +427,7 @@ footer a{overflow-wrap:anywhere}
         <a href="/en/" class="logo" style="margin-bottom:18px"><div class="seal"><span><em>온</em><em>고</em><em>원</em></span></div><div class="wm"><b style="font-size:22px">ONGOWON</b><small>온고원<i></i>KOREA</small></div></a>
         <p style="max-width:300px">An old Korean way of wishing with pictures, for today's little ones.</p>
       </div>
-      <div><h4>Shop</h4><ul><li><a href="/en/#collection">Blankets</a></li><li><a href="/en/#gift">Gift sets</a></li></ul></div>
+      <div><h4>Shop</h4><ul><li><a href="/studio/?lang=en">AI Minhwa Studio</a></li><li><a href="/en/#collection">Blankets</a></li><li><a href="/en/#gift">Gift sets</a></li></ul></div>
       <div><h4>About</h4><ul><li><a href="/en/#story">Our story</a></li><li><a href="/en/#life">At home</a></li><li><a href="/wish/">Wish Playground</a></li><li><a href="/en/minhwa/">Minhwa symbol guide</a></li><li><a href="/en/#faq">FAQ</a></li><li><a href="https://www.instagram.com/ongo.won_archive/" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://www.youtube.com/channel/UC07gJPocSabI5b8AhCYtEoQ" target="_blank" rel="noopener">YouTube</a></li></ul></div>
       <div><h4>Contact</h4><ul><li><a href="mailto:kjh012677@gmail.com">kjh012677@gmail.com</a></li></ul><div class="langs ft-langs"><a href="/minhwa/" data-lang="ko">KO</a><a href="/en/minhwa/" data-lang="en" class=cur aria-current=page>EN</a><a href="/ja/minhwa/" data-lang="ja">JA</a></div></div>
     </div>
@@ -441,5 +441,7 @@ document.querySelectorAll('[data-open]').forEach(b=>b.onclick=()=>mn.classList.a
 document.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',()=>mn.classList.remove('open')));
 document.querySelectorAll('[data-lang]').forEach(a=>a.addEventListener('click',()=>{try{localStorage.setItem('ongowon_lang',a.dataset.lang)}catch(e){}}));
 </script>
+<script defer src="/js/analytics-config.js"></script>
+<script defer src="/js/analytics.js"></script>
 </body>
 </html>

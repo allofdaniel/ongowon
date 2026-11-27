@@ -219,6 +219,18 @@ footer a:hover{color:var(--seal)}
 }
 
 /* wish minhwa band */
+.studio-band{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.studio-box{display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:center}
+.studio-box .en{font-family:var(--latin);font-style:italic;font-size:21px;color:var(--seal)}
+.studio-box h2{font-family:var(--latin);font-weight:600;font-size:clamp(28px,3.4vw,42px);line-height:1.22;margin:6px 0 14px}
+.studio-box p{color:#4A413A;margin:0 0 22px}
+.studio-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:26px}
+.studio-tags span{font-size:12px;color:var(--soft);background:var(--bg);border:1px solid var(--line);padding:4px 12px;letter-spacing:.03em}
+.studio-prev{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.studio-prev figure{margin:0;background:var(--bg);border:1px solid var(--line);padding:10px}
+.studio-prev img{width:100%;aspect-ratio:1;object-fit:cover}
+.studio-prev figcaption{font-size:11.5px;color:var(--soft);text-align:center;margin-top:8px;letter-spacing:.03em}
+@media (max-width:960px){.studio-box{grid-template-columns:1fr;gap:28px}}
 .wish{background:var(--rose)}
 .wcards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 .wc{background:var(--bg);display:flex;flex-direction:column;padding:0 0 26px;transition:transform .3s,box-shadow .3s}
@@ -275,7 +287,7 @@ footer a{overflow-wrap:anywhere}
 
 <header>
   <div class="wrap hd">
-    <nav><a href="#collection">Collection</a><a href="/wish/">Wish Playground</a><a href="#life">At home</a><a href="#gift">Gifts</a><a href="#story">Our story</a></nav>
+    <nav><a href="#collection">Collection</a><a href="/studio/?lang=en" style="color:var(--seal);font-weight:500">AI Studio</a><a href="/wish/">Wish Playground</a><a href="#life">At home</a><a href="#gift">Gifts</a><a href="#story">Our story</a></nav>
     <button class="menu-btn" aria-label="Menu" data-open>☰<span class="ml"> Menu</span></button>
     <a href="/en/" class="logo" aria-label="ONGOWON"><div class="seal"><span><em>온</em><em>고</em><em>원</em></span></div><div class="wm"><b>ONGOWON</b><small>온고원<i></i>KOREA</small></div></a>
     <div class="right">
@@ -287,7 +299,7 @@ footer a{overflow-wrap:anywhere}
 
 <div class="mnav" role="dialog" aria-label="Menu">
   <button data-close>Close ✕</button>
-  <a href="#collection" data-close>Collection</a><a href="/wish/" data-close>Wish Playground</a><a href="#life" data-close>At home</a><a href="#gift" data-close>Gifts</a><a href="#story" data-close>Our story</a>
+  <a href="#collection" data-close>Collection</a><a href="/studio/?lang=en" data-close style="color:var(--seal)">AI Studio</a><a href="/wish/" data-close>Wish Playground</a><a href="#life" data-close>At home</a><a href="#gift" data-close>Gifts</a><a href="#story" data-close>Our story</a>
   <a href="#newsletter" data-close>Notify me</a>
   <a href="https://www.instagram.com/ongo.won_archive/" target="_blank" rel="noopener">Instagram</a>
   <div class="langs"><a href="/" data-lang="ko">KO</a><a href="/en/" data-lang="en" class=cur aria-current=page>EN</a><a href="/ja/" data-lang="ja">JA</a></div>
@@ -298,7 +310,10 @@ footer a{overflow-wrap:anywhere}
   <div class="cap">
     <div class="k">The First Collection</div>
     <h1>A blanket<br>that keeps a wish</h1>
-    <a class="btn" href="#collection">Discover the collection</a>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+      <a class="btn red" href="/studio/?lang=en">Create AI Minhwa →</a>
+      <a class="btn" href="#collection">Discover the collection</a>
+    </div>
   </div>
 </section>
 
@@ -529,6 +544,27 @@ footer a{overflow-wrap:anywhere}
   </div>
 </section>
 
+<section class="sec studio-band" id="ai-studio">
+  <div class="wrap studio-box">
+    <div class="rv">
+      <div class="en">Ongowon AI Minhwa Studio</div>
+      <h2>Turn your baby's wish into a one-of-a-kind Korean minhwa</h2>
+      <p>Enter a baby nickname, choose from five documented Joseon auspicious themes (Longevity, Peony, Leaping Carp, Chaekgado, Jogakbo), and write your blessing. Our studio generates a low-dye pastel minhwa painting, a 95×95cm cotton muslin blanket mockup, and a keepsake wish postcard.</p>
+      <div class="studio-tags">
+        <span>5 Joseon Iconography Themes</span>
+        <span>Low-Dye KC-Safe Pastels</span>
+        <span>95×95cm Blanket Mockup</span>
+        <span>5 Free Creations / Day</span>
+      </div>
+      <a class="btn red" href="/studio/?lang=en">Try AI Minhwa Studio →</a>
+    </div>
+    <div class="studio-prev rv">
+      <figure><img src="/images/p_carp.jpg" alt="Leaping carp 95×95cm baby blanket mockup" loading="lazy"><figcaption>95×95cm Carré Blanket Mockup</figcaption></figure>
+      <figure><img src="/images/crane.jpg" alt="Ten Longevity Symbols pastel minhwa" loading="lazy"><figcaption>Low-Dye Pastel Minhwa Art</figcaption></figure>
+    </div>
+  </div>
+</section>
+
 <section class="sec wish" id="wish">
   <div class="wrap">
     <div class="title rv">
@@ -647,7 +683,7 @@ footer a{overflow-wrap:anywhere}
         <a href="/en/" class="logo" style="margin-bottom:18px"><div class="seal"><span><em>온</em><em>고</em><em>원</em></span></div><div class="wm"><b style="font-size:22px">ONGOWON</b><small>온고원<i></i>KOREA</small></div></a>
         <p style="max-width:300px">An old Korean way of wishing with pictures, for today's little ones.</p>
       </div>
-      <div><h4>Shop</h4><ul><li><a href="#collection">Blankets</a></li><li><a href="#gift">Gift sets</a></li></ul></div>
+      <div><h4>Shop</h4><ul><li><a href="/studio/?lang=en">AI Minhwa Studio</a></li><li><a href="#collection">Blankets</a></li><li><a href="#gift">Gift sets</a></li></ul></div>
       <div><h4>About</h4><ul><li><a href="#story">Our story</a></li><li><a href="#life">At home</a></li><li><a href="/wish/">Wish Playground</a></li><li><a href="/en/minhwa/">Minhwa symbol guide</a></li><li><a href="#faq">FAQ</a></li><li><a href="https://www.instagram.com/ongo.won_archive/" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://www.youtube.com/channel/UC07gJPocSabI5b8AhCYtEoQ" target="_blank" rel="noopener">YouTube</a></li></ul></div>
       <div><h4>Contact</h4><ul><li><a href="mailto:kjh012677@gmail.com">kjh012677@gmail.com</a></li></ul><div class="langs ft-langs"><a href="/" data-lang="ko">KO</a><a href="/en/" data-lang="en" class=cur aria-current=page>EN</a><a href="/ja/" data-lang="ja">JA</a></div></div>
     </div>
@@ -677,5 +713,7 @@ document.getElementById('nl').addEventListener('submit',e=>{
 });
 
 </script>
+<script defer src="/js/analytics-config.js"></script>
+<script defer src="/js/analytics.js"></script>
 </body>
 </html>

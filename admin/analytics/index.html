@@ -1,0 +1,805 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>온고원 트래픽 · 전환 애널리틱스 | ONGOWON Admin</title>
+<meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="theme-color" content="#FBF7F0">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400;1,500&family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FBF7F0; --paper:#F2E9DA; --sand:#E8DCC6; --card:#FFFDF9;
+  --ink:#2B2520; --soft:#6A5E52; --line:#D9CCB6;
+  --seal:#B4412F; --seal-dk:#8F3020; --gold:#9E804F;
+  --sage:#5E7D6E; --indigo:#55688F; --rose:#E9CFC6;
+  --serif:'Gowun Batang',serif; --latin:'Cormorant Garamond',serif; --sans:'Noto Sans KR',sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:14px;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+button,input{font-family:inherit}
+[hidden]{display:none!important}
+.wrap{max-width:1280px;margin:0 auto;padding:0 28px}
+
+/* Header */
+header{position:sticky;top:0;z-index:20;background:rgba(251,247,240,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.hd{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:74px;padding:10px 0;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:12px}
+.seal{width:22px;height:48px;background:var(--seal);border-radius:3px;padding:2.5px;flex:none}
+.seal span{display:flex;flex-direction:column;align-items:center;justify-content:space-evenly;height:100%;border:1px solid rgba(255,248,240,.85);border-radius:2px;font-family:var(--serif);font-weight:700;font-size:11px;line-height:1;color:#FFF8F0}
+.wm b{display:block;font-family:var(--latin);font-weight:600;font-size:21px;letter-spacing:.26em;line-height:1}
+.wm small{display:block;font-size:11px;color:var(--soft);letter-spacing:.08em;margin-top:3px}
+.hd-controls{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.range-group{display:inline-flex;border:1px solid var(--line);background:var(--card);padding:3px;gap:2px}
+.rbtn{border:0;background:transparent;color:var(--soft);padding:5px 11px;font-size:12px;cursor:pointer;transition:.15s}
+.rbtn:hover{color:var(--ink)}
+.rbtn.active{background:var(--ink);color:#FFF8F0;font-weight:500}
+.btn-sm{border:1px solid var(--line);background:var(--card);color:var(--ink);padding:6px 12px;font-size:12px;cursor:pointer;transition:.15s;display:inline-flex;align-items:center;gap:6px}
+.btn-sm:hover{border-color:var(--ink);background:var(--ink);color:#FFF8F0}
+.btn-sm.seal-btn{border-color:var(--seal);background:var(--seal);color:#FFF8F0}
+.btn-sm.seal-btn:hover{background:var(--seal-dk)}
+
+/* Auth Gate */
+.gate{min-height:calc(100vh - 120px);display:flex;align-items:center;justify-content:center;padding:36px 16px}
+.gate-card{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--seal);max-width:440px;width:100%;padding:34px 30px;box-shadow:0 20px 50px rgba(43,37,32,.08)}
+.gate-card .en{font-family:var(--latin);font-style:italic;font-size:18px;color:var(--seal)}
+.gate-card h1{font-family:var(--serif);font-size:24px;margin:4px 0 10px}
+.gate-card p{margin:0 0 20px;color:var(--soft);font-size:13.5px}
+.gate-input{width:100%;padding:11px 13px;border:1px solid var(--line);background:var(--bg);color:var(--ink);font-size:14px;outline:none;margin-bottom:12px}
+.gate-input:focus{border-color:var(--seal);background:var(--card)}
+.gate-submit{width:100%;padding:12px 16px;border:0;background:var(--seal);color:#FFF8F0;font-family:var(--serif);font-weight:700;font-size:15px;letter-spacing:.06em;cursor:pointer}
+.gate-submit:hover{background:var(--seal-dk)}
+.gate-err{margin-top:12px;padding:10px 12px;background:#FDF1EE;border:1px solid #E1B3A9;color:#8D2D1E;font-size:12.5px}
+
+/* Main Dashboard */
+main{padding:28px 0 64px}
+.meta-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:22px;padding:12px 16px;background:var(--paper);border:1px solid var(--line)}
+.meta-left{display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-size:12.5px;color:var(--soft)}
+.meta-left b{color:var(--ink);font-family:var(--serif);font-size:14px}
+.pills{display:flex;gap:8px;flex-wrap:wrap}
+.pill{display:inline-flex;align-items:center;gap:6px;font-size:11.5px;padding:3px 10px;border:1px solid var(--line);background:var(--card);color:var(--soft)}
+.pill i{width:7px;height:7px;border-radius:50%;display:inline-block;background:var(--line)}
+.pill.ok{color:var(--sage);border-color:rgba(94,125,110,.4)}
+.pill.ok i{background:var(--sage)}
+.pill.warn{color:var(--gold);border-color:rgba(158,128,79,.4)}
+.pill.warn i{background:var(--gold)}
+
+/* KPI Grid */
+.kpis{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-bottom:22px}
+.kpi{background:var(--card);border:1px solid var(--line);padding:18px 18px 16px;position:relative}
+.kpi::before{content:'';position:absolute;top:0;left:0;right:0;height:2.5px;background:var(--line)}
+.kpi.accent::before{background:var(--seal)}
+.kpi.sage::before{background:var(--sage)}
+.kpi.gold::before{background:var(--gold)}
+.kpi.indigo::before{background:var(--indigo)}
+.kpi-label{font-size:12px;color:var(--soft);letter-spacing:.02em;margin-bottom:6px}
+.kpi-val{font-family:var(--serif);font-weight:700;font-size:30px;line-height:1.15;color:var(--ink);font-variant-numeric:tabular-nums}
+.kpi-sub{font-size:11.5px;color:var(--soft);margin-top:6px}
+.kpi-sub b{color:var(--seal);font-weight:600}
+
+/* Cards & Grids */
+.grid-2{display:grid;grid-template-columns:1.15fr 1fr;gap:20px;margin-bottom:20px}
+.grid-2-eq{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px}
+.card{background:var(--card);border:1px solid var(--line);padding:22px 24px}
+.card-hd{display:flex;align-items:baseline;justify-content:space-between;gap:12px;border-bottom:1px solid var(--line);padding-bottom:10px;margin-bottom:16px;flex-wrap:wrap}
+.card-hd h2{font-family:var(--serif);font-size:18px;font-weight:700;margin:0}
+.card-hd span{font-family:var(--latin);font-style:italic;font-size:15px;color:var(--seal)}
+.card-note{font-size:12px;color:var(--soft);margin:-8px 0 14px}
+
+/* Funnel */
+.funnel-list{display:flex;flex-direction:column;gap:12px}
+.f-row{display:grid;grid-template-columns:170px 1fr 135px;gap:14px;align-items:center}
+.f-name{font-size:13px;font-weight:500;color:var(--ink)}
+.f-name small{display:block;font-size:11px;color:var(--soft);font-weight:400}
+.f-track{height:26px;background:var(--paper);border:1px solid var(--line);position:relative;overflow:hidden}
+.f-fill{height:100%;background:linear-gradient(90deg,var(--seal) 0%,#D06A56 100%);transition:width .4s ease;min-width:2px}
+.f-row:nth-child(1) .f-fill{background:linear-gradient(90deg,var(--indigo) 0%,#798CB0 100%)}
+.f-row:nth-child(2) .f-fill{background:linear-gradient(90deg,#7B6C5D 0%,#A08F7B 100%)}
+.f-row:nth-child(3) .f-fill{background:linear-gradient(90deg,var(--gold) 0%,#BE9F6A 100%)}
+.f-row:nth-child(4) .f-fill{background:linear-gradient(90deg,var(--sage) 0%,#83A393 100%)}
+.f-row:nth-child(5) .f-fill{background:linear-gradient(90deg,var(--seal) 0%,#D06552 100%)}
+.f-num{text-align:right;font-variant-numeric:tabular-nums;font-size:12.5px;color:var(--ink);white-space:nowrap}
+.f-num b{font-family:var(--serif);font-size:15px}
+.f-num small{display:block;font-size:11px;color:var(--soft)}
+
+/* Trend SVG */
+.chart-box{width:100%;overflow-x:auto}
+.chart-legend{display:flex;gap:16px;font-size:11.5px;color:var(--soft);margin-top:8px}
+.chart-legend span{display:inline-flex;align-items:center;gap:6px}
+.chart-legend i{width:10px;height:10px;display:inline-block}
+
+/* Tables & Bars */
+.bar-list{display:flex;flex-direction:column;gap:10px}
+.b-item{display:flex;flex-direction:column;gap:4px}
+.b-top{display:flex;justify-content:space-between;align-items:baseline;gap:8px;font-size:13px}
+.b-left{display:flex;align-items:center;gap:7px;min-width:0}
+.b-right{font-variant-numeric:tabular-nums;font-size:12.5px;color:var(--soft);white-space:nowrap}
+.b-right b{color:var(--ink)}
+.b-track{height:7px;background:var(--paper);overflow:hidden}
+.b-fill{height:100%;background:var(--seal);transition:width .35s}
+.b-fill.social{background:#C25947}
+.b-fill.search{background:var(--sage)}
+.b-fill.ai_search{background:var(--indigo)}
+.b-fill.campaign{background:var(--gold)}
+.b-fill.direct{background:#8A7D6E}
+.b-fill.referral{background:#A3856A}
+
+.tag{display:inline-block;font-size:10.5px;padding:1px 6px;border:1px solid var(--line);color:var(--soft);letter-spacing:.03em;white-space:nowrap}
+.tag.ai_search{border-color:rgba(85,104,143,.45);color:var(--indigo);background:#F2F5FA}
+.tag.social{border-color:rgba(180,65,47,.35);color:var(--seal);background:#FDF3F1}
+.tag.search{border-color:rgba(94,125,110,.4);color:var(--sage);background:#F2F7F4}
+.tag.campaign{border-color:rgba(158,128,79,.45);color:var(--gold);background:#FBF7EE}
+.tag.ev-mg{border-color:rgba(158,128,79,.5);color:#7E602E;background:#FBF6EA}
+.tag.ev-md{border-color:rgba(94,125,110,.5);color:#3E6050;background:#EFF6F2}
+.tag.ev-ns{border-color:rgba(180,65,47,.5);color:var(--seal);background:#FDEFEA;font-weight:600}
+.tag.ev-ls{border-color:rgba(85,104,143,.45);color:var(--indigo);background:#F2F5FA}
+
+.ai-callout{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 14px;background:#F4F6FA;border:1px solid #D3DCEB;margin-bottom:14px;font-size:12.5px}
+.ai-callout b{color:var(--indigo);font-family:var(--serif);font-size:15px}
+
+.tbl-wrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:12.5px}
+th,td{padding:8px 10px;border-bottom:1px solid #ECE3D3;text-align:left;white-space:nowrap}
+th{color:var(--soft);font-weight:500;font-size:11.5px;background:var(--bg)}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+.empty{padding:24px 12px;text-align:center;color:var(--soft);font-size:13px;background:var(--bg);border:1px dashed var(--line)}
+
+.sub-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px;padding-top:14px;border-top:1px dotted var(--line)}
+.mini-hd{font-size:12px;font-weight:600;color:var(--soft);margin:0 0 8px;letter-spacing:.03em}
+
+.setup-box{margin-top:20px;padding:16px 20px;background:var(--paper);border:1px solid var(--line);font-size:12.5px;color:var(--soft)}
+.setup-box b{color:var(--ink)}
+.setup-box code{background:var(--card);border:1px solid var(--line);padding:1px 6px;font-size:12px;color:var(--seal)}
+
+@media (max-width:1080px){
+  .kpis{grid-template-columns:repeat(3,1fr)}
+  .grid-2,.grid-2-eq{grid-template-columns:1fr}
+}
+@media (max-width:720px){
+  .wrap{padding:0 16px}
+  .kpis{grid-template-columns:repeat(2,1fr)}
+  .f-row{grid-template-columns:1fr;gap:5px}
+  .f-num{text-align:left}
+  .sub-row{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap hd">
+    <a href="/" class="brand">
+      <div class="seal"><span><em>온</em><em>고</em><em>원</em></span></div>
+      <div class="wm"><b>ONGOWON</b><small>트래픽 · 유입 · 전환 애널리틱스</small></div>
+    </a>
+    <div class="hd-controls" id="topControls" hidden>
+      <div class="range-group" role="group" aria-label="조회 기간">
+        <button type="button" class="rbtn" data-days="1">오늘</button>
+        <button type="button" class="rbtn" data-days="7">7일</button>
+        <button type="button" class="rbtn" data-days="14">14일</button>
+        <button type="button" class="rbtn active" data-days="30">30일</button>
+        <button type="button" class="rbtn" data-days="all">전체</button>
+      </div>
+      <button type="button" class="btn-sm" id="btnRefresh">새로고침</button>
+      <a class="btn-sm" href="/studio/" target="_blank" rel="noopener">스튜디오 ↗</a>
+      <button type="button" class="btn-sm" id="btnLogout">잠금</button>
+    </div>
+  </div>
+</header>
+
+<!-- Protected Token Gate -->
+<section class="gate" id="authGate">
+  <div class="gate-card">
+    <div class="en">Private Owner Analytics</div>
+    <h1>온고원 애널리틱스 대시보드</h1>
+    <p>관리자 토큰을 입력하거나 전용 북마크 링크(<code>?token=...</code>)로 접속하면 실시간 유입·리퍼러·퍼널 전환 지표를 확인할 수 있습니다.</p>
+    <form id="authForm">
+      <input class="gate-input" id="tokenInput" type="password" autocomplete="current-password" placeholder="관리자 토큰 (ANALYTICS_ADMIN_TOKEN)" required>
+      <button type="submit" class="gate-submit">대시보드 열기</button>
+    </form>
+    <div class="gate-err" id="authErr" hidden></div>
+  </div>
+</section>
+
+<!-- Main Dashboard -->
+<main id="dashMain" hidden>
+  <div class="wrap">
+    <div class="meta-bar">
+      <div class="meta-left">
+        <b id="periodLabel">-</b>
+        <span id="updatedLabel">불러오는 중...</span>
+      </div>
+      <div class="pills">
+        <span class="pill ok" id="pillStorage"><i></i><span>First-Party DB</span></span>
+        <span class="pill warn" id="pillGA4"><i></i><span>GA4 대기</span></span>
+        <span class="pill warn" id="pillClarity"><i></i><span>Clarity 대기</span></span>
+      </div>
+    </div>
+
+    <!-- Top KPIs -->
+    <section class="kpis" aria-label="핵심 지표">
+      <div class="kpi indigo">
+        <div class="kpi-label">총 페이지뷰 (PV)</div>
+        <div class="kpi-val" id="kpiPv">0</div>
+        <div class="kpi-sub">순 방문 세션 <b id="kpiSessions">0</b></div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">AI 민화 스튜디오 진입</div>
+        <div class="kpi-val" id="kpiStudio">0</div>
+        <div class="kpi-sub">스튜디오 유입률 <b id="kpiStudioRate">0%</b></div>
+      </div>
+      <div class="kpi gold">
+        <div class="kpi-label">AI 민화 생성 완료</div>
+        <div class="kpi-val" id="kpiGen">0</div>
+        <div class="kpi-sub">스튜디오 → 생성 <b id="kpiGenRate">0%</b></div>
+      </div>
+      <div class="kpi sage">
+        <div class="kpi-label">담요 목업 · 원화 저장</div>
+        <div class="kpi-val" id="kpiDl">0</div>
+        <div class="kpi-sub">생성 → 저장 <b id="kpiDlRate">0%</b></div>
+      </div>
+      <div class="kpi accent">
+        <div class="kpi-label">출시 · 맞춤 알림 신청</div>
+        <div class="kpi-val" id="kpiSignup">0</div>
+        <div class="kpi-sub">방문 → 신청 <b id="kpiSignupRate">0%</b></div>
+      </div>
+    </section>
+
+    <!-- Funnel + Daily Trend -->
+    <section class="grid-2">
+      <div class="card">
+        <div class="card-hd">
+          <h2>전환 퍼널 (Conversion Funnel)</h2>
+          <span>Visit → Studio → Signup</span>
+        </div>
+        <p class="card-note">익명 세션 기준 단계별 도달 수 및 직전 단계 대비 전환율</p>
+        <div class="funnel-list" id="funnelList"></div>
+      </div>
+
+      <div class="card">
+        <div class="card-hd">
+          <h2>일별 방문 · 전환 추이 (KST)</h2>
+          <span>Daily Trend</span>
+        </div>
+        <div class="chart-box" id="trendChart"></div>
+        <div class="chart-legend">
+          <span><i style="background:#55688F"></i>페이지뷰</span>
+          <span><i style="background:#9E804F"></i>AI 민화 생성</span>
+          <span><i style="background:#B4412F"></i>목업 저장 · 알림 신청</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Traffic Sources + Routes & Locales -->
+    <section class="grid-2-eq">
+      <div class="card">
+        <div class="card-hd">
+          <h2>유입 채널 · 리퍼러</h2>
+          <span>Traffic Sources</span>
+        </div>
+        <div class="ai-callout">
+          <span>AI 검색 유입 (ChatGPT · Perplexity · Gemini · Claude)</span>
+          <b id="aiSearchTotal">0회</b>
+        </div>
+        <div class="bar-list" id="sourcesList"></div>
+      </div>
+
+      <div class="card">
+        <div class="card-hd">
+          <h2>페이지별 조회수 · 언어 분포</h2>
+          <span>Routes &amp; Locales</span>
+        </div>
+        <div class="bar-list" id="routesList"></div>
+        <div class="sub-row">
+          <div>
+            <h3 class="mini-hd">언어별 (KO · EN · JA)</h3>
+            <div class="bar-list" id="localesList"></div>
+          </div>
+          <div>
+            <h3 class="mini-hd">기기별 · 언어 전환</h3>
+            <div class="bar-list" id="devicesList"></div>
+            <div id="langSwitchSummary" style="margin-top:10px;font-size:12px;color:var(--soft)"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Campaigns & Referrers + Studio Themes -->
+    <section class="grid-2-eq">
+      <div class="card">
+        <div class="card-hd">
+          <h2>UTM 캠페인 · 상위 리퍼러 도메인</h2>
+          <span>Campaigns &amp; Referrers</span>
+        </div>
+        <h3 class="mini-hd">UTM 캠페인</h3>
+        <div class="tbl-wrap" id="campaignsTable"></div>
+        <h3 class="mini-hd" style="margin-top:16px">상위 리퍼러 도메인</h3>
+        <div class="tbl-wrap" id="referrersTable"></div>
+      </div>
+
+      <div class="card">
+        <div class="card-hd">
+          <h2>AI 민화 스튜디오 도상 · 저장 분석</h2>
+          <span>Studio Insights</span>
+        </div>
+        <h3 class="mini-hd">가장 많이 생성된 조선 민화 도상</h3>
+        <div class="bar-list" id="themesList"></div>
+        <h3 class="mini-hd" style="margin-top:18px">저장 유형 (담요 목업 vs 원화 PNG)</h3>
+        <div class="bar-list" id="downloadsList"></div>
+      </div>
+    </section>
+
+    <!-- Recent Events -->
+    <section class="card">
+      <div class="card-hd">
+        <h2>최근 익명 이벤트 로그</h2>
+        <span>Recent Activity (Latest 40)</span>
+      </div>
+      <div class="tbl-wrap" id="recentTable"></div>
+    </section>
+
+    <div class="setup-box">
+      <b>GA4 · Microsoft Clarity 연결 안내</b> — GA4 측정 ID(<code>G-XXXXXXX</code>) 또는 Clarity 프로젝트 ID를 발급받으신 뒤
+      <code>/js/analytics-config.js</code>에 붙여넣고 커밋하거나, Vercel 환경변수 <code>GA4_MEASUREMENT_ID</code> / <code>CLARITY_PROJECT_ID</code>에 등록하면
+      전 페이지(<code>/</code>, <code>/studio/</code>, <code>/wish/</code>, <code>/minhwa/</code>, EN/JA)에 자동 연동됩니다.
+    </div>
+  </div>
+</main>
+
+<script src="/js/analytics-config.js"></script>
+<script>
+(function () {
+  var API = '/api/analytics/';
+  var state = { token: '', days: '30', loading: false };
+
+  var authGate = document.getElementById('authGate');
+  var dashMain = document.getElementById('dashMain');
+  var topControls = document.getElementById('topControls');
+  var authForm = document.getElementById('authForm');
+  var tokenInput = document.getElementById('tokenInput');
+  var authErr = document.getElementById('authErr');
+
+  function esc(s) {
+    return String(s == null ? '' : s).replace(/[&<>"']/g, function (m) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[m];
+    });
+  }
+
+  function num(n) {
+    return Number(n || 0).toLocaleString('ko-KR');
+  }
+
+  function showGate(errMsg) {
+    authGate.hidden = false;
+    dashMain.hidden = true;
+    topControls.hidden = true;
+    if (errMsg) {
+      authErr.textContent = errMsg;
+      authErr.hidden = false;
+    } else {
+      authErr.hidden = true;
+    }
+  }
+
+  function showDash() {
+    authGate.hidden = true;
+    dashMain.hidden = false;
+    topControls.hidden = false;
+  }
+
+  var GROUP_LABEL = {
+    social: 'SNS',
+    search: '검색',
+    ai_search: 'AI 검색',
+    campaign: 'UTM',
+    direct: '직접',
+    referral: '외부',
+  };
+
+  var EVENT_LABEL = {
+    page_view: '페이지뷰',
+    minhwa_generate: 'AI 민화 생성',
+    mockup_download: '목업·원화 저장',
+    notify_signup: '알림 신청',
+    language_switch: '언어 전환',
+  };
+
+  var EVENT_CLASS = {
+    page_view: '',
+    minhwa_generate: 'ev-mg',
+    mockup_download: 'ev-md',
+    notify_signup: 'ev-ns',
+    language_switch: 'ev-ls',
+  };
+
+  function renderChart(daily) {
+    var box = document.getElementById('trendChart');
+    if (!daily || !daily.length) {
+      box.innerHTML = '<div class="empty">표시할 일별 데이터가 아직 없습니다.</div>';
+      return;
+    }
+    var W = Math.max(520, daily.length * 26);
+    var H = 188;
+    var padL = 34, padR = 14, padT = 16, padB = 28;
+    var plotW = W - padL - padR;
+    var plotH = H - padT - padB;
+    var maxVal = Math.max(
+      4,
+      daily.reduce(function (m, d) {
+        return Math.max(m, d.pageviews, d.generates + d.downloads + d.signups);
+      }, 0)
+    );
+
+    var barW = Math.max(6, Math.min(20, Math.floor((plotW / daily.length) * 0.62)));
+    var step = plotW / daily.length;
+    var labelEvery = daily.length > 16 ? Math.ceil(daily.length / 8) : daily.length > 8 ? 2 : 1;
+
+    var gridLines = [0, 0.5, 1]
+      .map(function (f) {
+        var y = padT + plotH * (1 - f);
+        var v = Math.round(maxVal * f);
+        return (
+          '<line x1="' + padL + '" y1="' + y.toFixed(1) + '" x2="' + (W - padR) + '" y2="' + y.toFixed(1) + '" stroke="#E8DCC6" stroke-dasharray="3 3"/>' +
+          '<text x="' + (padL - 6) + '" y="' + (y + 4).toFixed(1) + '" text-anchor="end" font-size="10" fill="#85786B">' + v + '</text>'
+        );
+      })
+      .join('');
+
+    var bars = daily
+      .map(function (d, i) {
+        var cx = padL + i * step + step / 2;
+        var pvH = (d.pageviews / maxVal) * plotH;
+        var genH = (d.generates / maxVal) * plotH;
+        var convH = ((d.downloads + d.signups) / maxVal) * plotH;
+        var tip = d.date + ' · PV ' + d.pageviews + ' / 생성 ' + d.generates + ' / 저장 ' + d.downloads + ' / 신청 ' + d.signups;
+        var x = cx - barW / 2;
+        var lbl =
+          i % labelEvery === 0 || i === daily.length - 1
+            ? '<text x="' + cx.toFixed(1) + '" y="' + (H - 8) + '" text-anchor="middle" font-size="10" fill="#6A5E52">' + d.date.slice(5) + '</text>'
+            : '';
+
+        return (
+          '<g>' +
+          '<title>' + esc(tip) + '</title>' +
+          '<rect x="' + x.toFixed(1) + '" y="' + (padT + plotH - pvH).toFixed(1) + '" width="' + barW + '" height="' + Math.max(0, pvH).toFixed(1) + '" fill="#55688F" opacity="0.82" rx="1"/>' +
+          (genH > 0 ? '<rect x="' + (x + barW * 0.22).toFixed(1) + '" y="' + (padT + plotH - genH).toFixed(1) + '" width="' + Math.max(3, barW * 0.56).toFixed(1) + '" height="' + genH.toFixed(1) + '" fill="#9E804F" rx="1"/>' : '') +
+          (convH > 0 ? '<rect x="' + (x + barW * 0.34).toFixed(1) + '" y="' + (padT + plotH - convH).toFixed(1) + '" width="' + Math.max(3, barW * 0.36).toFixed(1) + '" height="' + convH.toFixed(1) + '" fill="#B4412F" rx="1"/>' : '') +
+          lbl +
+          '</g>'
+        );
+      })
+      .join('');
+
+    box.innerHTML =
+      '<svg viewBox="0 0 ' + W + ' ' + H + '" style="width:100%;height:auto;display:block" role="img" aria-label="일별 방문 및 전환 추이">' +
+      gridLines +
+      bars +
+      '</svg>';
+  }
+
+  function renderDashboard(data) {
+    var k = data.kpis || {};
+    var meta = data.meta || {};
+
+    document.getElementById('periodLabel').textContent =
+      (data.startDate || '') + ' ~ ' + (data.endDate || '') + ' (' + (data.days === 'all' ? '전체' : data.days + '일') + ')';
+    document.getElementById('updatedLabel').textContent =
+      '기준: ' + (meta.generatedAtKst || '-') + ' KST · 총 이벤트 ' + num(data.totalEvents) + '건';
+
+    var stPill = document.getElementById('pillStorage');
+    stPill.className = 'pill ' + (meta.storage === 'vercel_blob' ? 'ok' : 'warn');
+    stPill.querySelector('span').textContent = meta.storage === 'vercel_blob' ? 'Vercel Blob 연결됨' : '메모리 임시 모드';
+
+    var staticCfg = window.ONGOWON_ANALYTICS_CONFIG || {};
+    var ga4On = Boolean(meta.ga4Configured || staticCfg.ga4Id);
+    var clOn = Boolean(meta.clarityConfigured || staticCfg.clarityId);
+
+    var gaPill = document.getElementById('pillGA4');
+    gaPill.className = 'pill ' + (ga4On ? 'ok' : 'warn');
+    gaPill.querySelector('span').textContent = ga4On ? 'GA4 연결됨' : 'GA4 미설정 (Ready)';
+
+    var clPill = document.getElementById('pillClarity');
+    clPill.className = 'pill ' + (clOn ? 'ok' : 'warn');
+    clPill.querySelector('span').textContent = clOn ? 'Clarity 연결됨' : 'Clarity 미설정 (Ready)';
+
+    // KPIs
+    document.getElementById('kpiPv').textContent = num(k.pageviews);
+    document.getElementById('kpiSessions').textContent = num(k.uniqueSessions);
+    document.getElementById('kpiStudio').textContent = num(k.studioVisits);
+    var studioFunnel = (data.funnel || [])[1] || {};
+    document.getElementById('kpiStudioRate').textContent = (studioFunnel.rateFromStart || 0) + '%';
+    document.getElementById('kpiGen').textContent = num(k.minhwaGenerates);
+    document.getElementById('kpiGenRate').textContent = (k.studioToGenerateRate || 0) + '%';
+    document.getElementById('kpiDl').textContent = num(k.mockupDownloads);
+    document.getElementById('kpiDlRate').textContent = (k.generateToDownloadRate || 0) + '%';
+    document.getElementById('kpiSignup').textContent = num(k.notifySignups);
+    document.getElementById('kpiSignupRate').textContent = (k.visitToSignupRate || 0) + '%';
+
+    // Funnel
+    var funnelEl = document.getElementById('funnelList');
+    var maxSess = Math.max(1, ((data.funnel || [])[0] || {}).sessions || 0);
+    funnelEl.innerHTML = (data.funnel || [])
+      .map(function (step, idx) {
+        var w = step.sessions > 0 ? Math.max(4, Math.round((step.sessions / maxSess) * 100)) : 0;
+        var prevTxt = idx === 0 ? '기준 100%' : '이전 단계 대비 ' + step.rateFromPrev + '%';
+        return (
+          '<div class="f-row">' +
+          '<div class="f-name">' + esc(step.label) + '<small>' + prevTxt + '</small></div>' +
+          '<div class="f-track"><div class="f-fill" style="width:' + w + '%"></div></div>' +
+          '<div class="f-num"><b>' + num(step.sessions) + '</b> 세션 <small>총 ' + num(step.events) + '회 · ' + step.rateFromStart + '%</small></div>' +
+          '</div>'
+        );
+      })
+      .join('');
+
+    // Trend chart
+    renderChart(data.daily || []);
+
+    // Sources
+    document.getElementById('aiSearchTotal').textContent = num(k.aiSearchVisits) + '회';
+    var srcEl = document.getElementById('sourcesList');
+    if (!(data.sources || []).length) {
+      srcEl.innerHTML = '<div class="empty">아직 기록된 유입 데이터가 없습니다.</div>';
+    } else {
+      srcEl.innerHTML = data.sources
+        .map(function (s) {
+          var w = Math.max(3, Math.round(s.sharePct));
+          var convHtml = s.conversions > 0 ? ' · <b style="color:var(--seal)">전환 ' + s.conversions + '</b>' : '';
+          return (
+            '<div class="b-item">' +
+            '<div class="b-top">' +
+            '<span class="b-left"><span class="tag ' + esc(s.group) + '">' + esc(GROUP_LABEL[s.group] || s.group) + '</span><span>' + esc(s.label) + '</span></span>' +
+            '<span class="b-right"><b>' + num(s.visits) + '</b> PV · ' + num(s.sessions) + '세션 (' + s.sharePct + '%)' + convHtml + '</span>' +
+            '</div>' +
+            '<div class="b-track"><div class="b-fill ' + esc(s.group) + '" style="width:' + w + '%"></div></div>' +
+            '</div>'
+          );
+        })
+        .join('');
+    }
+
+    // Routes
+    var rtEl = document.getElementById('routesList');
+    if (!(data.routes || []).length) {
+      rtEl.innerHTML = '<div class="empty">아직 기록된 페이지뷰가 없습니다.</div>';
+    } else {
+      rtEl.innerHTML = data.routes
+        .map(function (r) {
+          var w = Math.max(3, Math.round(r.sharePct));
+          return (
+            '<div class="b-item">' +
+            '<div class="b-top">' +
+            '<span class="b-left"><b>' + esc(r.path) + '</b> <span style="color:var(--soft)">' + esc(r.label) + '</span></span>' +
+            '<span class="b-right"><b>' + num(r.pageviews) + '</b> PV (' + r.sharePct + '%)</span>' +
+            '</div>' +
+            '<div class="b-track"><div class="b-fill" style="width:' + w + '%"></div></div>' +
+            '</div>'
+          );
+        })
+        .join('');
+    }
+
+    // Locales
+    var locEl = document.getElementById('localesList');
+    locEl.innerHTML = (data.locales || []).length
+      ? data.locales
+          .map(function (l) {
+            return (
+              '<div class="b-item">' +
+              '<div class="b-top"><span>' + esc(l.label) + '</span><span class="b-right"><b>' + num(l.pageviews) + '</b> (' + l.sharePct + '%)</span></div>' +
+              '<div class="b-track"><div class="b-fill search" style="width:' + Math.max(3, Math.round(l.sharePct)) + '%"></div></div>' +
+              '</div>'
+            );
+          })
+          .join('')
+      : '<div class="empty">데이터 없음</div>';
+
+    // Devices & language switches
+    var devEl = document.getElementById('devicesList');
+    devEl.innerHTML = (data.devices || []).length
+      ? data.devices
+          .map(function (d) {
+            return (
+              '<div class="b-item">' +
+              '<div class="b-top"><span>' + esc(d.label) + '</span><span class="b-right"><b>' + num(d.count) + '</b> (' + d.sharePct + '%)</span></div>' +
+              '<div class="b-track"><div class="b-fill direct" style="width:' + Math.max(3, Math.round(d.sharePct)) + '%"></div></div>' +
+              '</div>'
+            );
+          })
+          .join('')
+      : '<div class="empty">데이터 없음</div>';
+
+    var lsEl = document.getElementById('langSwitchSummary');
+    var pairs = (data.languageSwitchPairs || [])
+      .map(function (p) {
+        return esc(p.pair.toUpperCase()) + ' ' + p.count + '회';
+      })
+      .join(' · ');
+    lsEl.innerHTML = '언어 전환 클릭: <b>' + num(k.languageSwitches) + '회</b>' + (pairs ? ' (' + pairs + ')' : '');
+
+    // UTM Campaigns table
+    var cmpEl = document.getElementById('campaignsTable');
+    if (!(data.campaigns || []).length) {
+      cmpEl.innerHTML = '<div class="empty">UTM 캠페인 유입이 기록되면 이곳에 표시됩니다. (예: <code>?utm_source=instagram&amp;utm_campaign=reels_launch</code>)</div>';
+    } else {
+      cmpEl.innerHTML =
+        '<table><thead><tr><th>캠페인 (utm_campaign)</th><th>소스</th><th class="num">PV</th><th class="num">세션</th><th class="num">알림 전환</th></tr></thead><tbody>' +
+        data.campaigns
+          .map(function (c) {
+            return (
+              '<tr><td><b>' + esc(c.campaign) + '</b></td><td>' + esc(c.source) + '</td><td class="num">' + num(c.visits) + '</td><td class="num">' + num(c.sessions) + '</td><td class="num">' + num(c.conversions) + '</td></tr>'
+            );
+          })
+          .join('') +
+        '</tbody></table>';
+    }
+
+    // Referrer hosts table
+    var refEl = document.getElementById('referrersTable');
+    if (!(data.referrers || []).length) {
+      refEl.innerHTML = '<div class="empty">외부 리퍼러 도메인이 기록되면 이곳에 표시됩니다.</div>';
+    } else {
+      refEl.innerHTML =
+        '<table><thead><tr><th>도메인 / 소스</th><th>채널</th><th class="num">PV</th><th class="num">세션</th></tr></thead><tbody>' +
+        data.referrers
+          .map(function (r) {
+            return (
+              '<tr><td>' + esc(r.host) + '</td><td>' + esc(r.channelLabel) + '</td><td class="num">' + num(r.visits) + '</td><td class="num">' + num(r.sessions) + '</td></tr>'
+            );
+          })
+          .join('') +
+        '</tbody></table>';
+    }
+
+    // Studio themes
+    var thEl = document.getElementById('themesList');
+    if (!(data.studioThemes || []).length) {
+      thEl.innerHTML = '<div class="empty">AI 민화 생성 이벤트가 쌓이면 인기 도상이 표시됩니다.</div>';
+    } else {
+      var thMax = Math.max(1, data.studioThemes[0].count);
+      thEl.innerHTML = data.studioThemes
+        .map(function (t) {
+          return (
+            '<div class="b-item">' +
+            '<div class="b-top"><span>' + esc(t.label) + '</span><span class="b-right"><b>' + num(t.count) + '</b>회</span></div>' +
+            '<div class="b-track"><div class="b-fill campaign" style="width:' + Math.max(4, Math.round((t.count / thMax) * 100)) + '%"></div></div>' +
+            '</div>'
+          );
+        })
+        .join('');
+    }
+
+    // Download kinds
+    var dlEl = document.getElementById('downloadsList');
+    if (!(data.downloadKinds || []).length) {
+      dlEl.innerHTML = '<div class="empty">담요 목업 · 원화 저장 이벤트가 아직 없습니다.</div>';
+    } else {
+      var dlMax = Math.max(
+        1,
+        data.downloadKinds.reduce(function (m, x) {
+          return Math.max(m, x.count);
+        }, 0)
+      );
+      dlEl.innerHTML = data.downloadKinds
+        .map(function (d) {
+          return (
+            '<div class="b-item">' +
+            '<div class="b-top"><span>' + esc(d.label) + '</span><span class="b-right"><b>' + num(d.count) + '</b>회</span></div>' +
+            '<div class="b-track"><div class="b-fill search" style="width:' + Math.max(4, Math.round((d.count / dlMax) * 100)) + '%"></div></div>' +
+            '</div>'
+          );
+        })
+        .join('');
+    }
+
+    // Recent events table
+    var recEl = document.getElementById('recentTable');
+    if (!(data.recent || []).length) {
+      recEl.innerHTML = '<div class="empty">기록된 최근 이벤트가 없습니다.</div>';
+    } else {
+      recEl.innerHTML =
+        '<table><thead><tr><th>시각 (KST)</th><th>이벤트</th><th>경로</th><th>유입 채널</th><th>리퍼러 / UTM</th><th>상세</th><th>기기</th></tr></thead><tbody>' +
+        data.recent
+          .map(function (ev) {
+            var refTxt = [ev.refHost, ev.utmCampaign ? 'utm:' + ev.utmCampaign : ''].filter(Boolean).join(' · ') || '-';
+            return (
+              '<tr>' +
+              '<td>' + esc(ev.kstTime) + '</td>' +
+              '<td><span class="tag ' + esc(EVENT_CLASS[ev.event] || '') + '">' + esc(EVENT_LABEL[ev.event] || ev.event) + '</span></td>' +
+              '<td><b>' + esc(ev.path) + '</b> <span style="color:var(--soft)">(' + esc(ev.locale.toUpperCase()) + ')</span></td>' +
+              '<td>' + esc(ev.channelLabel) + '</td>' +
+              '<td style="color:var(--soft)">' + esc(refTxt) + '</td>' +
+              '<td>' + esc(ev.extra || '-') + '</td>' +
+              '<td>' + esc(ev.device) + '</td>' +
+              '</tr>'
+            );
+          })
+          .join('') +
+        '</tbody></table>';
+    }
+  }
+
+  async function loadData(token, days) {
+    if (state.loading) return;
+    state.loading = true;
+    document.getElementById('btnRefresh').textContent = '불러오는 중...';
+    try {
+      var res = await fetch(API + '?days=' + encodeURIComponent(days), {
+        headers: { Authorization: 'Bearer ' + token },
+        cache: 'no-store',
+      });
+      var data = await res.json().catch(function () {
+        return { ok: false, message: '응답을 해석하지 못했습니다.' };
+      });
+      if (!res.ok || !data.ok) {
+        if (res.status === 401) {
+          try { sessionStorage.removeItem('ogw_admin_token'); } catch (e) {}
+          showGate(data.message || '토큰이 올바르지 않습니다.');
+          return;
+        }
+        throw new Error(data.message || '데이터를 불러오지 못했습니다.');
+      }
+      state.token = token;
+      state.days = days;
+      try { sessionStorage.setItem('ogw_admin_token', token); } catch (e) {}
+      showDash();
+      renderDashboard(data);
+    } catch (err) {
+      showGate(err instanceof Error ? err.message : '오류가 발생했습니다.');
+    } finally {
+      state.loading = false;
+      document.getElementById('btnRefresh').textContent = '새로고침';
+    }
+  }
+
+  // Range buttons
+  document.querySelectorAll('.rbtn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      document.querySelectorAll('.rbtn').forEach(function (b) {
+        b.classList.toggle('active', b === btn);
+      });
+      loadData(state.token, btn.dataset.days);
+    });
+  });
+
+  document.getElementById('btnRefresh').addEventListener('click', function () {
+    loadData(state.token, state.days);
+  });
+
+  document.getElementById('btnLogout').addEventListener('click', function () {
+    state.token = '';
+    try { sessionStorage.removeItem('ogw_admin_token'); } catch (e) {}
+    try { history.replaceState(null, '', location.pathname); } catch (e) {}
+    tokenInput.value = '';
+    showGate('');
+  });
+
+  authForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var tok = tokenInput.value.trim();
+    if (!tok) return;
+    loadData(tok, state.days);
+  });
+
+  // Boot from ?token=... or sessionStorage
+  var params = new URLSearchParams(location.search || '');
+  var urlToken = (params.get('token') || '').trim();
+  var savedToken = '';
+  try { savedToken = sessionStorage.getItem('ogw_admin_token') || ''; } catch (e) {}
+
+  if (urlToken) {
+    loadData(urlToken, state.days);
+  } else if (savedToken) {
+    loadData(savedToken, state.days);
+  } else {
+    showGate('');
+  }
+})();
+</script>
+</body>
+</html>

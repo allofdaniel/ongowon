@@ -303,7 +303,7 @@ footer a{overflow-wrap:anywhere}
 
 <header>
   <div class="wrap hd">
-    <nav><a href="/ja/#collection">コレクション</a><a href="/wish/">願いの遊び場</a><a href="/ja/#life">暮らしの中で</a><a href="/ja/#gift">ギフト</a><a href="/ja/#story">ストーリー</a></nav>
+    <nav><a href="/ja/#collection">コレクション</a><a href="/studio/?lang=ja" style="color:var(--seal);font-weight:500">AI民画スタジオ</a><a href="/wish/">願いの遊び場</a><a href="/ja/#life">暮らしの中で</a><a href="/ja/#gift">ギフト</a><a href="/ja/#story">ストーリー</a></nav>
     <button class="menu-btn" aria-label="メニュー" data-open>☰<span class="ml"> メニュー</span></button>
     <a href="/ja/" class="logo" aria-label="ONGOWON"><div class="seal"><span><em>온</em><em>고</em><em>원</em></span></div><div class="wm"><b>ONGOWON</b><small>온고원<i></i>KOREA</small></div></a>
     <div class="right">
@@ -315,7 +315,7 @@ footer a{overflow-wrap:anywhere}
 
 <div class="mnav" role="dialog" aria-label="メニュー">
   <button data-close>閉じる ✕</button>
-  <a href="/ja/#collection" data-close>コレクション</a><a href="/wish/" data-close>願いの遊び場</a><a href="/ja/#life" data-close>暮らしの中で</a><a href="/ja/#gift" data-close>ギフト</a><a href="/ja/#story" data-close>ストーリー</a>
+  <a href="/ja/#collection" data-close>コレクション</a><a href="/studio/?lang=ja" data-close style="color:var(--seal)">AI民画スタジオ</a><a href="/wish/" data-close>願いの遊び場</a><a href="/ja/#life" data-close>暮らしの中で</a><a href="/ja/#gift" data-close>ギフト</a><a href="/ja/#story" data-close>ストーリー</a>
   <a href="/ja/#newsletter" data-close>発売のお知らせ</a>
   <a href="https://www.instagram.com/ongo.won_archive/" target="_blank" rel="noopener">Instagram</a>
   <div class="langs"><a href="/minhwa/" data-lang="ko">KO</a><a href="/en/minhwa/" data-lang="en">EN</a><a href="/ja/minhwa/" data-lang="ja" class=cur aria-current=page>JA</a></div>
@@ -427,7 +427,7 @@ footer a{overflow-wrap:anywhere}
         <a href="/ja/" class="logo" style="margin-bottom:18px"><div class="seal"><span><em>온</em><em>고</em><em>원</em></span></div><div class="wm"><b style="font-size:22px">ONGOWON</b><small>온고원<i></i>KOREA</small></div></a>
         <p style="max-width:300px">絵に願いを託した朝鮮の習わしを、今のベビーブランケットに。</p>
       </div>
-      <div><h4>Shop</h4><ul><li><a href="/ja/#collection">ブランケット</a></li><li><a href="/ja/#gift">ギフトセット</a></li></ul></div>
+      <div><h4>Shop</h4><ul><li><a href="/studio/?lang=ja">AI民画スタジオ</a></li><li><a href="/ja/#collection">ブランケット</a></li><li><a href="/ja/#gift">ギフトセット</a></li></ul></div>
       <div><h4>About</h4><ul><li><a href="/ja/#story">ストーリー</a></li><li><a href="/ja/#life">暮らしの中で</a></li><li><a href="/wish/">願いの遊び場</a></li><li><a href="/ja/minhwa/">民画の願い事典</a></li><li><a href="/ja/#faq">FAQ</a></li><li><a href="https://www.instagram.com/ongo.won_archive/" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://www.youtube.com/channel/UC07gJPocSabI5b8AhCYtEoQ" target="_blank" rel="noopener">YouTube</a></li></ul></div>
       <div><h4>Contact</h4><ul><li><a href="mailto:kjh012677@gmail.com">kjh012677@gmail.com</a></li></ul><div class="langs ft-langs"><a href="/minhwa/" data-lang="ko">KO</a><a href="/en/minhwa/" data-lang="en">EN</a><a href="/ja/minhwa/" data-lang="ja" class=cur aria-current=page>JA</a></div></div>
     </div>
@@ -441,5 +441,7 @@ document.querySelectorAll('[data-open]').forEach(b=>b.onclick=()=>mn.classList.a
 document.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',()=>mn.classList.remove('open')));
 document.querySelectorAll('[data-lang]').forEach(a=>a.addEventListener('click',()=>{try{localStorage.setItem('ongowon_lang',a.dataset.lang)}catch(e){}}));
 </script>
+<script defer src="/js/analytics-config.js"></script>
+<script defer src="/js/analytics.js"></script>
 </body>
 </html>

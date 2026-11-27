@@ -78,6 +78,11 @@
   <url>
     <loc>https://ongowon.com/studio/</loc>
     <lastmod>2026-11-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ongowon.com/studio/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ongowon.com/studio/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ongowon.com/studio/?lang=ja"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ongowon.com/studio/"/>
+    <image:image><image:loc>https://ongowon.com/images/og/studio.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://ongowon.com/wish/</loc>

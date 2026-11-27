@@ -3,6 +3,9 @@
   "functions": {
     "api/minhwa-generate.js": {
       "maxDuration": 60
+    },
+    "api/analytics.js": {
+      "maxDuration": 30
     }
   },
   "headers": [

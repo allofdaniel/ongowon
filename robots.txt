@@ -1,6 +1,8 @@
 # ongowon.com — all search engines and AI assistants may read this site.
 User-agent: *
 Allow: /
+Disallow: /admin/
+Disallow: /api/
 
 # Search engines
 User-agent: Googlebot

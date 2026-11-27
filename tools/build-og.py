@@ -15,12 +15,13 @@ import html
 import json
 import os
 import re
+import sys
 from PIL import Image, ImageDraw, ImageFilter, ImageFont, ImageOps
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT_DIR = 'images/og'
 SITE = 'https://ongowon.com'
-OG_VERSION = '4'  # 썸네일을 바꾸면 숫자를 올린다 (카카오톡·페이스북의 옛 썸네일 캐시 무효화)
+OG_VERSION = '5'  # 썸네일을 바꾸면 숫자를 올린다 (카카오톡·페이스북의 옛 썸네일 캐시 무효화)
 
 W, H = 1200, 630
 BG = (251, 247, 240)      # --bg   #FBF7F0
@@ -34,6 +35,10 @@ FD = '/usr/share/fonts/opentype/noto/'
 SERIF_B = FD + 'NotoSerifCJK-Bold.ttc'
 SANS_M = FD + 'NotoSansCJK-Medium.ttc'
 SANS_B = FD + 'NotoSansCJK-Bold.ttc'
+WIN_FONTS = r'C:\Windows\Fonts'
+WIN_SERIF_B = os.path.join(WIN_FONTS, 'HANBatangB.ttf')
+WIN_SANS_M = os.path.join(WIN_FONTS, 'malgun.ttf')
+WIN_SANS_B = os.path.join(WIN_FONTS, 'malgunbd.ttf')
 IDX = {'ko': 1, 'en': 1, 'ja': 0}   # .ttc 글꼴 인덱스 (JP=0, KR=1)
 BRAND = {'ko': '온고원', 'en': 'ONGOWON', 'ja': '温故園'}
 SEAL_CH = {'ko': '溫', 'en': '溫', 'ja': '温'}
@@ -46,13 +51,21 @@ PAGES = {
     'minhwa/index.html': ('ko', 'minhwa', ['민화 소원 사전'], '잉어 · 학 · 모란 · 책가도 · 까치호랑이 · 박쥐 그림의 뜻', 'images/carp.jpg'),
     'en/minhwa/index.html': ('en', 'minhwa-en', ['Korean Minhwa', 'Symbols & Meanings'], 'Carp · Crane · Peony · Tiger · Bat', 'images/carp.jpg'),
     'ja/minhwa/index.html': ('ja', 'minhwa-ja', ['韓国民画の', '吉祥モチーフと意味'], '鯉・鶴・牡丹・冊架図・鵲虎・蝙蝠', 'images/carp.jpg'),
+    'studio/index.html': ('ko', 'studio', ['AI 소원 민화', '스튜디오'], '태몽과 소원으로 짓는 우리 아기 첫 민화 담요', 'images/p_carp.jpg'),
     'wish/index.html': ('ko', 'wish', ['민화는 원래', '소원을 비는 그림'], '진짜 민화 맞히기 · 내 소원템 찾기 · 조선의 띠와 돌잡이', 'images/peony.jpg'),
     'linktree/index.html': ('ko', 'linktree', ['그림으로 비는 소원'], '온고원 링크 모음', 'images/horse.jpg'),
 }
 
 
 def f(path, size, lang):
-    return ImageFont.truetype(path, size, index=IDX[lang])
+    if os.path.exists(path):
+        return ImageFont.truetype(path, size, index=IDX[lang])
+    fallback = {
+        SERIF_B: WIN_SERIF_B,
+        SANS_M: WIN_SANS_M,
+        SANS_B: WIN_SANS_B,
+    }.get(path, WIN_SANS_B)
+    return ImageFont.truetype(fallback, size)
 
 
 def wrap(d, text, fnt, max_w, lang):
@@ -251,7 +264,10 @@ LANG_OF = {k: v[0] for k, v in PAGES.items()}
 
 
 def main():
+    only = set(sys.argv[1:])
     for file, (lang, name, title, sub, img) in PAGES.items():
+        if only and name not in only and file not in only:
+            continue
         out = (make_photo if name in PHOTO else make)(lang, name, title, sub, img)
         patch(file, out)
         print(f'{file:24s} → {out}')
